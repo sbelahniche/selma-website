@@ -1,3 +1,7 @@
+@font-face{font-family:"Atkinson Hyperlegible Next";font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/atkinson-next-400.woff2) format("woff2")}
+@font-face{font-family:"Atkinson Hyperlegible Next";font-style:normal;font-weight:700;font-display:swap;src:url(/assets/fonts/atkinson-next-700.woff2) format("woff2")}
+@font-face{font-family:"Atkinson Hyperlegible Next";font-style:normal;font-weight:800;font-display:swap;src:url(/assets/fonts/atkinson-next-800.woff2) format("woff2")}
+@font-face{font-family:"Atkinson Hyperlegible Mono";font-style:normal;font-weight:600;font-display:swap;src:url(/assets/fonts/atkinson-mono-600.woff2) format("woff2")}
 /* ============ Tokens ============ */
 :root{
   --navy:#1c394c;        /* headings, dark sections */
@@ -604,3 +608,5 @@ h1,h2,h3,h4{overflow-wrap:break-word}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
+
+@media (prefers-reduced-motion:no-preference){@view-transition{navigation:auto}}
