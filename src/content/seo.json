@@ -1,0 +1,49 @@
+{
+ "titles": {
+  "/": "SELMA Zuhause | Ergotherapie bei Parkinson zu Hause",
+  "/leistungen": "Spezialisierte Ergotherapie bei Parkinson zu Hause",
+  "/ratgeber": "Wissen & Tipps rund um Parkinson | SELMA Zuhause",
+  "/kontakt": "Kontakt",
+  "/verordnung-gkv": "Verordnung GKV",
+  "/patienteninformationen": "Patienteninformationen & Verträge | SELMA Zuhause",
+  "/agb": "AGB | SELMA Zuhause",
+  "/behandlungsvertrag": "Behandlungsvertrag | SELMA Zuhause",
+  "/patienteninformation-datenschutz": "Patienteninformation Datenschutz | SELMA Zuhause",
+  "/einwilligung-anonymisierte-daten": "Einwilligung anonymisierte Daten | SELMA Zuhause",
+  "/einwilligung-versorgungskoordination": "Einwilligung Versorgungskoordination | SELMA Zuhause",
+  "/videotherapie": "Videotherapie | SELMA Zuhause",
+  "/jobs": "Jobs | SELMA Zuhause",
+  "/jobs-ergotherapie-berlin": "Ergotherapeut:in (25h) Berlin | SELMA Zuhause",
+  "/impressum": "Impressum",
+  "/datenschutzerklarung": "Datenschutzerklärung | SELMA Zuhause",
+  "/posts-categories/bewegung-training": "Bewegung & Training",
+  "/posts-categories/grundlagen-leitlinie": "Grundlagen & Leitlinie",
+  "/posts-categories/hilfsmittel-wohnraum": "Hilfsmittel & Wohnraum",
+  "/posts-categories/medikamente-alltag": "Medikamente & Alltag",
+  "/blog-posts/freezing-bei-parkinson-hilfsmittel-im-uberblick": "Freezing bei Parkinson: Hilfsmittel und Strategien im Überblick",
+  "/blog-posts/lsvt-big": "LSVT BIG® bei Parkinson: Sicherer bewegen im Alltag",
+  "/blog-posts/parkinson-medikamente-nebenwirkungen-alltag": "Parkinson-Medikamente: Wirkungen im Alltag managen",
+  "/blog-posts/pwr-moves-parkinson-training": "PWR!Moves® bei Parkinson: Training für den Alltag",
+  "/blog-posts/s2k-leitlinie-parkinson-ergotherapie": "Ergotherapie bei Parkinson: Was die Leitlinie empfiehlt"
+ },
+ "descriptions": {
+  "/": "Spezialisierte Ergotherapie für Menschen mit Parkinson zu Hause in Berlin: für mehr Sicherheit, Beweglichkeit und Lebensqualität im Alltag.",
+  "/leistungen": "Sturzprävention, Bewegungstraining, Hilfsmittel, Wohnraumanpassung und Angehörigenberatung, spezialisiert auf den Alltag mit Parkinson.",
+  "/ratgeber": "Praktische Informationen zu Parkinson im Alltag: Bewegung, Wohnraumanpassung und Hilfsmittel. Für Betroffene und Angehörige.",
+  "/patienteninformationen": "Behandlungsvertrag, Datenschutzinformation und freiwillige Einwilligungen der Praxis SELMA Zuhause auf einen Blick.",
+  "/agb": "Die AGB von SELMA Zuhause wurden durch den Behandlungsvertrag ersetzt. Alle Regelungen finden Sie im Behandlungsvertrag.",
+  "/behandlungsvertrag": "Behandlungsvertrag über ergotherapeutische Leistungen (§§ 630a ff. BGB) der Praxis SELMA Zuhause.",
+  "/patienteninformation-datenschutz": "Information nach Art. 13 DSGVO zur Verarbeitung Ihrer Gesundheitsdaten in der ergotherapeutischen Behandlung.",
+  "/einwilligung-anonymisierte-daten": "Freiwillige Einwilligung in die Nutzung anonymisierter Behandlungsdaten für Qualitätssicherung und Forschung.",
+  "/einwilligung-versorgungskoordination": "Freiwillige Einwilligung in den Austausch von Behandlungsdaten mit an der Versorgung beteiligten Ärzten und Therapeuten.",
+  "/videotherapie": "Informationen und Einwilligung zur Videotherapie bei SELMA Zuhause: Ablauf, Abrechnung, Datenschutz mit RED connect und Widerruf.",
+  "/jobs": "Offene Stellen bei SELMA Zuhause: Ergotherapeut:innen für unser Netzwerk in Berlin. Hausbesuche bei Menschen mit Parkinson, 25 Stunden, fest angestellt.",
+  "/jobs-ergotherapie-berlin": "Ergotherapie im Hausbesuch für Menschen mit Parkinson, in deiner Berliner Nachbarschaft. 25 Stunden, fest angestellt, 3 Patient:innen am Tag.",
+  "/datenschutzerklarung": "Datenschutzerklärung von SELMA Zuhause: Wie wir personenbezogene Daten auf unserer Website verarbeiten und welche Rechte Sie haben."
+ },
+ "noindex": [
+  "/verordnung-gkv",
+  "/impressum",
+  "/datenschutzerklarung"
+ ]
+}

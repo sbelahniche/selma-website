@@ -1,2 +1,4 @@
 # Old Webflow template pages (not rebuilt) -> services page
 /uebersicht/*   /leistungen   301
+# Old Webflow site search -> Ratgeber (has its own search)
+/search   /ratgeber   301

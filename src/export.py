@@ -15,9 +15,11 @@ SITE = "https://www.selmazuhause.de"
 TODAY = datetime.date.today().isoformat()
 
 MAIN_PATHS = {"start": "/", "leistungen": "/leistungen", "ratgeber": "/ratgeber", "kontakt": "/kontakt"}
-NOT_IN_SITEMAP = {"verordnung-gkv"}  # not in the Webflow sitemap either
+# Page titles, descriptions and noindex flags exactly as on the live Webflow site (SEO continuity)
+SEO = json.load(open(SRC / "content" / "seo.json"))
+TRACKING = (SRC / "tracking.html").read_text()
+RAPIDMAIL_POPUP = '<script src="https://t73717dc4.emailsys1a.net/form/242/2569/6d9213f71f/popup.js?_g=1765439568"></script>'
 
-# Titles/descriptions as on the live Webflow site (kept for SEO continuity)
 META = {
     "start": ("SELMA Zuhause | Ergotherapie bei Parkinson zu Hause",
               "Spezialisierte Ergotherapie für Menschen mit Parkinson zu Hause in Berlin: für mehr Sicherheit, Beweglichkeit und Lebensqualität im Alltag."),
@@ -50,6 +52,7 @@ def hashed(name, text):
 def excerpt(el, n=155):
     for p in el.select(".page-head p, .prose p, p"):
         t = re.sub(r"\s+", " ", p.get_text(" ")).strip()
+        t = re.sub(r"\(\s+", "(", re.sub(r"\s+([).,;:!?])", r"\1", t))
         if len(t) > 60:
             if len(t) <= n: return t
             return t[:n].rsplit(" ", 1)[0].rstrip(",;:") + " …"
@@ -97,9 +100,9 @@ def main():
     # ---- Shared chrome
     app = soup.find(id="app")
     skip, header, footer = app.find(class_="skip"), app.find("header"), app.find("footer")
-    ck = footer.find(attrs={"data-cookie": True})  # no cookies/tracking on the new site -> no consent banner needed
+    ck = footer.find(attrs={"data-cookie": True})  # opens the Silktide cookie settings
     if ck:
-        li = ck.find_parent("li"); (li or ck).decompose()
+        del ck["data-cookie"]; ck["data-cookie-settings"] = "open"
     sprite = build.sprite
 
     def fix_links(root, here):
@@ -131,10 +134,14 @@ def main():
         for a in hdr.select("[data-nav]"):
             if a["href"] == path.get(section, "#"): a["aria-current"] = "page"
             elif a.has_attr("aria-current"): del a["aria-current"]
-        url = SITE + (path.get(pid, "/") if pid != "404" else "/404")
+        p_url = path.get(pid, "/")
+        title = SEO["titles"].get(p_url, title)
+        desc = SEO["descriptions"].get(p_url, desc)
+        noindex = pid == "404" or p_url in SEO["noindex"]
+        url = SITE + (p_url if pid != "404" else "/404")
         meta = f'<meta name="description" content="{esc(desc)}">\n' if desc else ""
         og_desc = f'<meta property="og:description" content="{esc(desc)}">\n' if desc else ""
-        canon = f'<link rel="canonical" href="{url}">\n' if pid != "404" else '<meta name="robots" content="noindex">\n'
+        canon = (f'<link rel="canonical" href="{url}">\n' if pid != "404" else "") + ('<meta name="robots" content="noindex">\n' if noindex else "")
         return f"""<!doctype html>
 <html lang="de">
 <head>
@@ -146,9 +153,9 @@ def main():
 <meta property="og:locale" content="de_DE">
 <meta property="og:title" content="{esc(title)}">
 {og_desc}<meta property="og:url" content="{url}">
-<meta property="og:image" content="{SITE}/og.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image" content="{SITE}/og-image.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="576">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#cdeff0">
 <link rel="icon" href="/favicon.png" type="image/png">
@@ -156,8 +163,9 @@ def main():
 <link rel="preload" href="/assets/fonts/atkinson-next-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/atkinson-next-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{css_url}">
-</head>
+{TRACKING}</head>
 <body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KC8MCTHN" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
 {sprite}
 <div id="app">
 {skip}
@@ -168,6 +176,7 @@ def main():
 {ftr}
 </div>
 <script src="{js_url}" defer></script>
+{RAPIDMAIL_POPUP if pid == "start" else ""}
 </body>
 </html>
 """
@@ -185,14 +194,15 @@ def main():
             desc = blog.META.get(pid, {}).get("excerpt")
         elif pid in PAGE_DESC:
             desc = PAGE_DESC[pid]
-        desc = desc or excerpt(p)
+        if not desc and pid == "kontakt":
+            desc = excerpt(p)
         for a in ("hidden", "data-title"):
             if p.has_attr(a): del p[a]
         html = document(pid, str(p), title, desc, section, "article" if p.has_attr("data-article") else "website")
         fn = OUT / ("index.html" if path[pid] == "/" else path[pid].lstrip("/") + ".html")
         fn.parent.mkdir(parents=True, exist_ok=True)
         fn.write_text(html)
-        if pid not in NOT_IN_SITEMAP:
+        if path[pid] not in SEO["noindex"]:
             sitemap.append(SITE + (path[pid] if path[pid] != "/" else "/"))
 
     nf = """<div data-page id="nicht-gefunden">

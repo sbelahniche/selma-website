@@ -132,7 +132,7 @@ def title_parts(p):
     s = BeautifulSoup(_clean_text(p["title"]), "html.parser")
     h1 = s.find("h1")
     sub = h1.find("span")
-    sub_txt = re.sub(r"\s+", " ", sub.get_text()).strip() if sub else None
+    sub_txt = re.sub(r"\s+", " ", sub.get_text(", ")).strip() if sub else None
     if sub: sub.decompose()
     main = re.sub(r"\s+", " ", h1.get_text()).strip()
     return main, sub_txt

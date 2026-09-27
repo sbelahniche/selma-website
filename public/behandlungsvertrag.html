@@ -12,9 +12,9 @@
 <meta property="og:title" content="Behandlungsvertrag | SELMA Zuhause">
 <meta property="og:description" content="Behandlungsvertrag über ergotherapeutische Leistungen (§§ 630a ff. BGB) der Praxis SELMA Zuhause.">
 <meta property="og:url" content="https://www.selmazuhause.de/behandlungsvertrag">
-<meta property="og:image" content="https://www.selmazuhause.de/og.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image" content="https://www.selmazuhause.de/og-image.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="576">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#cdeff0">
 <link rel="icon" href="/favicon.png" type="image/png">
@@ -22,8 +22,137 @@
 <link rel="preload" href="/assets/fonts/atkinson-next-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/atkinson-next-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/style.827176f0.css">
+<!-- Consent defaults (Silktide cookie banner decides what may run) -->
+<script>window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    functionality_storage: 'denied',
+    personalization_storage: 'denied',
+    security_storage: 'granted'
+  });</script>
+<script>// Initialize the dataLayer
+  window.dataLayer = window.dataLayer || [];
+
+  // Create the gtag function that pushes to the dataLayer
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  // Set consent defaults
+  gtag('consent', 'default', {
+    analytics_storage: localStorage.getItem('silktideCookieChoice_analytics') === 'true' ? 'granted' : 'denied',
+    ad_storage: localStorage.getItem('silktideCookieChoice_marketing') === 'true' ? 'granted' : 'denied',
+    ad_user_data: localStorage.getItem('silktideCookieChoice_marketing') === 'true' ? 'granted' : 'denied',
+    ad_personalization: localStorage.getItem('silktideCookieChoice_marketing') === 'true' ? 'granted' : 'denied',
+    functionality_storage: localStorage.getItem('silktideCookieChoice_necessary') === 'true' ? 'granted' : 'denied',
+    security_storage: localStorage.getItem('silktideCookieChoice_necessary') === 'true' ? 'granted' : 'denied'
+  });</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BXQDHS50B9"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-BXQDHS50B9');</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KC8MCTHN');</script>
+<!-- Silktide cookie banner -->
+<link rel="stylesheet" href="https://cookie-banner-pi.vercel.app/silktide-consent-manager.css">
+<script src="https://cookie-banner-pi.vercel.app/silktide-consent-manager.js"></script>
+<script>if (window.silktideCookieBannerManager) silktideCookieBannerManager.updateCookieBannerConfig({
+  background: {
+    showBackground: true
+  },
+
+  cookieTypes: [
+    {
+      id: "notwendig",
+      name: "Notwendig",
+      description: "<p><span id=\"docs-internal-guid-3d6fd1f4-7fff-bdbd-2f8a-736fd7fdad5f\"><span style=\"font-size: 12pt; font-family: Arial, sans-serif; color: rgb(14, 14, 14); background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;\">Diese Cookies sind erforderlich, damit die Website korrekt funktioniert und können nicht deaktiviert werden. Sie werden zum Beispiel zur Speicherung Ihrer Cookie-Einstellungen sowie für die sichere Nutzung des Kontaktformulars verwendet.</span></span></p>",
+      required: true,
+      onAccept: function() {
+        console.log('Add logic for the required Notwendig here');
+      }
+    },
+    {
+      id: "analyse",
+      name: "Analyse",
+      description: "<p><span id=\"docs-internal-guid-ebecab01-7fff-0d1f-e0a7-8194a9648772\"><span style=\"font-size: 12pt; font-family: Arial, sans-serif; color: rgb(14, 14, 14); background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;\">Diese Cookies helfen uns zu verstehen, wie Besucher die Website nutzen, zum Beispiel welche Seiten aufgerufen werden. Die Auswertung erfolgt anonymisiert und dient ausschließlich der Verbesserung der Website.</span></span></p>",
+      required: false,
+      onAccept: function() {
+        gtag('consent', 'update', {
+          analytics_storage: 'granted',
+        });
+        dataLayer.push({
+          'event': 'consent_accepted_analytics',
+        });
+      },
+      onReject: function() {
+        gtag('consent', 'update', {
+          analytics_storage: 'denied',
+        });
+      }
+    },
+    {
+      id: "performance",
+      name: "Performance",
+      description: "<p><span id=\"docs-internal-guid-2ec5eed9-7fff-3b8a-0866-4ba6e18da08e\"><span style=\"font-size: 12pt; font-family: Arial, sans-serif; color: rgb(14, 14, 14); background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;\">Diese Cookies sorgen für die technische Stabilität, Sicherheit und Ladegeschwindigkeit der Website, zum Beispiel durch den Einsatz eines Content-Delivery-Netzwerks (Cloudflare). Dabei können Besucher zur technischen Optimierung über mehrere Sitzungen hinweg wiedererkannt werden. Eine Nutzung zu Werbezwecken erfolgt nicht.</span></span></p>",
+      required: false,
+      onAccept: function() {
+        gtag('consent', 'update', {
+          analytics_storage: 'granted',
+        });
+        dataLayer.push({
+          'event': 'consent_accepted_performance',
+        });
+      },
+      onReject: function() {
+        gtag('consent', 'update', {
+          analytics_storage: 'denied',
+        });
+      }
+    }
+  ],
+  text: {
+    banner: {
+      description: "<p>Wir verwenden Cookies, um den Betrieb der Website sicherzustellen und Inhalte zu verbessern. Weitere Informationen finden Sie in unserer <a href=\"https://www.selmazuhause.de/datenschutzerklarung\" target=\"_blank\">Datenschutzrichtlinie.</a></p>",
+      acceptAllButtonText: "Alle akzeptieren",
+      acceptAllButtonAccessibleLabel: "Alle akzeptieren",
+      rejectNonEssentialButtonText: "Nur notwendige akzeptieren",
+      rejectNonEssentialButtonAccessibleLabel: "Nur notwendige akzeptieren",
+      preferencesButtonText: "Einstellungen",
+      preferencesButtonAccessibleLabel: "Einstellungen anpassen"
+    },
+    preferences: {
+      title: "Cookie-Einstellungen anpassen",
+      description: "<p>Ihre Privatsphäre ist uns wichtig. Sie können selbst entscheiden, welche Arten von Cookies Sie zulassen möchten. Ihre Auswahl gilt für diese Website.</p>",
+      creditLinkText: "Get this banner for free",
+      creditLinkAccessibleLabel: "Get this banner for free"
+    }
+  }
+});</script>
+<script>(function () {
+  document.addEventListener('click', function (event) {
+    var trigger = event.target.closest('[data-cookie-settings="open"]');
+    if (!trigger) return;
+
+    event.preventDefault();
+
+    var silktideButton = document.getElementById('silktide-cookie-icon');
+
+    if (silktideButton) {
+      silktideButton.click();
+    } else {
+      console.error('Silktide cookie button not found');
+    }
+  });
+})();</script>
 </head>
 <body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KC8MCTHN" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="i-house" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol><symbol id="i-award" viewBox="0 0 24 24"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></symbol><symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol><symbol id="i-arrowl" viewBox="0 0 24 24"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol><symbol id="i-instagram" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol><symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></symbol><symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4.5" height="16" rx="1.2"/><rect x="13.5" y="4" width="4.5" height="16" rx="1.2"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></symbol><symbol id="i-calendar" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol><symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></symbol></svg>
 <div id="app">
 <a class="skip" data-skip="" href="#main">Zum Inhalt springen</a>
@@ -54,7 +183,7 @@
 </section>
 <section aria-labelledby="behandlungsvertrag-title" class="section doc">
 <div class="wrap"><div class="prose doc-prose">
-<p class="back-link"><a href="/patienteninformationen"><svg aria-hidden="true" class="icon"><use href="#i-arrowl"></use></svg>Zurück zur Übersicht Patienteninformationen</a></p><h2>Behandlungsvertrag über ergotherapeutische Leistungen (§§ 630a ff. BGB)</h2><p>zwischen</p><p><strong>Kathleen Olstedt, SELMA Zuhause Praxis (freiberufliche Ergotherapie), Blockdammweg 63, 10318 Berlin (Karlshorst)</strong><br/>nachfolgend „Therapeutin“</p><p>und</p><p>Name, Vorname: ____________________<br/><br/>Anschrift: ____________________<br/><br/>ggf. gesetzliche Vertreterin / gesetzlicher Vertreter: ____________________<br/>nachfolgend „Klient/in“</p><h3>§ 1 Gegenstand des Vertrages</h3><p>(1) Die Therapeutin erbringt ergotherapeutische Leistungen. Bei gesetzlich Versicherten erfolgt die Behandlung auf Grundlage einer gültigen ärztlichen Heilmittelverordnung.</p><p>(2) Art, Umfang und Frequenz richten sich nach der Verordnung und der fachlichen Einschätzung der Therapeutin. Die Behandlung erfolgt grundsätzlich als Hausbesuch in der häuslichen Umgebung, und zwar ausschließlich als Doppelbehandlung einmal wöchentlich.</p><p>(3) Die Behandlungszeit umfasst neben der Behandlung vor Ort auch die Vor- und Nachbereitung, z. B. Dokumentation und Therapieplanung. Eine Doppelbehandlung umfasst 90 Minuten reine Therapiezeit vor Ort zuzüglich in der Regel 30 Minuten Vor- und Nachbereitung.</p><p>(4) Ein bestimmter Behandlungserfolg wird nicht geschuldet.</p><h3>§ 2 Vergütung</h3><p><strong>a) Gesetzlich Versicherte (GKV)</strong></p><p>(1) Verordnete Leistungen und Hausbesuche werden nach den jeweils geltenden Vergütungsregelungen unmittelbar mit der gesetzlichen Krankenkasse abgerechnet.</p><p>(2) Soweit keine Zuzahlungsbefreiung besteht, trägt die Klientin/der Klient die gesetzliche Zuzahlung nach § 32 Abs. 2 und § 61 SGB V. Sie beträgt 10 % der Behandlungskosten zuzüglich 10 € je Verordnung. Die Behandlung im Hausbesuch erfolgt ausschließlich als Doppelbehandlung (zwei Behandlungseinheiten, 90 Minuten reine Therapiezeit) einmal wöchentlich. Die Zuzahlung beträgt dafür derzeit rund 19 € je Termin, bei wöchentlicher Behandlung also etwa 75 bis 80 € im Monat zuzüglich 10 € je Verordnung. Maßgeblich sind die jeweils geltenden Vergütungssätze nach § 125 SGB V.</p><p>(3) Die genaue Höhe der Zuzahlung steht erst nach Abschluss der Verordnung fest, da sie sich nach den tatsächlich erbrachten Behandlungen richtet. Die Therapeutin stellt die Zuzahlung deshalb nach der letzten Behandlung der jeweiligen Verordnung in Rechnung. Die Rechnung ist innerhalb von 14 Tagen nach Zugang zahlbar und dient zugleich als Beleg zur Vorlage bei der Krankenkasse.</p><p>(4) Wer von der Zuzahlung befreit ist, zahlt nichts. Ein gültiger Befreiungsnachweis ist vor Beginn der Behandlung vorzulegen. Zuzahlungen sind auf 2 % der jährlichen Bruttoeinnahmen begrenzt, bei chronisch Kranken auf 1 %. Die Krankenkasse berät zur Befreiung und erstattet zu viel gezahlte Beträge auf Antrag.</p><p>(5) Für vertragsärztlich verordnete und von der GKV vergütete Hausbesuche wird keine zusätzliche private Anfahrtspauschale erhoben.</p><p><strong>b) Privatversicherte, Selbstzahler/innen und zusätzliche Privatleistungen</strong></p><ul class="legal-list"><li>Erstbefundung inkl. Befundbericht: 180,00 €</li><li>Doppelbehandlung im Hausbesuch (90 Minuten reine Therapiezeit): 205,00 €</li><li>Hausbesuchs- und Anfahrtspauschale (bis 10 km von der Praxis): 38,00 €</li><li>Anfahrt außerhalb des Einzugsgebiets: nach vorheriger Vereinbarung</li></ul><p>Die Vergütung orientiert sich am 1,3-fachen Satz der jeweils geltenden GKV-Vergütung für Ergotherapie. Eine Doppelbehandlung im Hausbesuch kostet damit 243,00 € je Termin; bei wöchentlicher Behandlung entspricht das etwa 970 € im Monat. Die genannten Beträge gelten je Termin. Rechnungen sind innerhalb von 14 Tagen nach Zugang ohne Abzug zahlbar. Ob und in welcher Höhe eine private Krankenversicherung oder Beihilfe die Kosten erstattet, richtet sich nach dem jeweiligen Tarif; auf Wunsch erstellt die Therapeutin vor Behandlungsbeginn einen Kostenvoranschlag.</p><h3>§ 3 Termine und Ausfallregelung</h3><p>(1) Termine werden individuell vereinbart und ausschließlich für die Klientin/den Klienten reserviert.</p><p>(2) Absagen sind möglichst frühzeitig, spätestens 24 Stunden vor dem vereinbarten Termin, telefonisch unter 030 37580867 (auch Anrufbeantworter) oder per E-Mail an info@selmazuhause.de mitzuteilen.</p><p>(3) Bei einer Absage innerhalb von weniger als 24 Stunden oder bei Nichterscheinen kann ein Ausfallhonorar von 96,00 € berechnet werden, sofern der Termin nicht anderweitig vergeben werden konnte. Der Klientin/dem Klienten bleibt ausdrücklich der Nachweis vorbehalten, dass kein oder ein wesentlich geringerer Schaden entstanden ist.</p><p>(4) Das Ausfallhonorar ist eine privat zu zahlende Forderung und wird nicht mit der gesetzlichen Krankenkasse abgerechnet. Bei nachgewiesener akuter Erkrankung oder höherer Gewalt kann auf die Berechnung verzichtet werden.</p><h3>§ 4 Mitwirkung</h3><p>Die Klientin/der Klient wirkt an der Behandlung mit durch:</p><ul class="legal-list"><li>rechtzeitige Vorlage der ärztlichen Verordnung bei GKV-Behandlung;</li><li>Erreichbarkeit zum vereinbarten Termin und Zugang zur Wohnung;</li><li>Mitteilung behandlungsrelevanter gesundheitlicher Veränderungen;</li><li>aktive Mitarbeit an vereinbarten therapeutischen Maßnahmen.</li></ul><h3>§ 5 Dokumentation, Datenschutz und Schweigepflicht</h3><p>(1) Die Therapeutin führt die erforderliche Behandlungsdokumentation und wahrt die berufliche Schweigepflicht. Zur Dokumentation und Behandlungsvorbereitung setzt sie digitale, auch KI-gestützte Werkzeuge ein. Die daran beteiligten Dienstleister sind als mitwirkende Personen nach § 203 Abs. 3 StGB zur Verschwiegenheit verpflichtet.</p><p>(2) Informationen zur Verarbeitung personenbezogener Daten enthält der gesonderte <a href="/patienteninformation-datenschutz">Datenschutzhinweis nach Art. 13 DSGVO</a>, der vor bzw. zu Beginn der Behandlung zur Verfügung gestellt wird. Freiwillige Einwilligungen werden hiervon getrennt eingeholt und können unabhängig vom Behandlungsvertrag verweigert oder widerrufen werden.</p><h3>§ 6 Laufzeit und Beendigung</h3><p>(1) Der Vertrag beginnt mit Aufnahme der Behandlung und endet mit Abschluss der verordneten bzw. vereinbarten Behandlung.</p><p>(2) Die Behandlung kann von beiden Seiten beendet werden. Gesetzliche Kündigungs- und Beendigungsrechte bleiben unberührt. Bereits erbrachte Leistungen und wirksam entstandene private Forderungen bleiben zahlbar.</p><h3>§ 7 Hilfsmittel, Wohnraumanpassung und Haftung</h3><p>(1) Die Therapeutin berät im Rahmen der Ergotherapie zu Hilfsmitteln, Wohnraumanpassungen und digitalen Assistenzsystemen. Die Auswahl erfolgt gemeinsam mit der Klientin/dem Klienten und richtet sich nach der individuellen Situation. Nicht alle Maßnahmen und Hilfsmittel sind erstattungsfähig.</p><p>(2) Die Beantragung, Genehmigung und Abrechnung bei Kostenträgern (z. B. Krankenkasse, Pflegekasse oder Beihilfe) erfolgt durch die Klientin/den Klienten. Die Therapeutin unterstützt auf Wunsch mit fachlichen Berichten und vermittelt bei Bedarf an Beratungsstellen. Eine Kostenübernahme durch den Kostenträger ist nicht garantiert; für dessen Entscheidung oder den Umfang der Bewilligung übernimmt die Therapeutin keine Haftung.</p><p>(3) Für die Umsetzung empfohlener Maßnahmen (z. B. bauliche Anpassungen, Installation von Hilfsmitteln oder technischen Systemen) sowie für Mängel an Hilfsmitteln, baulichen Anpassungen oder technischen Systemen sind ausschließlich die jeweiligen Hersteller, Fachbetriebe oder ausführenden Dienstleister verantwortlich.</p><p>(4) Die Therapeutin haftet für Schäden im Zusammenhang mit empfohlenen Hilfsmitteln oder umgesetzten Maßnahmen nur, soweit diese auf einer fehlerhaften Beratung oder Anleitung durch die Therapeutin beruhen. Die Haftung für Schäden aus der Verletzung von Leben, Körper oder Gesundheit sowie für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.</p><h3>§ 8 Schlussbestimmungen</h3><p>(1) Individuelle Absprachen und Änderungen können in Textform festgehalten werden.</p><p>(2) Es gilt deutsches Recht. Zwingende gesetzliche Vorschriften bleiben unberührt.</p><h3>Unterschriften</h3><p>Berlin, den ____________________</p><p>____________________<br/>Therapeutin (Kathleen Olstedt)</p><p>____________________<br/>Klient/in bzw. gesetzliche Vertretung</p><p class="back-link"><a href="/patienteninformationen"><svg aria-hidden="true" class="icon"><use href="#i-arrowl"></use></svg>Zurück zur Übersicht Patienteninformationen</a></p>
+<p class="back-link"><a href="/patienteninformationen"><svg aria-hidden="true" class="icon"><use href="#i-arrowl"></use></svg>Zurück zur Übersicht Patienteninformationen</a></p><h2>Behandlungsvertrag über ergotherapeutische Leistungen (§§ 630a ff. BGB)</h2><p>zwischen</p><p><strong>Kathleen Olstedt, SELMA Zuhause Praxis (freiberufliche Ergotherapie), Blockdammweg 63, 10318 Berlin (Karlshorst)</strong><br/>nachfolgend „Therapeutin“</p><p>und</p><p>Name, Vorname: ____________________<br/><br/>Anschrift: ____________________<br/><br/>ggf. gesetzliche Vertreterin / gesetzlicher Vertreter: ____________________<br/>nachfolgend „Klient/in“</p><h3>§ 1 Gegenstand des Vertrages</h3><p>(1) Die Therapeutin erbringt ergotherapeutische Leistungen. Bei gesetzlich Versicherten erfolgt die Behandlung auf Grundlage einer gültigen ärztlichen Heilmittelverordnung.</p><p>(2) Art, Umfang und Frequenz richten sich nach der Verordnung und der fachlichen Einschätzung der Therapeutin. Die Behandlung erfolgt grundsätzlich als Hausbesuch in der häuslichen Umgebung, und zwar ausschließlich als Doppelbehandlung einmal wöchentlich.</p><p>(3) Die Behandlungszeit umfasst neben der Behandlung vor Ort auch die Vor- und Nachbereitung, z. B. Dokumentation und Therapieplanung. Eine Doppelbehandlung umfasst 90 Minuten reine Therapiezeit vor Ort zuzüglich in der Regel 30 Minuten Vor- und Nachbereitung.</p><p>(4) Ein bestimmter Behandlungserfolg wird nicht geschuldet.</p><h3>§ 2 Vergütung</h3><p><strong>a) Gesetzlich Versicherte (GKV)</strong></p><p>(1) Verordnete Leistungen und Hausbesuche werden nach den jeweils geltenden Vergütungsregelungen unmittelbar mit der gesetzlichen Krankenkasse abgerechnet.</p><p>(2) Soweit keine Zuzahlungsbefreiung besteht, trägt die Klientin/der Klient die gesetzliche Zuzahlung nach § 32 Abs. 2 und § 61 SGB V. Sie beträgt 10 % der Behandlungskosten zuzüglich 10 € je Verordnung. Die Behandlung im Hausbesuch erfolgt ausschließlich als Doppelbehandlung (zwei Behandlungseinheiten, 90 Minuten reine Therapiezeit) einmal wöchentlich. Die Zuzahlung beträgt dafür derzeit rund 19 € je Termin, bei wöchentlicher Behandlung also etwa 75 bis 80 € im Monat zuzüglich 10 € je Verordnung. Maßgeblich sind die jeweils geltenden Vergütungssätze nach § 125 SGB V.</p><p>(3) Die genaue Höhe der Zuzahlung steht erst nach Abschluss der Verordnung fest, da sie sich nach den tatsächlich erbrachten Behandlungen richtet. Die Therapeutin stellt die Zuzahlung deshalb nach der letzten Behandlung der jeweiligen Verordnung in Rechnung. Die Rechnung ist innerhalb von 14 Tagen nach Zugang zahlbar und dient zugleich als Beleg zur Vorlage bei der Krankenkasse.</p><p>(4) Wer von der Zuzahlung befreit ist, zahlt nichts. Ein gültiger Befreiungsnachweis ist vor Beginn der Behandlung vorzulegen. Zuzahlungen sind auf 2 % der jährlichen Bruttoeinnahmen begrenzt, bei chronisch Kranken auf 1 %. Die Krankenkasse berät zur Befreiung und erstattet zu viel gezahlte Beträge auf Antrag.</p><p>(5) Für vertragsärztlich verordnete und von der GKV vergütete Hausbesuche wird keine zusätzliche private Anfahrtspauschale erhoben.</p><p><strong>b) Privatversicherte, Selbstzahler/innen und zusätzliche Privatleistungen</strong></p><ul class="legal-list"><li>Erstbefundung inkl. Befundbericht: 180,00 €</li><li>Doppelbehandlung im Hausbesuch (90 Minuten reine Therapiezeit): 205,00 €</li><li>Hausbesuchs- und Anfahrtspauschale (bis 10 km von der Praxis): 38,00 €</li><li>Anfahrt außerhalb des Einzugsgebiets: nach vorheriger Vereinbarung</li></ul><p>Die Vergütung orientiert sich am 1,3-fachen Satz der jeweils geltenden GKV-Vergütung für Ergotherapie. Eine Doppelbehandlung im Hausbesuch kostet damit 243,00 € je Termin; bei wöchentlicher Behandlung entspricht das etwa 970 € im Monat. Die genannten Beträge gelten je Termin. Rechnungen sind innerhalb von 14 Tagen nach Zugang ohne Abzug zahlbar. Ob und in welcher Höhe eine private Krankenversicherung oder Beihilfe die Kosten erstattet, richtet sich nach dem jeweiligen Tarif; auf Wunsch erstellt die Therapeutin vor Behandlungsbeginn einen Kostenvoranschlag.</p><h3>§ 3 Termine und Ausfallregelung</h3><p>(1) Termine werden individuell vereinbart und ausschließlich für die Klientin/den Klienten reserviert.</p><p>(2) Absagen sind möglichst frühzeitig, spätestens 24 Stunden vor dem vereinbarten Termin, telefonisch unter 030 37580867 (auch Anrufbeantworter) oder per E-Mail an info@selmazuhause.de mitzuteilen.</p><p>(3) Bei einer Absage innerhalb von weniger als 24 Stunden oder bei Nichterscheinen kann ein Ausfallhonorar von 96,00 € berechnet werden, sofern der Termin nicht anderweitig vergeben werden konnte. Der Klientin/dem Klienten bleibt ausdrücklich der Nachweis vorbehalten, dass kein oder ein wesentlich geringerer Schaden entstanden ist.</p><p>(4) Das Ausfallhonorar ist eine privat zu zahlende Forderung und wird nicht mit der gesetzlichen Krankenkasse abgerechnet. Bei nachgewiesener akuter Erkrankung oder höherer Gewalt kann auf die Berechnung verzichtet werden.</p><h3>§ 4 Mitwirkung</h3><p>Die Klientin/der Klient wirkt an der Behandlung mit durch:</p><ul class="legal-list"><li>rechtzeitige Vorlage der ärztlichen Verordnung bei GKV-Behandlung;</li><li>Erreichbarkeit zum vereinbarten Termin und Zugang zur Wohnung;</li><li>Mitteilung behandlungsrelevanter gesundheitlicher Veränderungen;</li><li>aktive Mitarbeit an vereinbarten therapeutischen Maßnahmen.</li></ul><h3>§ 5 Dokumentation, Datenschutz und Schweigepflicht</h3><p>(1) Die Therapeutin führt die erforderliche Behandlungsdokumentation und wahrt die berufliche Schweigepflicht. Zur Dokumentation und Behandlungsvorbereitung setzt sie digitale, auch KI-gestützte Werkzeuge ein. Die daran beteiligten Dienstleister sind als mitwirkende Personen nach § 203 Abs. 3 StGB zur Verschwiegenheit verpflichtet.</p><p>(2) Informationen zur Verarbeitung personenbezogener Daten enthält der gesonderte <a href="/patienteninformation-datenschutz">Datenschutzhinweis nach Art. 13 DSGVO</a>, der vor bzw. zu Beginn der Behandlung zur Verfügung gestellt wird. Freiwillige Einwilligungen werden hiervon getrennt eingeholt und können unabhängig vom Behandlungsvertrag verweigert oder widerrufen werden.</p><h3>§ 6 Laufzeit und Beendigung</h3><p>(1) Der Vertrag beginnt mit Aufnahme der Behandlung und endet mit Abschluss der verordneten bzw. vereinbarten Behandlung.</p><p>(2) Die Behandlung kann von beiden Seiten beendet werden. Gesetzliche Kündigungs- und Beendigungsrechte bleiben unberührt. Bereits erbrachte Leistungen und wirksam entstandene private Forderungen bleiben zahlbar.</p><h3>§ 7 Hilfsmittel, Wohnraumanpassung und Haftung</h3><p>(1) Die Therapeutin berät im Rahmen der Ergotherapie zu Hilfsmitteln, Wohnraumanpassungen und digitalen Assistenzsystemen. Die Auswahl erfolgt gemeinsam mit der Klientin/dem Klienten und richtet sich nach der individuellen Situation. Nicht alle Maßnahmen und Hilfsmittel sind erstattungsfähig.</p><p>(2) Die Beantragung, Genehmigung und Abrechnung bei Kostenträgern (z. B. Krankenkasse, Pflegekasse oder Beihilfe) erfolgt durch die Klientin/den Klienten. Die Therapeutin unterstützt auf Wunsch mit fachlichen Berichten und vermittelt bei Bedarf an Beratungsstellen. Eine Kostenübernahme durch den Kostenträger ist nicht garantiert; für dessen Entscheidung oder den Umfang der Bewilligung übernimmt die Therapeutin keine Haftung.</p><p>(3) Für die Umsetzung empfohlener Maßnahmen (z. B. bauliche Anpassungen, Installation von Hilfsmitteln oder technischen Systemen) sowie für Mängel an Hilfsmitteln, baulichen Anpassungen oder technischen Systemen sind ausschließlich die jeweiligen Hersteller, Fachbetriebe oder ausführenden Dienstleister verantwortlich.</p><p>(4) Die Therapeutin haftet für Schäden im Zusammenhang mit empfohlenen Hilfsmitteln oder umgesetzten Maßnahmen nur, soweit diese auf einer fehlerhaften Beratung oder Anleitung durch die Therapeutin beruhen. Die Haftung für Schäden aus der Verletzung von Leben, Körper oder Gesundheit sowie für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.</p><h3>§ 8 Leihweise Überlassung von Hilfsmitteln zur Erprobung</h3><p>(1) Die Therapeutin kann der Klientin/dem Klienten Hilfsmittel zur Erprobung vorübergehend und unentgeltlich überlassen (Leihe, §§ 598 ff. BGB). Die Überlassung dient der Prüfung, ob ein Hilfsmittel im Alltag geeignet ist, und ersetzt keine Versorgung durch Sanitätshaus, Krankenkasse oder Pflegekasse.</p><p>(2) Die Therapeutin weist in die Nutzung ein. Die Klientin/der Klient verpflichtet sich, das Hilfsmittel nur wie eingewiesen und nur für den vereinbarten Zweck zu nutzen, es nicht an Dritte weiterzugeben und Mängel oder Beschädigungen unverzüglich mitzuteilen. Ein Hilfsmittel, das beschädigt oder unsicher erscheint, darf nicht weiter benutzt werden.</p><p>(3) Die Therapeutin haftet für Schäden aus der Nutzung des geliehenen Hilfsmittels nur bei Vorsatz und grober Fahrlässigkeit; dies gilt nicht für Schäden aus der Verletzung von Leben, Körper oder Gesundheit sowie bei Verletzung wesentlicher Vertragspflichten. Für Mängel des Hilfsmittels selbst haftet der jeweilige Hersteller nach den gesetzlichen Vorschriften.</p><p>(4) Die Klientin/der Klient haftet für Verlust und für Beschädigungen, die über die normale Abnutzung hinausgehen, in Höhe des Zeitwerts. Die Rückgabe erfolgt zum vereinbarten Termin, spätestens bei Beendigung der Behandlung, in gereinigtem Zustand.</p><p>(5) Überlassene Hilfsmittel, Leihdauer und die erfolgte Einweisung werden in der Behandlungsdokumentation festgehalten.</p><h3>§ 9 Schlussbestimmungen</h3><p>(1) Individuelle Absprachen und Änderungen können in Textform festgehalten werden.</p><p>(2) Es gilt deutsches Recht. Zwingende gesetzliche Vorschriften bleiben unberührt.</p><h3>Unterschriften</h3><p>Berlin, den ____________________</p><p>____________________<br/>Therapeutin (Kathleen Olstedt)</p><p>____________________<br/>Klient/in bzw. gesetzliche Vertretung</p><p class="back-link"><a href="/patienteninformationen"><svg aria-hidden="true" class="icon"><use href="#i-arrowl"></use></svg>Zurück zur Übersicht Patienteninformationen</a></p>
 </div></div>
 </section>
 <section aria-labelledby="ask-title-behandlungsvertrag" class="section bg-mist ask">
@@ -127,11 +256,13 @@
 <ul>
 <li><a href="/datenschutzerklarung">Datenschutzerklärung</a></li>
 <li><a href="/impressum">Impressum</a></li>
+<li><button class="linklike" data-cookie-settings="open" type="button">Cookie-Einstellungen</button></li>
 </ul>
 </div>
 </div>
 </footer>
 </div>
 <script src="/assets/app.4e1adee5.js" defer></script>
+
 </body>
 </html>
