@@ -199,16 +199,8 @@
         <h2 id="nlband-title" class="rv-split">Bleiben Sie auf dem Laufenden</h2>
       </div>
       <div class="rv" style="--d:120ms">
-        <form id="form-nl-home" novalidate data-done="Vielen Dank! Ihre Anmeldung ist eingegangen.">
-          <div class="form-summary" hidden tabindex="-1"></div>
-          <div class="nl-form">
-            <div class="field">
-              <label for="nl-email-home">E-Mail-Adresse</label>
-              <input id="nl-email-home" name="email" type="email" autocomplete="email" required data-msg="Bitte geben Sie Ihre E-Mail-Adresse an, z. B. name@beispiel.de.">
-            </div>
-            <button class="btn btn-primary" type="submit">Newsletter erhalten<span class="btn-ic">{{i:arrow}}</span></button>
-          </div>
-        </form>
+        <!-- Opens the rapidmail sign-up pop-up (double opt-in), same as on the old Webflow site -->
+        <button class="btn btn-primary rm-open-popup" type="button" aria-haspopup="dialog">Newsletter erhalten<span class="btn-ic">{{i:arrow}}</span></button>
         <p class="fineprint">*Mit der Anmeldung erklären Sie sich mit dem Erhalt des Newsletters einverstanden. Sie können sich jederzeit abmelden. Weitere Infos in der <a href="#datenschutzerklarung">Datenschutzerklärung</a>.</p>
       </div>
     </div>
