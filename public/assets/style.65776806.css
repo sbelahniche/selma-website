@@ -319,15 +319,21 @@ a.chip:hover{background:var(--mint);color:var(--navy)}
 }
 
 /* Newsletter (home) */
-.nl-home{padding-block:clamp(56px,7vw,100px)}
-.nl-home .nl-head{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
-.nl.nl-home h2{font-size:clamp(1.75rem,1.2rem + 1.6vw,2.5rem);max-width:16ch}
-.nl-home .nl-ic{flex:none;width:clamp(56px,6vw,72px);height:clamp(56px,6vw,72px);border-radius:50%;background:var(--white);color:var(--teal-strong);display:grid;place-items:center;box-shadow:0 12px 28px -18px rgba(28,57,76,.55)}
+.nl-home{padding-block:clamp(48px,6vw,80px)}
+.nl.nl-home .wrap{display:block}
+.nl-card{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:20px 32px;max-width:1040px;margin-inline:auto;padding:clamp(24px,3.5vw,40px);border-radius:var(--r-card);background:var(--white);box-shadow:0 24px 50px -36px rgba(28,57,76,.45)}
+.nl-home .nl-ic{flex:none;width:clamp(56px,6vw,72px);height:clamp(56px,6vw,72px);border-radius:50%;background:var(--peach-soft);color:var(--teal-strong);display:grid;place-items:center}
 .nl-home .nl-ic .icon{width:45%;height:45%}
-.nl-home .nl-form{margin-top:0}
-.nl-home .fineprint{margin-top:14px}
-@media (min-width:861px){.nl.nl-home .wrap{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}}
-.nl-home .nl-form .field{flex:1 1 220px}
+.nl.nl-home h2{font-size:clamp(1.5rem,1.15rem + 1.1vw,2.125rem);line-height:1.15}
+.nl-home .fineprint{margin-top:10px;max-width:62ch}
+.nl-home .btn{white-space:nowrap}
+@media (max-width:760px){
+  .nl-card{grid-template-columns:auto minmax(0,1fr)}
+  .nl-card .btn{grid-column:1 / -1;justify-self:start}
+}
+@media (max-width:420px){
+  .nl-card{grid-template-columns:minmax(0,1fr);padding:22px 20px}
+}
 
 /* FAQ */
 .faq .wrap{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:clamp(32px,5vw,80px);align-items:start}
@@ -554,15 +560,22 @@ h1,h2,h3,h4{overflow-wrap:break-word}
 .foot-brand img.logo{height:48px;width:auto}
 .foot-brand .who{margin-top:20px;color:#fff}
 .foot-brand .who strong{color:#fff}
-.dve{display:inline-flex;align-items:center;gap:16px;margin-top:24px;max-width:340px;line-height:1.35}
-.dve .badge{flex:none;background:#fff;border-radius:12px;padding:8px}
-.dve .badge img{width:56px;height:auto}
 .site-footer h2{font-size:1.0625rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mint);margin-bottom:18px;font-weight:700}
 .foot-list{list-style:none;display:grid;gap:2px}
 .foot-list li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;align-items:start;padding-block:8px}
 .foot-list .icon{width:22px;height:22px;color:var(--mint);margin-top:3px}
 .foot-nav{list-style:none;display:grid;gap:0}
 .foot-nav a{display:inline-flex;align-items:center;min-height:44px;gap:8px}
+.foot-certs{margin-top:clamp(40px,5vw,64px);padding:clamp(24px,3vw,36px) clamp(20px,3vw,40px);border-radius:var(--r-card);background:var(--white);color:var(--slate);text-align:center}
+.site-footer .foot-certs h2{margin:0 0 clamp(18px,2.5vw,28px);font-size:clamp(1.25rem,1.1rem + .5vw,1.5rem);letter-spacing:0;text-transform:none;color:var(--teal-strong);font-weight:700}
+.cert-list{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:center;justify-items:center;gap:24px 32px}
+.cert-list a{display:inline-flex;align-items:center;justify-content:center;min-height:48px;border-radius:12px;padding:6px;transition:transform .2s}
+.cert-list a:hover{transform:translateY(-2px)}
+.cert-list img{height:88px;width:auto;max-width:100%;object-fit:contain}
+.cert-list .is-wide img{height:auto;width:min(100%,300px)}
+.cert-list .is-tall img{height:104px}
+.cert-note{margin-top:clamp(18px,2.5vw,28px);font-size:var(--fs-small);line-height:1.5}
+@media (max-width:760px){.cert-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 12px}.cert-list .is-wide{grid-column:1 / -1;order:-1}.cert-list img{height:72px}.cert-list .is-tall img{height:84px}}
 .foot-bottom{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between;margin-top:56px;padding-top:24px;border-top:1px solid rgba(205,239,240,.25);font-size:var(--fs-small)}
 .foot-bottom ul{list-style:none;display:flex;flex-wrap:wrap;gap:4px 24px}
 .foot-bottom a,.linklike{display:inline-flex;align-items:center;min-height:44px}

@@ -165,7 +165,6 @@ def main():
 <link rel="stylesheet" href="{css_url}">
 {TRACKING}</head>
 <body>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KC8MCTHN" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
 {sprite}
 <div id="app">
 {skip}

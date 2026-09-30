@@ -560,15 +560,21 @@ h1,h2,h3,h4{overflow-wrap:break-word}
 .foot-brand img.logo{height:48px;width:auto}
 .foot-brand .who{margin-top:20px;color:#fff}
 .foot-brand .who strong{color:#fff}
-.dve{display:inline-flex;align-items:center;gap:16px;margin-top:24px;max-width:340px;line-height:1.35}
-.dve .badge{flex:none;background:#fff;border-radius:12px;padding:8px}
-.dve .badge img{width:56px;height:auto}
 .site-footer h2{font-size:1.0625rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mint);margin-bottom:18px;font-weight:700}
 .foot-list{list-style:none;display:grid;gap:2px}
 .foot-list li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;align-items:start;padding-block:8px}
 .foot-list .icon{width:22px;height:22px;color:var(--mint);margin-top:3px}
 .foot-nav{list-style:none;display:grid;gap:0}
 .foot-nav a{display:inline-flex;align-items:center;min-height:44px;gap:8px}
+.foot-certs{margin-top:clamp(40px,5vw,56px)}
+.foot-certs .cert-list{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.cert-list a{display:flex;align-items:center;justify-content:center;height:72px;padding:8px 14px;border-radius:12px;background:#fff;transition:transform .2s,box-shadow .2s}
+.cert-list a:hover{transform:translateY(-2px);box-shadow:0 10px 24px -14px rgba(0,0,0,.5)}
+.cert-list img{height:100%;width:auto;max-width:none}
+.cert-list .is-wide a{padding-inline:18px}
+.cert-list .is-wide img{height:40px}
+.cert-note{margin-top:16px;font-size:var(--fs-small);line-height:1.5;color:#dbe9ec}
+@media (max-width:560px){.cert-list a{height:60px;padding:6px 10px}.cert-list .is-wide img{height:32px}}
 .foot-bottom{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between;margin-top:56px;padding-top:24px;border-top:1px solid rgba(205,239,240,.25);font-size:var(--fs-small)}
 .foot-bottom ul{list-style:none;display:flex;flex-wrap:wrap;gap:4px 24px}
 .foot-bottom a,.linklike{display:inline-flex;align-items:center;min-height:44px}
