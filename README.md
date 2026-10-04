@@ -17,10 +17,13 @@ Static website for [selmazuhause.de](https://www.selmazuhause.de), hosted on Net
 ## Making a change
 
 ```bash
-pip3 install beautifulsoup4      # once
-python3 src/export.py            # rebuilds public/
-git add -A && git commit -m "…" && git push   # Netlify deploys automatically
+python3 -m pip install --user beautifulsoup4   # once
+python3 src/export.py                          # rebuilds public/
+python3 src/preview.py                         # local preview on http://localhost:8000 (Ctrl+C to stop)
+git add -A && git commit -m "…" && git push    # Netlify deploys automatically
 ```
+
+With Claude Code: see `CLAUDE.md` for the workflow Claude follows.
 
 Page addresses are the same as on the old Webflow site (`/leistungen`, `/blog-posts/…`, `/posts-categories/…`).
 

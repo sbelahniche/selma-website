@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "selma",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": ["-c", "python3 src/export.py && python3 src/preview.py 8000"],
+      "port": 8000,
+      "env": { "SELMA_NO_BROWSER": "1" }
+    }
+  ]
+}
