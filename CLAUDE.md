@@ -9,7 +9,10 @@ Kathleen is not a developer. Talk to her in German, in plain words, briefly. Exp
 1. **Get the latest version first:** `git pull`
 2. **Edit the source files**, never `public/` (it is generated).
 3. **Rebuild:** `python3 src/export.py`
-4. **Preview:** start `python3 src/preview.py` in the background and tell Kathleen to open http://localhost:8000 and check the change. Stop the server when she is done.
+4. **Preview:**
+   - In the Claude desktop app, start the preview server "selma" (`.claude/launch.json`; it rebuilds first). The site opens in the Browser pane. After further edits, rebuild and reload.
+   - In the terminal, start `python3 src/preview.py` and tell Kathleen to open http://localhost:8000.
+   - Either way, show Kathleen the changed page and let her check it.
 5. **Only after Kathleen says it looks good:** commit with a short German message (`git add -A && git commit -m "…"`). Kathleen pushes with GitHub Desktop ("Push origin"). Push yourself only if she explicitly asks.
 6. Netlify deploys in about 1 minute. Live: https://www.selmazuhause.de
 
