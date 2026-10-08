@@ -266,7 +266,7 @@ def article_page(a):
   <article aria-labelledby="{a["slug"]}-title">
     <header class="article-head bg-mint">
       <div class="wrap">
-        <nav class="crumbs" aria-label="Brotkrumen"><ol><li><a href="#ratgeber">Ratgeber</a></li><li><a href="#kategorie-{a["cat"]}">{esc(a["catname"])}</a></li></ol></nav>
+        <nav class="crumbs" aria-label="Brotkrumen"><ol><li><a href="#ratgeber">Ratgeber</a></li></ol></nav>
         <h1 id="{a["slug"]}-title" class="rv-split" tabindex="-1">{esc(a["title"])}</h1>
         {byline(a)}
       </div>

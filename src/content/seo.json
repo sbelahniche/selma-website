@@ -1,9 +1,9 @@
 {
  "titles": {
-  "/": "SELMA Zuhause | Ergotherapie bei Parkinson zu Hause",
-  "/leistungen": "Spezialisierte Ergotherapie bei Parkinson zu Hause",
+  "/": "SELMA Zuhause | Mobile Ergotherapie bei Parkinson",
+  "/leistungen": "Ergotherapie bei Parkinson im Hausbesuch | SELMA Zuhause",
   "/ratgeber": "Wissen & Tipps rund um Parkinson | SELMA Zuhause",
-  "/kontakt": "Kontakt",
+  "/kontakt": "Kontakt & Erstgespräch | SELMA Zuhause",
   "/verordnung-gkv": "Verordnung GKV",
   "/patienteninformationen": "Patienteninformationen & Verträge | SELMA Zuhause",
   "/agb": "AGB | SELMA Zuhause",
@@ -27,9 +27,11 @@
   "/blog-posts/s2k-leitlinie-parkinson-ergotherapie": "Ergotherapie bei Parkinson: Was die Leitlinie empfiehlt"
  },
  "descriptions": {
-  "/": "Spezialisierte Ergotherapie für Menschen mit Parkinson zu Hause in Berlin: für mehr Sicherheit, Beweglichkeit und Lebensqualität im Alltag.",
-  "/leistungen": "Sturzprävention, Bewegungstraining, Hilfsmittel, Wohnraumanpassung und Angehörigenberatung, spezialisiert auf den Alltag mit Parkinson.",
-  "/ratgeber": "Praktische Informationen zu Parkinson im Alltag: Bewegung, Wohnraumanpassung und Hilfsmittel. Für Betroffene und Angehörige.",
+  "/": "Spezialisierte Ergotherapie für Menschen mit Parkinson im Hausbesuch. Alltag stärken. Stürzen vorbeugen.",
+  "/leistungen": "Sturzprävention, Bewegungstraining, Hilfsmittel und Wohnraumanpassung – direkt bei Ihnen zu Hause. Für mehr Sicherheit und Selbstständigkeit im Alltag mit Parkinson.",
+  "/ratgeber": "Praktische Tipps für den Alltag mit Parkinson: Bewegung, Hilfsmittel und Wohnraum. Verständlich erklärt – für Betroffene und Angehörige.",
+  "/kontakt": "Lernen Sie uns kennen: unverbindliches Erstgespräch für mobile Ergotherapie bei Parkinson im Hausbesuch in Berlin.",
+  "/blog-posts/freezing-bei-parkinson-hilfsmittel-im-uberblick": "Freezing-Episoden sicher begegnen: bewährte Hilfsmittel und einfache Strategien, die im Alltag mit Parkinson wirklich helfen.",
   "/patienteninformationen": "Behandlungsvertrag, Datenschutzinformation und freiwillige Einwilligungen der Praxis SELMA Zuhause auf einen Blick.",
   "/agb": "Die AGB von SELMA Zuhause wurden durch den Behandlungsvertrag ersetzt. Alle Regelungen finden Sie im Behandlungsvertrag.",
   "/behandlungsvertrag": "Behandlungsvertrag über ergotherapeutische Leistungen (§§ 630a ff. BGB) der Praxis SELMA Zuhause.",

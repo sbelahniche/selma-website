@@ -112,7 +112,7 @@ On dark (navy/royal) backgrounds, body text is `#e8f3f5` (on navy) or `#dbe9ec` 
 --fs-h3:clamp(1.375rem,1.22rem + .7vw,1.75rem);
 --fs-h2:clamp(1.875rem,1.45rem + 1.9vw,3rem);
 --fs-h1:clamp(2.375rem,1.7rem + 3vw,4rem);
---fs-display:clamp(2.25rem,1.3rem + 5vw,5.5rem);
+--fs-display:clamp(2.25rem,1.3rem + 5vw,5rem);
 ```
 
 ### Rules
