@@ -229,20 +229,12 @@ def newsletter(suffix):
     <div class="wrap">
       <div class="intro">
         <h2 id="nl-title-{suffix}" class="rv-split">Auf dem Laufenden Bleiben</h2>
-        <p class="rv" style="--d:120ms">Praktische Tipps zu Wohnsicherheit, Alltagshilfen und Prävention, für mehr Sicherheit und Selbstbestimmung zu Hause.</p>
+        <p class="rv" style="--d:120ms">Tipps für den Alltag mit Parkinson, kostenlose Online-Workshops und neue Veranstaltungen – gelegentlich und jederzeit abbestellbar.</p>
       </div>
       <div class="rv" style="--d:200ms">
-        <form id="form-nl-{suffix}" novalidate data-done="Vielen Dank! Ihre Anmeldung ist eingegangen.">
-          <div class="form-summary" hidden tabindex="-1"></div>
-          <div class="nl-form">
-            <div class="field">
-              <label for="nl-email-{suffix}">E-Mail-Adresse</label>
-              <input id="nl-email-{suffix}" name="email" type="email" autocomplete="email" required data-msg="Bitte geben Sie Ihre E-Mail-Adresse an, z. B. name@beispiel.de.">
-            </div>
-            <button class="btn btn-primary" type="submit">Newsletter bestellen<span class="btn-ic">{{{{i:arrow}}}}</span></button>
-          </div>
-        </form>
-        <p class="fineprint" style="margin-top:16px">*Mit der Anmeldung erklären Sie sich mit dem Erhalt des Newsletters einverstanden. Sie können sich jederzeit abmelden. Weitere Infos in der <a href="#datenschutzerklarung">Datenschutzerklärung</a>.</p>
+        <!-- Opens the rapidmail sign-up pop-up (double opt-in), same list as everywhere -->
+        <button class="btn btn-primary rm-open-popup" type="button" aria-haspopup="dialog">Jetzt anmelden<span class="btn-ic">{{{{i:arrow}}}}</span></button>
+        <p class="fineprint" style="margin-top:16px">*Mit der Anmeldung erklären Sie sich einverstanden, per E-Mail Tipps, Workshops und Veranstaltungen von SELMA Zuhause zu erhalten. Jederzeit abbestellbar. Weitere Infos in der <a href="#datenschutzerklarung">Datenschutzerklärung</a>.</p>
       </div>
     </div>
   </section>'''

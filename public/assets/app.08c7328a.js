@@ -21,12 +21,12 @@
     if (open) { var first = nav.querySelector("a"); if (first) first.focus(); }
     else if (returnFocus) menuBtn.focus();
   }
-  menuBtn.addEventListener("click", function () { setMenu(menuBtn.getAttribute("aria-expanded") !== "true"); });
+  if (menuBtn) menuBtn.addEventListener("click", function () { setMenu(menuBtn.getAttribute("aria-expanded") !== "true"); });
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && menuBtn.getAttribute("aria-expanded") === "true") setMenu(false, true);
+    if (e.key === "Escape" && menuBtn && menuBtn.getAttribute("aria-expanded") === "true") setMenu(false, true);
   });
   document.addEventListener("click", function (e) {
-    if (menuBtn.getAttribute("aria-expanded") === "true" && !header.contains(e.target)) setMenu(false);
+    if (menuBtn && menuBtn.getAttribute("aria-expanded") === "true" && !header.contains(e.target)) setMenu(false);
   });
 
   /* ---------- Split headings into words (visual copy is aria-hidden; real text stays for screen readers) ---------- */
@@ -145,6 +145,91 @@
     h.scrollIntoView({ block: "start" });
   });
 
+  /* ---------- Workshops: Terminbuchung (Termine in src/content/workshops.json) ---------- */
+  // Vergangene Termine ausblenden: Radio-Buttons, Termin-Zeilen und Karten-Termine tragen data-end
+  var nowMs = Date.now();
+  $$("[data-end]").forEach(function (el) {
+    if (Date.parse(el.dataset.end) < nowMs) (el.closest(".slot") || el).remove();
+  });
+  $$(".ws-card-dates, .ws-dates").forEach(function (list) {
+    if (!list.children.length) list.textContent = "Neue Termine folgen bald.";
+  });
+  $$("form[data-booking]").forEach(function (form) {
+    var open = $$('input[name="termin"]', form).filter(function (r) { return !r.disabled; });
+    if (!open.length) {
+      form.hidden = true;
+      var card = form.parentNode, t = $(".ws-book-title", card), ns = $(".ws-noslots", card);
+      if (t) t.hidden = true;
+      if (ns) ns.hidden = false;
+    } else if (open.length === 1) open[0].checked = true;
+  });
+
+  // Herkunft der Anmeldung (utm_*) aus der Adresse übernehmen, ohne etwas im Browser zu speichern
+  var qs = new URLSearchParams(location.search), utm = [];
+  ["utm_source", "utm_medium", "utm_campaign"].forEach(function (k) {
+    var v = qs.get(k);
+    if (!v) return;
+    v = v.slice(0, 100);
+    utm.push(k + "=" + encodeURIComponent(v));
+    $$('input[type="hidden"][name="' + k + '"]').forEach(function (inp) { inp.value = v; });
+  });
+  if (utm.length) $$('a[href^="/workshop-"]').forEach(function (a) {
+    var h = a.getAttribute("href").split("#");
+    a.setAttribute("href", h[0] + "?" + utm.join("&") + (h[1] ? "#" + h[1] : ""));
+  });
+
+  function toast(msg) {
+    var t = document.createElement("div");
+    t.className = "toast";
+    t.setAttribute("role", "status");
+    t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(function () { t.remove(); }, 4000);
+  }
+  function calStamp(ms) { return new Date(ms).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, ""); }
+  function icsText(s) { return String(s).replace(/\\/g, "\\\\").replace(/\n/g, "\\n").replace(/([,;])/g, "\\$1"); }
+  function icsFold(line) {
+    var out = [];
+    while (line.length > 72) { out.push(line.slice(0, 72)); line = " " + line.slice(72); }
+    out.push(line);
+    return out.join("\r\n");
+  }
+  // Danke-Bereich nach der Buchung: Termin, Kalender, Teilen
+  function bookingDone(after, b) {
+    var page = location.origin + location.pathname;
+    var title = b.thema + " (Online-Workshop SELMA Zuhause)";
+    var desc = "Kostenloser Live-Workshop per Video. Den Zugangslink schicken wir Ihnen per E-Mail. Fragen: 030 3758 0867. " + page;
+    var where = "Online, Zugangslink per E-Mail";
+    var s = calStamp(Date.parse(b.start)), en = calStamp(Date.parse(b.end));
+    $$("[data-fill=termin]", after).forEach(function (el) { el.textContent = b.thema + ": " + b.text; });
+    var g = $("[data-gcal]", after);
+    if (g) g.href = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + encodeURIComponent(title) +
+      "&dates=" + s + "/" + en + "&details=" + encodeURIComponent(desc) + "&location=" + encodeURIComponent(where);
+    var ics = $("[data-ics]", after);
+    if (ics) ics.addEventListener("click", function () {
+      var body = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//SELMA Zuhause//Workshops//DE", "METHOD:PUBLISH", "BEGIN:VEVENT",
+        "UID:" + s + "-" + location.pathname.replace(/\W/g, "") + "@selmazuhause.de", "DTSTAMP:" + calStamp(Date.now()),
+        "DTSTART:" + s, "DTEND:" + en, "SUMMARY:" + icsText(title), "DESCRIPTION:" + icsText(desc),
+        "LOCATION:" + icsText(where), "URL:" + page,
+        "BEGIN:VALARM", "ACTION:DISPLAY", "DESCRIPTION:" + icsText("Morgen: " + b.thema), "TRIGGER:-P1D", "END:VALARM",
+        "BEGIN:VALARM", "ACTION:DISPLAY", "DESCRIPTION:" + icsText("In 30 Minuten: " + b.thema), "TRIGGER:-PT30M", "END:VALARM",
+        "END:VEVENT", "END:VCALENDAR"].map(icsFold).join("\r\n");
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(new Blob([body], { type: "text/calendar;charset=utf-8" }));
+      a.download = "SELMA-Workshop.ics";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    });
+    var sh = $("[data-share]", after);
+    if (sh) sh.addEventListener("click", function () {
+      var data = { title: b.thema + ": kostenloser Online-Workshop", text: "Kostenloser Online-Workshop bei Parkinson: " + b.thema, url: page };
+      if (navigator.share) { navigator.share(data).catch(function () {}); return; }
+      if (navigator.clipboard) navigator.clipboard.writeText(page).then(function () { toast("Link kopiert. Sie können ihn jetzt weitergeben."); }, function () { toast(page); });
+      else toast(page);
+    });
+  }
+
   /* ---------- Forms: accessible validation, preview success ---------- */
   var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   function fieldError(input, msg) {
@@ -164,6 +249,7 @@
     input.setAttribute("aria-describedby", p.id);
   }
   function validate(input) {
+    if (input.type === "radio") return input.required && !input.form.querySelector('input[name="' + input.name + '"]:checked') ? (input.dataset.msg || "Bitte wählen Sie eine Option.") : "";
     var v = input.value.trim();
     if (input.required && !v) return input.dataset.msg || "Bitte füllen Sie dieses Feld aus.";
     if (input.type === "email" && v && !emailRe.test(v)) return "Bitte prüfen Sie die E-Mail-Adresse, z. B. name@beispiel.de.";
@@ -171,7 +257,16 @@
   }
   $$("form[data-done]").forEach(function (form) {
     var summary = form.querySelector(".form-summary");
-    var inputs = $$('input:not([type="hidden"]):not([name="bot-field"]),textarea', form);
+    // Radio-Gruppen werden über ihr erstes Feld geprüft
+    var inputs = $$('input:not([type="hidden"]):not([name="bot-field"]),textarea', form).filter(function (inp, i, all) {
+      return inp.type !== "radio" || all.filter(function (o) { return o.name === inp.name; })[0] === inp;
+    });
+    $$('input[type="radio"]', form).forEach(function (r) {
+      r.addEventListener("change", function () {
+        var first = inputs.filter(function (o) { return o.name === r.name; })[0];
+        if (first && first.getAttribute("aria-invalid")) fieldError(first, "");
+      });
+    });
     inputs.forEach(function (inp) {
       // Clear an error once the input is valid (while typing, not on blur, so the submit button never jumps under the pointer)
       inp.addEventListener("input", function () { if (inp.getAttribute("aria-invalid") && !validate(inp)) fieldError(inp, ""); });
@@ -182,7 +277,7 @@
       inputs.forEach(function (inp) {
         var msg = validate(inp);
         fieldError(inp, msg);
-        if (msg) errors.push({ id: inp.id, label: form.querySelector('label[for="' + inp.id + '"]').firstChild.textContent.trim(), msg: msg });
+        if (msg) errors.push({ id: inp.id, label: inp.dataset.label || form.querySelector('label[for="' + inp.id + '"]').firstChild.textContent.trim(), msg: msg });
       });
       if (errors.length) {
         summary.hidden = false;
@@ -202,6 +297,8 @@
         return;
       }
       summary.hidden = true;
+      var picked = form.hasAttribute("data-booking") && form.querySelector('input[name="termin"]:checked');
+      var booking = picked ? { thema: form.elements.workshop.value, text: picked.dataset.text, start: picked.dataset.start, end: picked.dataset.end } : null;
       var btn = form.querySelector('[type="submit"]');
       if (btn) btn.disabled = true;
       fetch("/", {
@@ -216,7 +313,20 @@
         done.setAttribute("tabindex", "-1");
         done.innerHTML = '<span class="done-ic"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><p></p>';
         done.querySelector("p").textContent = form.dataset.done;
+        // Optional follow-up block (e.g. newsletter offer) revealed after a successful send
+        var after = form.dataset.after && document.getElementById(form.dataset.after);
+        var bookTitle = form.parentNode.querySelector(".ws-book-title");
         form.replaceWith(done);
+        if (after && booking) bookingDone(after, booking);
+        if (bookTitle && booking) bookTitle.hidden = true;
+        if (after) after.hidden = false;
+        // Google Analytics (lädt nur nach Zustimmung im Cookie-Banner)
+        if (/^form-w[sl]/.test(form.id) && typeof window.gtag === "function") {
+          var th = form.elements.workshop;
+          window.gtag("event", form.id === "form-wl" ? "workshop_warteliste" : "workshop_anmeldung", {
+            workshop_thema: th ? th.value : "", workshop_termin: booking ? booking.start : ""
+          });
+        }
         done.focus();
       }).catch(function () {
         if (btn) btn.disabled = false;

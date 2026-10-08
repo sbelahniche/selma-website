@@ -4,6 +4,7 @@
   "/leistungen": "Ergotherapie bei Parkinson im Hausbesuch | SELMA Zuhause",
   "/ratgeber": "Wissen & Tipps rund um Parkinson | SELMA Zuhause",
   "/kontakt": "Kontakt & Erstgespräch | SELMA Zuhause",
+  "/workshops": "Kostenlose Online-Workshops bei Parkinson | SELMA Zuhause",
   "/verordnung-gkv": "Verordnung GKV",
   "/patienteninformationen": "Patienteninformationen & Verträge | SELMA Zuhause",
   "/agb": "AGB | SELMA Zuhause",
@@ -24,13 +25,17 @@
   "/blog-posts/lsvt-big": "LSVT BIG® bei Parkinson: Sicherer bewegen im Alltag",
   "/blog-posts/parkinson-medikamente-nebenwirkungen-alltag": "Parkinson-Medikamente: Wirkungen im Alltag managen",
   "/blog-posts/pwr-moves-parkinson-training": "PWR!Moves® bei Parkinson: Training für den Alltag",
-  "/blog-posts/s2k-leitlinie-parkinson-ergotherapie": "Ergotherapie bei Parkinson: Was die Leitlinie empfiehlt"
+  "/blog-posts/s2k-leitlinie-parkinson-ergotherapie": "Ergotherapie bei Parkinson: Was die Leitlinie empfiehlt",
+  "/workshop-freezing": "Freezing bei Parkinson: kostenloser Online-Workshop | SELMA Zuhause",
+  "/workshop-stuerze": "Stürze vermeiden bei Parkinson: kostenloser Online-Workshop | SELMA Zuhause",
+  "/workshop-wohnen": "Wohnen mit Parkinson: kostenloser Online-Workshop | SELMA Zuhause"
  },
  "descriptions": {
   "/": "Spezialisierte Ergotherapie für Menschen mit Parkinson im Hausbesuch. Alltag stärken. Stürzen vorbeugen.",
   "/leistungen": "Sturzprävention, Bewegungstraining, Hilfsmittel und Wohnraumanpassung – direkt bei Ihnen zu Hause. Für mehr Sicherheit und Selbstständigkeit im Alltag mit Parkinson.",
   "/ratgeber": "Praktische Tipps für den Alltag mit Parkinson: Bewegung, Hilfsmittel und Wohnraum. Verständlich erklärt – für Betroffene und Angehörige.",
   "/kontakt": "Lernen Sie uns kennen: unverbindliches Erstgespräch für mobile Ergotherapie bei Parkinson im Hausbesuch in Berlin.",
+  "/workshops": "Kostenlose Online-Workshops bei Parkinson, live per Video: Freezing, Sturzprävention sowie Hilfsmittel und Wohnraum. 45 Minuten, für Menschen mit Parkinson und Angehörige. Jetzt Termin buchen.",
   "/blog-posts/freezing-bei-parkinson-hilfsmittel-im-uberblick": "Freezing-Episoden sicher begegnen: bewährte Hilfsmittel und einfache Strategien, die im Alltag mit Parkinson wirklich helfen.",
   "/patienteninformationen": "Behandlungsvertrag, Datenschutzinformation und freiwillige Einwilligungen der Praxis SELMA Zuhause auf einen Blick.",
   "/agb": "Die AGB von SELMA Zuhause wurden durch den Behandlungsvertrag ersetzt. Alle Regelungen finden Sie im Behandlungsvertrag.",
@@ -41,7 +46,10 @@
   "/videotherapie": "Informationen und Einwilligung zur Videotherapie bei SELMA Zuhause: Ablauf, Abrechnung, Datenschutz mit RED connect und Widerruf.",
   "/jobs": "Offene Stellen bei SELMA Zuhause: Ergotherapeut:innen für unser Netzwerk in Berlin. Hausbesuche bei Menschen mit Parkinson, 25 Stunden, fest angestellt.",
   "/jobs-ergotherapie-berlin": "Ergotherapie im Hausbesuch für Menschen mit Parkinson, in deiner Berliner Nachbarschaft. 25 Stunden, fest angestellt, 3 Patient:innen am Tag.",
-  "/datenschutzerklarung": "Datenschutzerklärung von SELMA Zuhause: Wie wir personenbezogene Daten auf unserer Website verarbeiten und welche Rechte Sie haben."
+  "/datenschutzerklarung": "Datenschutzerklärung von SELMA Zuhause: Wie wir personenbezogene Daten auf unserer Website verarbeiten und welche Rechte Sie haben.",
+  "/workshop-freezing": "Kostenloser Live-Workshop per Video: Strategien bei Freezing für Losgehen, Drehen und enge Durchgänge. 45 Minuten, für Menschen mit Parkinson und Angehörige. Jetzt Termin buchen.",
+  "/workshop-stuerze": "Kostenloser Live-Workshop per Video: typische Sturzsituationen erkennen, sicher aufstehen, hinsetzen und drehen. 45 Minuten, für Menschen mit Parkinson und Angehörige.",
+  "/workshop-wohnen": "Kostenloser Live-Workshop per Video: Hilfsmittel und kleine Veränderungen für mehr Sicherheit zu Hause bei Parkinson. 45 Minuten, für Menschen mit Parkinson und Angehörige."
  },
  "noindex": [
   "/verordnung-gkv",

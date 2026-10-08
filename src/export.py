@@ -18,7 +18,7 @@ MAIN_PATHS = {"start": "/", "leistungen": "/leistungen", "ratgeber": "/ratgeber"
 # Page titles, descriptions and noindex flags exactly as on the live Webflow site (SEO continuity)
 SEO = json.load(open(SRC / "content" / "seo.json"))
 TRACKING = (SRC / "tracking.html").read_text()
-RAPIDMAIL_POPUP = '<script src="https://t73717dc4.emailsys1a.net/form/242/2569/6d9213f71f/popup.js?_g=1765439568"></script>'
+RAPIDMAIL_POPUP = '<script src="https://t73717dc4.emailsys1a.net/form/242/2569/6d9213f71f/popup.js?_g=1791473631" async></script>'
 
 META = {
     "start": ("SELMA Zuhause | Ergotherapie bei Parkinson zu Hause",
@@ -31,7 +31,7 @@ META = {
 }
 PAGE_DESC = {p["path"].strip("/"): p.get("metaDesc") or None for p in json.load(open(SRC / "content" / "pages.json"))["pages"]}
 
-FORM_NAMES = (("form-nl", "newsletter"), ("form-frage", "frage"), ("form-erst", "erstgespraech"))
+FORM_NAMES = (("form-nl", "newsletter"), ("form-frage", "frage"), ("form-erst", "erstgespraech"), ("form-ws", "workshop"), ("form-wl", "warteliste"))
 
 FONTS = """@font-face{font-family:"Atkinson Hyperlegible Next";font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/atkinson-next-400.woff2) format("woff2")}
 @font-face{font-family:"Atkinson Hyperlegible Next";font-style:normal;font-weight:700;font-display:swap;src:url(/assets/fonts/atkinson-next-700.woff2) format("woff2")}
@@ -127,8 +127,11 @@ def main():
                                       '<p hidden><label>Bitte leer lassen: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>',
                                       "html.parser"))
 
-    def document(pid, main_html, title, desc, section, og_type="website"):
+    def document(pid, main_html, title, desc, section, og_type="website", landing=False):
         hdr = BeautifulSoup(str(header), "html.parser")
+        if landing:  # Workshop-Seiten: schlanke Kopfzeile, nur Logo (ein Ziel pro Seite)
+            for el in hdr.select(".menu-btn, .main-nav, .header-cta"): el.decompose()
+            hdr.header["class"] = hdr.header.get("class", []) + ["is-landing"]
         ftr = BeautifulSoup(str(footer), "html.parser")
         for part in (hdr, ftr): fix_links(part, pid)
         for a in hdr.select("[data-nav]"):
@@ -175,7 +178,7 @@ def main():
 {ftr}
 </div>
 <script src="{js_url}" defer></script>
-{RAPIDMAIL_POPUP if pid == "start" else ""}
+{RAPIDMAIL_POPUP if "rm-open-popup" in main_html else ""}
 </body>
 </html>
 """
@@ -195,9 +198,10 @@ def main():
             desc = PAGE_DESC[pid]
         if not desc and pid == "kontakt":
             desc = excerpt(p)
-        for a in ("hidden", "data-title"):
+        landing = p.has_attr("data-landing")
+        for a in ("hidden", "data-title", "data-landing"):
             if p.has_attr(a): del p[a]
-        html = document(pid, str(p), title, desc, section, "article" if p.has_attr("data-article") else "website")
+        html = document(pid, str(p), title, desc, section, "article" if p.has_attr("data-article") else "website", landing)
         fn = OUT / ("index.html" if path[pid] == "/" else path[pid].lstrip("/") + ".html")
         fn.parent.mkdir(parents=True, exist_ok=True)
         fn.write_text(html)

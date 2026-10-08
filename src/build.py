@@ -2,6 +2,7 @@ import re, pathlib, sys
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 import blog
 import pages
+import workshops
 B = pathlib.Path(__file__).parent
 OUT = B.parent / "preview" / "index.html"  # single-file preview (not deployed)
 LIVE = "https://www.selmazuhause.de"
@@ -41,6 +42,7 @@ def render_body():
     body = body.replace("{{BLOG}}", blog.render() + "\n" + pages.render())
     body = body.replace("{{FAQ_START}}", faq.replace("{{FAQ_ID}}", "faq-start").replace("{{FAQ_CONTACT}}", "#kontakt").replace("{{FAQ_BG}}", ""))
     body = body.replace("{{FAQ_LEIST}}", faq.replace("{{FAQ_ID}}", "faq").replace("{{FAQ_CONTACT}}", "#kontakt-form").replace("{{FAQ_BG}}", ""))
+    body = body.replace("{{WS_PAGES}}", workshops.render_pages()).replace("{{WS_CARDS}}", workshops.render_cards()).replace("{{WS_TOPICS}}", workshops.render_topics())
     body = re.sub(r"\{\{i:([a-z]+)\}\}", icon, body)
     body = body.replace("{{ext}}", '<span class="sr-only"> (öffnet in neuem Tab)</span>').replace("{{LIVE}}", LIVE)
     assert "{{" not in body, re.findall(r"\{\{[^}]+\}\}", body)

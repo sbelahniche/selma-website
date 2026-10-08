@@ -1,0 +1,63 @@
+{
+  "_hinweis": "Termine hier pflegen. start = Beginn in Berliner Zeit (JJJJ-MM-TTTHH:MM). Vergangene Termine blendet die Website automatisch aus. Ausgebuchter Termin: \"voll\": true ergänzen. Danach neu bauen: python3 src/export.py",
+  "dauer_min": 45,
+  "workshops": [
+    {
+      "slug": "freezing",
+      "titel": "Freezing bei Parkinson",
+      "karte_titel_html": "Freezing bei <em>Parkinson</em>",
+      "h1": "Freezing bei Parkinson:",
+      "h1_akzent": "wieder leichter losgehen",
+      "kurz": "Wenn die Füße plötzlich nicht mehr weiterwollen: praktische Bewegungsstrategien, die das Losgehen, Drehen und Gehen im Alltag erleichtern.",
+      "bild": "img/ansatz-bewegung.webp",
+      "mitnehmen": [
+        "Verstehen, in welchen Situationen Freezing auftritt",
+        "Einfache Strategien für Losgehen, Drehen und enge Durchgänge",
+        "Übungen, die Sie gleich zu Hause ausprobieren können"
+      ],
+      "erwartet": "Sie lernen Strategien aus der täglichen Arbeit mit Menschen mit Parkinson: wie Rhythmus, Zählen oder ein bewusster erster Schritt das Losgehen erleichtern. Wir probieren einfache Übungen gemeinsam aus, im Sitzen oder Stehen, ganz in Ihrem Tempo.",
+      "termine": [
+        {"start": "2026-11-17T10:30"},
+        {"start": "2026-11-19T18:00"}
+      ]
+    },
+    {
+      "slug": "stuerze",
+      "titel": "Sicher bewegen, Stürze vermeiden",
+      "karte_titel_html": "Sicher bewegen, <em>Stürze vermeiden</em>",
+      "h1": "Sicher bewegen:",
+      "h1_akzent": "Stürze im Alltag vermeiden",
+      "kurz": "Aufstehen, Hinsetzen, Drehen oder Gehen: Übungen und Strategien, mit denen Sie typische Sturzrisiken im Alltag verringern.",
+      "bild": "img/ansatz-hilfsmittel.webp",
+      "mitnehmen": [
+        "Typische Sturzsituationen im Alltag erkennen",
+        "Sicher aufstehen, hinsetzen und drehen",
+        "Was hilft, wenn Sie doch einmal fallen"
+      ],
+      "erwartet": "Viele Stürze passieren bei ganz alltäglichen Bewegungen: beim Aufstehen, beim Umdrehen, auf dem Weg ins Bad in der Nacht. Wir schauen uns diese Momente genau an und üben Bewegungsabläufe, die Ihnen mehr Sicherheit geben.",
+      "termine": [
+        {"start": "2026-11-24T10:30"},
+        {"start": "2026-11-26T18:00"}
+      ]
+    },
+    {
+      "slug": "wohnen",
+      "titel": "Wohnen mit Parkinson",
+      "karte_titel_html": "Wohnen mit <em>Parkinson</em>",
+      "h1": "Wohnen mit Parkinson:",
+      "h1_akzent": "sicher und selbstständig zu Hause",
+      "kurz": "Kleine Veränderungen, große Wirkung: praktische Hilfsmittel und Wohnraumanpassungen für mehr Sicherheit und Selbstständigkeit zu Hause.",
+      "bild": "img/ansatz-wohnraum.webp",
+      "mitnehmen": [
+        "Die häufigsten Stolperstellen in Flur, Bad und Schlafzimmer",
+        "Hilfsmittel, die im Alltag wirklich helfen",
+        "Kleine Veränderungen, die oft ohne Umbau gehen"
+      ],
+      "erwartet": "Oft machen schon kleine Veränderungen einen großen Unterschied: ein Haltegriff an der richtigen Stelle, gutes Licht in der Nacht, ein freier Weg ins Bad. Sie erfahren, welche Hilfsmittel sich bewährt haben und worauf Sie bei der Auswahl achten.",
+      "termine": [
+        {"start": "2026-12-01T10:30"},
+        {"start": "2026-12-03T18:00"}
+      ]
+    }
+  ]
+}

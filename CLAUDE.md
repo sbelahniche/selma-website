@@ -27,6 +27,7 @@ Each push costs 15 of 300 free Netlify credits per month. Collect several small 
 | FAQ (shown on Start and Leistungen) | `src/faq.html` |
 | Ratgeber articles (blog) | `src/content/articles.json` (images: `src/img/art-<slug>.webp`) |
 | Info pages: AGB, Verträge, Jobs, Impressum, Datenschutz, Verordnung … | `src/content/pages.json` |
+| Workshops: dates, texts, topic pages `/workshop-<slug>` (past dates hide themselves) | `src/content/workshops.json`, rendered by `src/workshops.py` |
 | Page titles, meta descriptions, noindex (SEO) | `src/content/seo.json` |
 | Design (colors, spacing) | `src/style.css`, documented in `SELMA-Design-System.md` |
 | Images | `src/img/` (use `.webp`, about 1600 px max width) |

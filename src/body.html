@@ -12,6 +12,7 @@
         <li><a href="#start" data-nav aria-current="page">Start</a></li>
         <li><a href="#leistungen" data-nav>Leistungen</a></li>
         <li><a href="#ratgeber" data-nav>Ratgeber</a></li>
+        <li><a href="#workshops" data-nav>Workshops</a></li>
         <li><a href="#kontakt" data-nav>Kontakt</a></li>
       </ul>
       <a class="btn btn-primary nav-cta-mobile" href="#kontakt">Erstgespräch anfragen<span class="btn-ic">{{i:arrow}}</span></a>
@@ -204,7 +205,8 @@
         <span class="nl-ic" aria-hidden="true">{{i:mail}}</span>
         <div class="nl-copy">
           <h2 id="nlband-title">Bleiben Sie auf dem Laufenden</h2>
-          <p class="fineprint">*Mit der Anmeldung erklären Sie sich mit dem Erhalt des Newsletters einverstanden. Sie können sich jederzeit abmelden. Weitere Infos in der <a href="#datenschutzerklarung">Datenschutzerklärung</a>.</p>
+          <p>Tipps für den Alltag mit Parkinson, kostenlose Online-Workshops und neue Veranstaltungen – gelegentlich und jederzeit abbestellbar.</p>
+          <p class="fineprint">*Mit der Anmeldung erklären Sie sich einverstanden, per E-Mail Tipps, Workshops und Veranstaltungen von SELMA Zuhause zu erhalten. Jederzeit abbestellbar. Weitere Infos in der <a href="#datenschutzerklarung">Datenschutzerklärung</a>.</p>
         </div>
         <!-- Opens the rapidmail sign-up pop-up (double opt-in), same as on the old Webflow site -->
         <button class="btn btn-primary rm-open-popup" type="button" aria-haspopup="dialog">Newsletter erhalten<span class="btn-ic">{{i:arrow}}</span></button>
@@ -354,24 +356,104 @@
     <div class="wrap">
       <div class="intro">
         <h2 id="nl-title" class="rv-split" tabindex="-1">Auf dem Laufenden Bleiben</h2>
-        <p class="rv" style="--d:120ms">Praktische Tipps zu Wohnsicherheit, Alltagshilfen und Prävention, für mehr Sicherheit und Selbstbestimmung zu Hause.</p>
+        <p class="rv" style="--d:120ms">Tipps für den Alltag mit Parkinson, kostenlose Online-Workshops und neue Veranstaltungen – gelegentlich und jederzeit abbestellbar.</p>
       </div>
       <div class="rv" style="--d:200ms">
-        <form id="form-nl" novalidate data-done="Vielen Dank! Ihre Anmeldung ist eingegangen.">
-          <div class="form-summary" hidden tabindex="-1"></div>
-          <div class="nl-form">
-            <div class="field">
-              <label for="nl-email">E-Mail-Adresse</label>
-              <input id="nl-email" name="email" type="email" autocomplete="email" required data-msg="Bitte geben Sie Ihre E-Mail-Adresse an, z. B. name@beispiel.de.">
-            </div>
-            <button class="btn btn-primary" type="submit">Newsletter bestellen<span class="btn-ic">{{i:arrow}}</span></button>
-          </div>
-        </form>
-        <p class="fineprint" style="margin-top:16px">*Mit der Anmeldung erklären Sie sich mit dem Erhalt des Newsletters einverstanden. Sie können sich jederzeit abmelden. Weitere Infos in der <a href="#datenschutzerklarung">Datenschutzerklärung</a>.</p>
+        <!-- Opens the rapidmail sign-up pop-up (double opt-in), same list as everywhere -->
+        <button class="btn btn-primary rm-open-popup" type="button" aria-haspopup="dialog">Jetzt anmelden<span class="btn-ic">{{i:arrow}}</span></button>
+        <p class="fineprint" style="margin-top:16px">*Mit der Anmeldung erklären Sie sich einverstanden, per E-Mail Tipps, Workshops und Veranstaltungen von SELMA Zuhause zu erhalten. Jederzeit abbestellbar. Weitere Infos in der <a href="#datenschutzerklarung">Datenschutzerklärung</a>.</p>
       </div>
     </div>
   </section>
 </div>
+
+<!-- ======================= WORKSHOPS (Übersicht). Themenseiten und Termine: src/workshops.py + content/workshops.json ======================= -->
+<div data-page id="workshops" data-title="Kostenlose Online-Workshops bei Parkinson · SELMA Zuhause" hidden>
+  <section class="section" aria-labelledby="workshops-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Live per Video · kostenlos</p>
+        <h1 id="workshops-title" class="rv-split" tabindex="-1">Kostenlose Online-Workshops bei Parkinson</h1>
+        <p class="rv" style="--d:120ms">45 Minuten, live per Video, für Menschen mit Parkinson und ihre Angehörigen. Wählen Sie ein Thema und buchen Sie Ihren Termin.</p>
+      </div>
+      {{WS_CARDS}}
+    </div>
+  </section>
+
+  <section class="section bg-mist" aria-labelledby="ws-ablauf-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="ws-ablauf-title" class="rv-split">So einfach geht es</h2>
+      </div>
+      <ol class="ws-steps">
+        <li class="rv" style="--d:0ms"><span class="phase-no" aria-hidden="true">1</span><div><h3>Termin wählen</h3><p>Sie wählen Thema und Termin und melden sich mit Namen und E-Mail an.</p></div></li>
+        <li class="rv" style="--d:120ms"><span class="phase-no" aria-hidden="true">2</span><div><h3>Link erhalten</h3><p>Wir schicken Ihnen eine Bestätigung mit dem Zugangslink per E-Mail.</p></div></li>
+        <li class="rv" style="--d:240ms"><span class="phase-no" aria-hidden="true">3</span><div><h3>Live dabei sein</h3><p>Sie klicken auf den Link, machen mit und stellen Ihre Fragen.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section founder" aria-labelledby="ws-founder-title">
+    <div class="wrap">
+      <div class="portrait">
+        <div class="pblock" data-par="0.1" aria-hidden="true"></div>
+        <div class="pimg rv-img"><img data-par="0.05" src="img/portrait.webp" width="760" height="869" alt="Porträt von Kathleen Olstedt" loading="lazy"></div>
+      </div>
+      <div>
+        <p class="eyebrow rv">Wer die Workshops leitet</p>
+        <h2 id="ws-founder-title" class="rv-split">Kathleen Olstedt</h2>
+        <p class="role rv" style="--d:120ms">Leiterin SELMA Zuhause · staatl. anerkannte Ergotherapeutin</p>
+        <div class="bio rv" style="--d:200ms">
+          <p>SELMA Zuhause ist auf <strong>mobile Ergotherapie bei Parkinson</strong> spezialisiert. Wir begleiten Menschen mit Parkinson direkt in ihrem häuslichen Umfeld, und die Erfahrungen aus dieser täglichen Arbeit fließen in die Workshops ein.</p>
+          <p>Zertifiziert in <strong>LSVT BIG®</strong>, <strong>PWR!Moves®</strong>, Wohnraumanpassung (<strong>CAPS</strong>) und Sturzprävention.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-peach" id="warteliste" aria-labelledby="ws-wl-title">
+    <div class="wrap ws-form-wrap">
+      <div class="section-head">
+        <h2 id="ws-wl-title" class="rv-split">Kein passender Termin?</h2>
+        <p class="rv" style="--d:120ms">Wir sagen Ihnen Bescheid, sobald neue Termine feststehen.</p>
+      </div>
+      <div class="form-card rv">
+        <form id="form-wl" novalidate data-done="Vielen Dank! Wir melden uns, sobald neue Termine feststehen." data-after="wl-nl-offer">
+          <div class="form-summary" hidden tabindex="-1"></div>
+          <input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value="">
+          <fieldset class="field ws-slots ws-topics">
+            <legend>Welches Thema interessiert Sie?</legend>
+            {{WS_TOPICS}}
+          </fieldset>
+          <div class="form-grid">
+            <div class="field">
+              <label for="wl-vorname">Vorname</label>
+              <input id="wl-vorname" name="vorname" type="text" autocomplete="given-name" required data-msg="Bitte geben Sie Ihren Vornamen an.">
+            </div>
+            <div class="field">
+              <label for="wl-nachname">Nachname</label>
+              <input id="wl-nachname" name="nachname" type="text" autocomplete="family-name" required data-msg="Bitte geben Sie Ihren Nachnamen an.">
+            </div>
+            <div class="field full">
+              <label for="wl-email">E-Mail</label>
+              <input id="wl-email" name="email" type="email" autocomplete="email" inputmode="email" required data-msg="Bitte geben Sie Ihre E-Mail-Adresse an, z. B. name@beispiel.de.">
+            </div>
+          </div>
+          <p class="fineprint ws-privacy">Wir nutzen Ihre Angaben nur, um Sie über neue Termine zu diesem Thema zu informieren. Ihre Daten geben wir nicht weiter. Mehr in der <a href="#datenschutzerklarung">Datenschutzerklärung</a>.</p>
+          <div class="form-foot">
+            <button class="btn btn-primary" type="submit">Bei neuen Terminen informieren<span class="btn-ic">{{i:arrow}}</span></button>
+          </div>
+        </form>
+        <div class="ws-nl-offer" id="wl-nl-offer" hidden>
+          <p><strong>Möchten Sie auch über weitere Workshops informiert werden?</strong> Dann melden Sie sich gern für unseren Newsletter an. Sie können ihn jederzeit abbestellen.</p>
+          <button class="btn btn-ghost rm-open-popup" type="button" aria-haspopup="dialog">Newsletter erhalten<span class="btn-ic">{{i:arrow}}</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{{WS_PAGES}}
 
 <!-- ======================= KONTAKT ======================= -->
 <div data-page id="kontakt" data-title="Kontakt · SELMA Zuhause" hidden>
@@ -459,6 +541,7 @@
           <li><a href="#start">Start</a></li>
           <li><a href="#leistungen">Leistungen</a></li>
           <li><a href="#ratgeber">Ratgeber</a></li>
+          <li><a href="#workshops">Kostenlose Workshops</a></li>
           <li><a href="#patienteninformationen">AGB / Verträge</a></li>
           <li><a href="#jobs">Jobs</a></li>
         </ul>
