@@ -392,6 +392,12 @@ a.chip:hover{background:var(--mint);color:var(--navy)}
 .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 20px}
 .form-grid .full{grid-column:1 / -1}
 @media (max-width:620px){.form-grid{grid-template-columns:1fr}}
+/* Felder nebeneinander bündig: Beschriftung, Eingabefeld und Fehlermeldung teilen sich je eine Zeile, auch wenn eine Beschriftung umbricht */
+@supports (grid-template-rows:subgrid){
+  .form-grid{row-gap:14px}
+  .form-grid > .field{grid-row:span 3;grid-template-rows:subgrid;row-gap:8px;align-content:normal}
+  .form-grid > .field > label{align-self:end}
+}
 .field{display:grid;gap:8px;align-content:start}
 .field label{font-weight:700;color:var(--navy);line-height:1.3}
 .field .opt{font-weight:400;color:var(--slate)}
