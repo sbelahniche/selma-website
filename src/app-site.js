@@ -163,6 +163,14 @@
       if (ns) ns.hidden = false;
     } else if (open.length === 1) open[0].checked = true;
   });
+  // Leiste „Platz sichern“ (nur mobil): weg, solange die Anmeldung zu sehen ist, und ganz weg ohne freie Termine
+  $$(".ws-bar").forEach(function (bar) {
+    var book = document.getElementById(bar.dataset.bar), form = book && $("form[data-booking]", book);
+    if (!form || form.hidden) { bar.remove(); return; }
+    if ("IntersectionObserver" in window) new IntersectionObserver(function (en) {
+      bar.classList.toggle("is-off", en[0].isIntersecting);
+    }).observe(book);
+  });
 
   // Herkunft der Anmeldung (utm_*) aus der Adresse übernehmen, ohne etwas im Browser zu speichern
   var qs = new URLSearchParams(location.search), utm = [];
@@ -319,6 +327,7 @@
         form.replaceWith(done);
         if (after && booking) bookingDone(after, booking);
         if (bookTitle && booking) bookTitle.hidden = true;
+        if (booking) $$(".ws-bar").forEach(function (b) { b.remove(); });
         if (after) after.hidden = false;
         // Google Analytics (lädt nur nach Zustimmung im Cookie-Banner)
         if (/^form-w[sl]/.test(form.id) && typeof window.gtag === "function") {

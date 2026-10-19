@@ -129,10 +129,19 @@ def main():
 
     def document(pid, main_html, title, desc, section, og_type="website", landing=False):
         hdr = BeautifulSoup(str(header), "html.parser")
-        if landing:  # Workshop-Seiten: schlanke Kopfzeile, nur Logo (ein Ziel pro Seite)
+        ftr = BeautifulSoup(str(footer), "html.parser")
+        if landing:  # Workshop-Seiten: schlanke Kopf- und Fußzeile (ein Ziel pro Seite)
             for el in hdr.select(".menu-btn, .main-nav, .header-cta"): el.decompose()
             hdr.header["class"] = hdr.header.get("class", []) + ["is-landing"]
-        ftr = BeautifulSoup(str(footer), "html.parser")
+            hdr.select_one(".header-inner").append(BeautifulSoup(
+                '<a class="header-phone" href="tel:+493037580867"><span class="hp-ic"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span>'
+                '<span class="sr-only">Anrufen: </span><span class="num">030 3758 0867</span></a>', "html.parser"))
+            logo = ftr.select_one(".foot-brand .logo").extract()
+            for el in ftr.select(".foot-grid, .foot-certs"): el.decompose()
+            ftr.footer["class"] = ftr.footer.get("class", []) + ["is-landing"]
+            bottom = ftr.select_one(".foot-bottom")
+            bottom.insert(0, logo)
+            bottom.ul.insert(0, BeautifulSoup('<li><a href="#start">selmazuhause.de</a></li>', "html.parser"))
         for part in (hdr, ftr): fix_links(part, pid)
         for a in hdr.select("[data-nav]"):
             if a["href"] == path.get(section, "#"): a["aria-current"] = "page"

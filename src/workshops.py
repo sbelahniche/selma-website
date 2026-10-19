@@ -52,6 +52,7 @@ def slots(w):
             "tag": f"{TAGE_K[s.weekday()]}, {s.day}. {MONATE[s.month - 1]}",
             "zeit": f"{_uhr(s)} bis {_uhr(en)} Uhr",
             "kurz": f"{TAGE_K[s.weekday()]}, {s.day}. {MONATE[s.month - 1]}, {_uhr(s)} Uhr",
+            "mini": f"{TAGE_K[s.weekday()]}, {s.day}.{s.month}.",
             "wert": f"{datum_lang}, {_uhr(s)} Uhr",
             "text": f"{datum_lang}, {_uhr(s)} bis {_uhr(en)} Uhr",
             "hint": hint,
@@ -127,44 +128,116 @@ FAQ = [
 ]
 
 
+ZAHL = {2: "Zwei", 3: "Drei", 4: "Vier", 5: "Fünf"}
+
+
+def _dates(w, key):
+    """Termine als Liste; vergangene blendet app-site.js über data-end aus."""
+    return "".join(f'<span class="ws-d" data-end="{x["end"]}">{e(x[key])}</span>' for x in slots(w) if not x["voll"])
+
+
 def render_page(w):
     s = w["slug"]
     pid = f"workshop-{s}"
     page_url = f"{SITE}/{pid}"
-    sl = slots(w)
-    dates = "".join(f'<span class="ws-d" data-end="{x["end"]}">{e(x["kurz"])}</span>' for x in sl if not x["voll"])
     radios = []
-    for x in sl:
+    for x in slots(w):
         dis = " disabled" if x["voll"] else ""
         hint = "Ausgebucht" if x["voll"] else x["hint"]
         radios.append(
             f'<label class="slot{" is-full" if x["voll"] else ""}"><input type="radio" name="termin" id="t-{s}-{x["i"]}" value="{e(x["wert"])}" required{dis} '
             f'data-label="Termin" data-msg="Bitte wählen Sie einen Termin." data-start="{x["start"]}" data-end="{x["end"]}" data-text="{e(x["text"])}">'
             f'<span class="slot-body"><strong>{e(x["tag"])}</strong><span>{e(x["zeit"])}</span><small>{e(hint)}</small></span></label>')
-    checks = "".join(f"<li>{{{{i:check}}}}<span>{e(m)}</span></li>" for m in w["mitnehmen"])
+    take = "".join(
+        f'<li class="phase rv" style="--d:{n * 120}ms"><div class="phase-top" aria-hidden="true"><span class="phase-no">{n + 1}</span><span class="phase-track"></span></div>'
+        f'<h3>{e(m)}</h3></li>' for n, m in enumerate(w["mitnehmen"]))
+    zahl = ZAHL.get(len(w["mitnehmen"]), str(len(w["mitnehmen"])))
     faq = "".join(
         f'<details class="faq-item"><summary>{e(q)}<span class="plus" aria-hidden="true">{{{{i:plus}}}}</span></summary>'
         f'<div class="faq-body"><p>{a}</p></div></details>' for q, a in FAQ)
     others = "".join(
-        f'<li><a href="#workshop-{o["slug"]}"><img src="{o["bild"]}" width="72" height="72" alt="" loading="lazy"><span>{e(o["titel"])}</span>{{{{i:arrow}}}}</a></li>'
+        f'<li><a href="#workshop-{o["slug"]}"><img src="{o["bild"]}" width="80" height="80" alt="" loading="lazy">'
+        f'<span class="ws-more-txt"><strong>{e(o["titel"])}</strong><span class="ws-dates">{_dates(o, "mini")}</span></span>{{{{i:arrow}}}}</a></li>'
         for o in DATA["workshops"] if o is not w)
     return f"""
 <!-- ======================= WORKSHOP: {e(w['titel'])} (aus src/workshops.py, Termine in content/workshops.json) ======================= -->
 <div data-page id="{pid}" data-title="{e(w['titel'])}: kostenloser Online-Workshop · SELMA Zuhause" data-landing data-section="workshops" hidden>
   {_ld(w, page_url)}
-  <section class="section ws-hero bg-mint" aria-labelledby="{pid}-title">
-    <div class="wrap ws-hero-grid">
-      <div class="ws-hero-a">
+  <section class="ws-hero bg-mint" aria-labelledby="{pid}-title">
+    <div class="wrap">
+      <div class="ws-hero-copy">
         <p class="eyebrow">Kostenloser Online-Workshop</p>
         <h1 id="{pid}-title" tabindex="-1">{e(w['h1'])} <span class="accent">{e(w['h1_akzent'])}</span></h1>
+        <p class="ws-lead">{e(w['kurz'])}</p>
         <ul class="ws-facts">
-          <li>{{{{i:calendar}}}}<span class="ws-dates">{dates}</span></li>
+          <li>{{{{i:calendar}}}}<span class="ws-dates">{_dates(w, "kurz")}</span></li>
           <li>{{{{i:clock}}}}<span>{DAUER} Minuten, live per Video, kostenlos</span></li>
-          <li>{{{{i:user}}}}<span>Für Menschen mit Parkinson und Angehörige</span></li>
         </ul>
+        <a class="btn btn-primary" href="#anmeldung-{s}">Meinen Platz sichern<span class="btn-ic">{{{{i:arrow}}}}</span></a>
       </div>
-      <div class="form-card ws-book" id="anmeldung-{s}">
-        <h2 class="ws-book-title">Kostenlos Platz sichern</h2>
+      <div class="ws-hero-media">
+        <div class="ws-hero-img"><img src="{w['bild']}" width="500" height="500" alt="" fetchpriority="high"></div>
+        <p class="ws-host"><img src="img/portrait.webp" width="52" height="52" alt=""><span><strong>Mit Kathleen Olstedt</strong><span>Ergotherapeutin, spezialisiert auf Parkinson</span></span></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust">
+    <div class="wrap">
+      <ul>
+        <li class="rv" style="--d:0ms"><span class="t-ic">{{{{i:check}}}}</span><span class="t-txt"><span>Ein Klick auf</span> <span>den Link genügt</span></span></li>
+        <li class="rv" style="--d:80ms"><span class="t-ic">{{{{i:user}}}}</span><span class="t-txt"><span>Zuschauen oder im</span> <span>Sitzen mitmachen</span></span></li>
+        <li class="rv" style="--d:160ms"><span class="t-ic">{{{{i:heart}}}}</span><span class="t-txt"><span>Angehörige sind</span> <span>willkommen</span></span></li>
+        <li class="rv" style="--d:240ms"><span class="t-ic">{{{{i:wallet}}}}</span><span class="t-txt"><span>Kostenlos und</span> <span>unverbindlich</span></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="section" aria-labelledby="{pid}-mit">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow rv">Das nehmen Sie mit</p>
+        <h2 id="{pid}-mit" class="rv-split">{zahl} Dinge, die Sie <span class="hl">gleich nutzen</span> können</h2>
+      </div>
+      <ol class="phases ws-take">{take}</ol>
+    </div>
+  </section>
+
+  <section class="section bg-mist" aria-labelledby="{pid}-was">
+    <div class="wrap ws-split">
+      <div class="ws-split-media">
+        <div class="pblock" data-par="0.1" aria-hidden="true"></div>
+        <div class="ws-split-img rv-img"><img src="{w['bild2']}" width="408" height="300" alt="" loading="lazy"></div>
+      </div>
+      <div>
+        <p class="eyebrow rv">Das erwartet Sie</p>
+        <h2 id="{pid}-was" class="rv-split">{e(w['titel'])}</h2>
+        <p class="ws-lead rv">{e(w['erwartet'])}</p>
+        <p class="rv">Der Workshop ist für Menschen mit Parkinson und ihre Angehörigen. Vorkenntnisse brauchen Sie keine. Am Ende ist Zeit für Ihre Fragen.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section ws-how" aria-labelledby="{pid}-how">
+    <div class="wrap">
+      <h2 id="{pid}-how" class="rv-split">So einfach geht es</h2>
+      <ol class="ws-steps">
+        <li class="rv" style="--d:0ms"><span class="phase-no" aria-hidden="true">1</span><div><h3>Termin wählen</h3><p>Sie wählen Thema und Termin und melden sich mit Namen und E-Mail an.</p></div></li>
+        <li class="rv" style="--d:120ms"><span class="phase-no" aria-hidden="true">2</span><div><h3>Link erhalten</h3><p>Wir schicken Ihnen eine Bestätigung mit dem Zugangslink per E-Mail.</p></div></li>
+        <li class="rv" style="--d:240ms"><span class="phase-no" aria-hidden="true">3</span><div><h3>Live dabei sein</h3><p>Sie klicken auf den Link, machen mit und stellen Ihre Fragen.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section bg-peach" id="anmeldung-{s}" aria-labelledby="{pid}-book">
+    <div class="wrap ws-book-grid">
+      <div class="ws-book-intro">
+        <h2 id="{pid}-book" class="rv-split">Kostenlos <span class="accent">Platz sichern</span></h2>
+        <p class="ws-lead rv">Live dabei sein, Fragen stellen, Strategien für den Alltag mitnehmen.</p>
+        <div class="ws-kathleen rv"><img src="img/portrait.webp" width="72" height="72" alt="Porträt von Kathleen Olstedt" loading="lazy"><p><strong>Kathleen Olstedt</strong><span>Leiterin SELMA Zuhause · staatl. anerkannte Ergotherapeutin. Zertifiziert in LSVT BIG®, PWR!Moves®, CAPS und Sturzprävention.</span></p></div>
+        <p class="ws-phone rv">Lieber telefonisch anmelden? <a href="tel:+493037580867"><span class="num">030 3758 0867</span></a></p>
+      </div>
+      <div class="form-card ws-book">
         <form id="form-ws-{s}" novalidate data-booking data-done="Vielen Dank! Ihr Platz ist reserviert." data-after="ws-after-{s}">
           <div class="form-summary" hidden tabindex="-1"></div>
           <input type="hidden" name="workshop" value="{e(w['titel'])}">{UTM}
@@ -190,7 +263,6 @@ def render_page(w):
           <div class="form-foot">
             <button class="btn btn-primary" type="submit">Meinen Platz sichern<span class="btn-ic">{{{{i:arrow}}}}</span></button>
           </div>
-          <p class="ws-phone">Lieber telefonisch anmelden? <a href="tel:+493037580867"><span class="num">030 3758 0867</span></a></p>
         </form>
         <div class="ws-after" id="ws-after-{s}" hidden>
           <p class="ws-after-termin" data-fill="termin"></p>
@@ -213,41 +285,6 @@ def render_page(w):
           <a class="btn btn-primary" href="#warteliste">Bei neuen Terminen informieren<span class="btn-ic">{{{{i:arrow}}}}</span></a>
         </div>
       </div>
-      <div class="ws-hero-b">
-        <h2 class="ws-sub">Das nehmen Sie mit</h2>
-        <ul class="ws-check">{checks}</ul>
-        <div class="ws-host"><img src="img/portrait.webp" width="64" height="64" alt="" loading="lazy"><p><strong>Mit Kathleen Olstedt</strong><span>Ergotherapeutin, spezialisiert auf Parkinson</span></p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="{pid}-was">
-    <div class="wrap ws-split">
-      <div>
-        <p class="eyebrow rv">Das erwartet Sie</p>
-        <h2 id="{pid}-was" class="rv-split">{e(w['titel'])}</h2>
-        <p class="rv">{e(w['erwartet'])}</p>
-        <p class="rv">Der Workshop ist für Menschen mit Parkinson und ihre Angehörigen. Vorkenntnisse brauchen Sie keine. Am Ende ist Zeit für Ihre Fragen.</p>
-      </div>
-      <div class="media rv-img"><img src="{w['bild']}" width="500" height="500" alt="" loading="lazy"></div>
-    </div>
-  </section>
-
-  <section class="section founder bg-mist" aria-labelledby="{pid}-leitung">
-    <div class="wrap">
-      <div class="portrait">
-        <div class="pblock" data-par="0.1" aria-hidden="true"></div>
-        <div class="pimg rv-img"><img data-par="0.05" src="img/portrait.webp" width="760" height="869" alt="Porträt von Kathleen Olstedt" loading="lazy"></div>
-      </div>
-      <div>
-        <p class="eyebrow rv">Ihre Workshop-Leiterin</p>
-        <h2 id="{pid}-leitung" class="rv-split">Kathleen Olstedt</h2>
-        <p class="role rv" style="--d:120ms">Leiterin SELMA Zuhause · staatl. anerkannte Ergotherapeutin</p>
-        <div class="bio rv" style="--d:200ms">
-          <p>SELMA Zuhause ist auf <strong>mobile Ergotherapie bei Parkinson</strong> spezialisiert. Wir begleiten Menschen mit Parkinson direkt in ihrem häuslichen Umfeld, und die Erfahrungen aus dieser täglichen Arbeit fließen in die Workshops ein.</p>
-          <p>Zertifiziert in <strong>LSVT BIG®</strong>, <strong>PWR!Moves®</strong>, Wohnraumanpassung (<strong>CAPS</strong>) und Sturzprävention.</p>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -261,18 +298,17 @@ def render_page(w):
     </div>
   </section>
 
-  <section class="section ws-end bg-peach" aria-label="Anmelden und weitere Workshops">
+  <section class="ws-more bg-mist" aria-labelledby="{pid}-more">
     <div class="wrap">
-      <div class="cta-band">
-        <p>Live dabei sein, Fragen stellen, Strategien für den Alltag mitnehmen.</p>
-        <a class="btn btn-primary" href="#anmeldung-{s}">Meinen Platz sichern<span class="btn-ic">{{{{i:arrow}}}}</span></a>
-      </div>
-      <div class="ws-more">
-        <h2>Weitere kostenlose Workshops</h2>
-        <ul>{others}</ul>
-      </div>
+      <h2 id="{pid}-more">Weitere kostenlose Workshops</h2>
+      <ul>{others}</ul>
     </div>
   </section>
+
+  <div class="ws-bar" data-bar="anmeldung-{s}">
+    <p><strong>Kostenlos · {DAUER} Min.</strong><span class="ws-dates">{_dates(w, "mini")}</span></p>
+    <a class="btn btn-primary btn-plain" href="#anmeldung-{s}">Platz sichern</a>
+  </div>
 </div>
 """
 
