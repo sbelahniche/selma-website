@@ -583,8 +583,6 @@ h1,h2,h3,h4{overflow-wrap:break-word}
 .cert-list img{height:100%;width:auto;max-width:none}
 .cert-list .is-wide a{padding-inline:18px}
 .cert-list .is-wide img{height:40px}
-.cert-list .is-text a{color:var(--royal);font-size:var(--fs-small);font-weight:700;line-height:1.25;padding-inline:18px}
-.cert-list .is-text a:hover{text-decoration:none}
 .cert-note{margin-top:16px;font-size:var(--fs-small);line-height:1.5;color:#dbe9ec}
 @media (max-width:560px){.cert-list a{height:60px;padding:6px 10px}.cert-list .is-wide img{height:32px}}
 .foot-bottom{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between;margin-top:56px;padding-top:24px;border-top:1px solid rgba(205,239,240,.25);font-size:var(--fs-small)}
