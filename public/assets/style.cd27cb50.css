@@ -121,6 +121,11 @@ a:hover{color:var(--teal-deep);text-decoration-thickness:3px}
 .main-nav ul a[aria-current="page"]{color:var(--navy)}
 .main-nav ul a[aria-current="page"]::after{content:"";position:absolute;left:16px;right:16px;bottom:6px;height:3px;border-radius:3px;background:var(--teal)}
 .header-cta{flex:none}
+.header-phone{flex:none;display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 18px 0 6px;border-radius:999px;background:var(--mint-soft);
+  color:var(--navy);font-weight:700;font-size:1.0625rem;text-decoration:none;white-space:nowrap;transition:background-color .2s}
+.header-phone:hover{background:var(--mint);color:var(--navy)}
+.header-phone .hp-ic{flex:none;width:36px;height:36px;border-radius:50%;background:var(--white);color:var(--teal-strong);display:grid;place-items:center}
+.header-phone .icon{width:20px;height:20px}
 .menu-btn{
   display:none;margin-left:auto;align-items:center;gap:10px;min-height:48px;padding:0 18px 0 14px;border-radius:999px;
   border:2px solid var(--navy);background:transparent;color:var(--navy);font:inherit;font-weight:700;font-size:1.0625rem;cursor:pointer;
@@ -149,6 +154,13 @@ a:hover{color:var(--teal-deep);text-decoration-thickness:3px}
   .main-nav ul a:hover{background:transparent;color:var(--teal-strong)}
   .main-nav ul a[aria-current="page"]::after{left:auto;right:4px;top:50%;bottom:auto;width:10px;height:10px;border-radius:50%;transform:translateY(-50%)}
   .nav-cta-mobile{display:flex;width:100%;margin-top:20px;justify-content:space-between}
+  .site-header:not(.is-landing) .header-phone{order:1;margin-left:auto}
+  .menu-btn{order:2;margin-left:0}
+}
+/* Wenig Platz: Telefon nur als Symbol (Nummer bleibt für Screenreader lesbar) */
+@media (min-width:1001px) and (max-width:1199px), (max-width:560px){
+  .site-header:not(.is-landing) .header-phone{padding:6px}
+  .site-header:not(.is-landing) .header-phone .num{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 }
 
 @media (min-width:1001px) and (max-width:1199px){.header-inner{gap:16px}.main-nav ul{gap:0}.main-nav ul a{padding:0 11px}}
@@ -322,22 +334,6 @@ a.chip:hover{background:var(--mint);color:var(--navy)}
   .post-card .media{grid-row:auto}
 }
 
-/* Newsletter (home) */
-.nl-home{padding-block:clamp(48px,6vw,80px)}
-.nl.nl-home .wrap{display:block}
-.nl-card{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:20px 32px;max-width:1040px;margin-inline:auto;padding:clamp(24px,3.5vw,40px);border-radius:var(--r-card);background:var(--white);box-shadow:0 24px 50px -36px rgba(28,57,76,.45)}
-.nl-home .nl-ic{flex:none;width:clamp(56px,6vw,72px);height:clamp(56px,6vw,72px);border-radius:50%;background:var(--peach-soft);color:var(--teal-strong);display:grid;place-items:center}
-.nl-home .nl-ic .icon{width:45%;height:45%}
-.nl.nl-home h2{font-size:clamp(1.5rem,1.15rem + 1.1vw,2.125rem);line-height:1.15}
-.nl-home .fineprint{margin-top:10px;max-width:62ch}
-.nl-home .btn{white-space:nowrap}
-@media (max-width:760px){
-  .nl-card{grid-template-columns:auto minmax(0,1fr)}
-  .nl-card .btn{grid-column:1 / -1;justify-self:start}
-}
-@media (max-width:420px){
-  .nl-card{grid-template-columns:minmax(0,1fr);padding:22px 20px}
-}
 
 /* FAQ */
 .faq .wrap{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:clamp(32px,5vw,80px);align-items:start}
@@ -481,12 +477,6 @@ a.chip:hover{background:var(--mint);color:var(--navy)}
 .cats{list-style:none;display:flex;flex-wrap:wrap;gap:10px}
 .cats .chip{min-height:44px;padding:6px 18px;font-size:1rem}
 @media (max-width:900px){.rg-grid{grid-template-columns:1fr}}
-.nl-form{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin-top:24px;max-width:640px}
-.nl-form .field{flex:1 1 260px}
-.nl .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 64px;align-items:center}
-.nl h2{font-size:var(--fs-h2)}
-.nl .intro p{margin-top:14px;font-size:var(--fs-lead);line-height:1.5}
-@media (max-width:860px){.nl .wrap{grid-template-columns:1fr}}
 
 
 /* ============ Ratgeber: breadcrumbs, articles, categories ============ */
@@ -621,11 +611,6 @@ h1,h2,h3,h4{overflow-wrap:break-word}
 
 /* Workshops (Übersicht /workshops und Themenseiten /workshop-…) */
 .site-header.is-landing .header-inner{justify-content:space-between;gap:12px}
-.header-phone{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 18px 0 6px;border-radius:999px;background:var(--mint-soft);
-  color:var(--navy);font-weight:700;font-size:1.0625rem;text-decoration:none;white-space:nowrap;transition:background-color .2s}
-.header-phone:hover{background:var(--mint);color:var(--navy)}
-.header-phone .hp-ic{flex:none;width:36px;height:36px;border-radius:50%;background:var(--white);color:var(--teal-strong);display:grid;place-items:center}
-.header-phone .icon{width:20px;height:20px}
 @media (max-width:400px){.site-header.is-landing .brand img{height:34px}.header-phone{gap:8px;padding-right:12px;font-size:1rem}}
 .site-footer.is-landing{padding-block:40px 32px}
 .site-footer.is-landing .foot-bottom{margin-top:0;padding-top:0;border-top:0;gap:16px 32px}
@@ -640,7 +625,6 @@ h1,h2,h3,h4{overflow-wrap:break-word}
 .ws-steps p{margin-top:6px;max-width:34ch}
 .ws-form-wrap .form-card{max-width:760px}
 .ws-privacy{margin-top:22px}
-.ws-nl-offer:not([hidden]){display:grid;gap:16px;justify-items:start;margin-top:28px;padding-top:28px;border-top:1px solid var(--line)}
 
 /* Workshop-Themenseiten /workshop-… (Gestaltung aus Claude Design, Vorlage „Workshop-Landingpage“) */
 .ws-lead{font-size:var(--fs-lead);line-height:1.5}

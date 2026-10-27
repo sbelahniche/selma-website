@@ -18,7 +18,6 @@ MAIN_PATHS = {"start": "/", "leistungen": "/leistungen", "ratgeber": "/ratgeber"
 # Page titles, descriptions and noindex flags exactly as on the live Webflow site (SEO continuity)
 SEO = json.load(open(SRC / "content" / "seo.json"))
 TRACKING = (SRC / "tracking.html").read_text()
-RAPIDMAIL_POPUP = '<script src="https://t73717dc4.emailsys1a.net/form/242/2569/6d9213f71f/popup.js?_g=1791473631" async></script>'
 
 META = {
     "start": ("SELMA Zuhause | Ergotherapie bei Parkinson zu Hause",
@@ -31,7 +30,7 @@ META = {
 }
 PAGE_DESC = {p["path"].strip("/"): p.get("metaDesc") or None for p in json.load(open(SRC / "content" / "pages.json"))["pages"]}
 
-FORM_NAMES = (("form-nl", "newsletter"), ("form-frage", "frage"), ("form-erst", "erstgespraech"), ("form-ws", "workshop"), ("form-wl", "warteliste"))
+FORM_NAMES = (("form-frage", "frage"), ("form-erst", "erstgespraech"), ("form-ws", "workshop"), ("form-wl", "warteliste"))
 
 FONTS = """@font-face{font-family:"Atkinson Hyperlegible Next";font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/atkinson-next-400.woff2) format("woff2")}
 @font-face{font-family:"Atkinson Hyperlegible Next";font-style:normal;font-weight:700;font-display:swap;src:url(/assets/fonts/atkinson-next-700.woff2) format("woff2")}
@@ -133,9 +132,6 @@ def main():
         if landing:  # Workshop-Seiten: schlanke Kopf- und Fußzeile (ein Ziel pro Seite)
             for el in hdr.select(".menu-btn, .main-nav, .header-cta"): el.decompose()
             hdr.header["class"] = hdr.header.get("class", []) + ["is-landing"]
-            hdr.select_one(".header-inner").append(BeautifulSoup(
-                '<a class="header-phone" href="tel:+493037580867"><span class="hp-ic"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span>'
-                '<span class="sr-only">Anrufen: </span><span class="num">030 3758 0867</span></a>', "html.parser"))
             logo = ftr.select_one(".foot-brand .logo").extract()
             for el in ftr.select(".foot-grid, .foot-certs"): el.decompose()
             ftr.footer["class"] = ftr.footer.get("class", []) + ["is-landing"]
@@ -187,7 +183,6 @@ def main():
 {ftr}
 </div>
 <script src="{js_url}" defer></script>
-{RAPIDMAIL_POPUP if "rm-open-popup" in main_html else ""}
 </body>
 </html>
 """

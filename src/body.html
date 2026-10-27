@@ -16,6 +16,7 @@
       </ul>
       <a class="btn btn-primary nav-cta-mobile" href="#kontakt">Erstgespräch anfragen<span class="btn-ic">{{i:arrow}}</span></a>
     </nav>
+    <a class="header-phone" href="tel:+493037580867"><span class="hp-ic">{{i:phone}}</span><span class="sr-only">Anrufen: </span><span class="num">030 3758 0867</span></a>
     <a class="btn btn-primary header-cta" href="#kontakt">Erstgespräch anfragen<span class="btn-ic">{{i:arrow}}</span></a>
   </div>
 </header>
@@ -31,7 +32,7 @@
         <h1 id="start-title" tabindex="-1">Mobile Ergotherapie bei <span class="accent">Parkinson.</span></h1>
         <div class="hero-lead">
           <p class="lead-1">Alltag stärken. Stürzen vorbeugen.</p>
-          <p class="lead-2">Mit Bewegungsroutinen, Hilfsmitteln und Wohnraumanpassung.</p>
+          <p class="lead-2">Mit Bewegungsroutinen, die in Ihren Alltag passen. Hilfsmittel und Umbauten nur, wenn Sie sie wirklich brauchen.</p>
         </div>
         <div class="hero-home">
           <p class="home-line">{{i:house}}<span>Wir kommen zu Ihnen <span class="hl">nach Hause</span></span></p>
@@ -67,7 +68,7 @@
     <div class="wrap">
       <div class="section-head">
         <h2 id="ansatz-title" class="rv-split">Der SELMA Ansatz</h2>
-        <p class="rv" style="--d:120ms">Basierend auf aktuellen therapeutischen Erkenntnissen, individuell angepasst.</p>
+        <p class="rv" style="--d:120ms">Im Mittelpunkt steht Ihre Beweglichkeit. Wohnraumanpassungen und Hilfsmittel nehmen wir bei Bedarf dazu.</p>
       </div>
       <ul class="cards-3">
         <li class="ansatz-card rv" style="--d:0ms">
@@ -195,21 +196,6 @@
         </li>
       </ul>
       <div class="after-cards rv"><a class="btn btn-ghost" href="#ratgeber">Weitere Artikel<span class="btn-ic">{{i:arrow}}</span></a></div>
-    </div>
-  </section>
-
-  <section class="section bg-peach nl nl-home" aria-labelledby="nlband-title">
-    <div class="wrap">
-      <div class="nl-card rv">
-        <span class="nl-ic" aria-hidden="true">{{i:mail}}</span>
-        <div class="nl-copy">
-          <h2 id="nlband-title">Bleiben Sie auf dem Laufenden</h2>
-          <p>Tipps für den Alltag mit Parkinson, kostenlose Online-Workshops und neue Veranstaltungen – gelegentlich und jederzeit abbestellbar.</p>
-          <p class="fineprint">*Mit der Anmeldung erklären Sie sich einverstanden, per E-Mail Tipps, Workshops und Veranstaltungen von SELMA Zuhause zu erhalten. Jederzeit abbestellbar. Weitere Infos in der <a href="#datenschutzerklarung">Datenschutzerklärung</a>.</p>
-        </div>
-        <!-- Opens the rapidmail sign-up pop-up (double opt-in), same as on the old Webflow site -->
-        <button class="btn btn-primary rm-open-popup" type="button" aria-haspopup="dialog">Newsletter erhalten<span class="btn-ic">{{i:arrow}}</span></button>
-      </div>
     </div>
   </section>
 
@@ -349,20 +335,6 @@
       </aside>
     </div>
   </section>
-
-  <section class="section bg-peach nl" id="newsletter" aria-labelledby="nl-title">
-    <div class="wrap">
-      <div class="intro">
-        <h2 id="nl-title" class="rv-split" tabindex="-1">Auf dem Laufenden Bleiben</h2>
-        <p class="rv" style="--d:120ms">Tipps für den Alltag mit Parkinson, kostenlose Online-Workshops und neue Veranstaltungen – gelegentlich und jederzeit abbestellbar.</p>
-      </div>
-      <div class="rv" style="--d:200ms">
-        <!-- Opens the rapidmail sign-up pop-up (double opt-in), same list as everywhere -->
-        <button class="btn btn-primary rm-open-popup" type="button" aria-haspopup="dialog">Jetzt anmelden<span class="btn-ic">{{i:arrow}}</span></button>
-        <p class="fineprint" style="margin-top:16px">*Mit der Anmeldung erklären Sie sich einverstanden, per E-Mail Tipps, Workshops und Veranstaltungen von SELMA Zuhause zu erhalten. Jederzeit abbestellbar. Weitere Infos in der <a href="#datenschutzerklarung">Datenschutzerklärung</a>.</p>
-      </div>
-    </div>
-  </section>
 </div>
 
 <!-- ======================= WORKSHOPS (Übersicht). Themenseiten und Termine: src/workshops.py + content/workshops.json ======================= -->
@@ -416,7 +388,7 @@
         <p class="rv" style="--d:120ms">Wir sagen Ihnen Bescheid, sobald neue Termine feststehen.</p>
       </div>
       <div class="form-card rv">
-        <form id="form-wl" novalidate data-done="Vielen Dank! Wir melden uns, sobald neue Termine feststehen." data-after="wl-nl-offer">
+        <form id="form-wl" novalidate data-done="Vielen Dank! Wir melden uns, sobald neue Termine feststehen.">
           <div class="form-summary" hidden tabindex="-1"></div>
           <input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value="">
           <fieldset class="field ws-slots ws-topics">
@@ -442,10 +414,6 @@
             <button class="btn btn-primary" type="submit">Bei neuen Terminen informieren<span class="btn-ic">{{i:arrow}}</span></button>
           </div>
         </form>
-        <div class="ws-nl-offer" id="wl-nl-offer" hidden>
-          <p><strong>Möchten Sie auch über weitere Workshops informiert werden?</strong> Dann melden Sie sich gern für unseren Newsletter an. Sie können ihn jederzeit abbestellen.</p>
-          <button class="btn btn-ghost rm-open-popup" type="button" aria-haspopup="dialog">Newsletter erhalten<span class="btn-ic">{{i:arrow}}</span></button>
-        </div>
       </div>
     </div>
   </section>
@@ -479,14 +447,6 @@
             <div class="field">
               <label for="k-tel">Telefonnummer <span class="opt">(Pflichtfeld)</span></label>
               <input id="k-tel" name="telefon" type="tel" autocomplete="tel" required data-msg="Bitte geben Sie Ihre Telefonnummer an.">
-            </div>
-            <div class="field full">
-              <label for="k-weg">Wie sollen wir uns melden?</label>
-              <select id="k-weg" name="kontaktweg">
-                <option value="">Bitte wählen</option>
-                <option>Rückruf</option>
-                <option>E-Mail</option>
-              </select>
             </div>
             <div class="field full">
               <label for="k-msg">Worum geht es? <span class="opt">(optional)</span></label>

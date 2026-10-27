@@ -272,10 +272,6 @@ def render_page(w):
             <a data-gcal href="https://calendar.google.com/" target="_blank" rel="noopener">In Google Kalender eintragen{{{{ext}}}}</a>
           </div>
           <div class="ws-after-block">
-            <p><strong>Möchten Sie auch über weitere Workshops informiert werden?</strong> Dann melden Sie sich gern für unseren Newsletter an. Sie können ihn jederzeit abbestellen.</p>
-            <button class="btn btn-ghost rm-open-popup" type="button" aria-haspopup="dialog">Newsletter erhalten<span class="btn-ic">{{{{i:arrow}}}}</span></button>
-          </div>
-          <div class="ws-after-block">
             <p><strong>Kennen Sie jemanden, für den das hilfreich ist?</strong></p>
             <button class="btn btn-ghost" type="button" data-share>Workshop weitersagen<span class="btn-ic">{{{{i:arrow}}}}</span></button>
           </div>

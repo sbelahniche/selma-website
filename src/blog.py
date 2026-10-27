@@ -224,22 +224,6 @@ def byline(a):
     return '<p class="byline">' + "".join(parts) + "</p>"
 
 
-def newsletter(suffix):
-    return f'''  <section class="section bg-peach nl" aria-labelledby="nl-title-{suffix}">
-    <div class="wrap">
-      <div class="intro">
-        <h2 id="nl-title-{suffix}" class="rv-split">Auf dem Laufenden Bleiben</h2>
-        <p class="rv" style="--d:120ms">Tipps für den Alltag mit Parkinson, kostenlose Online-Workshops und neue Veranstaltungen – gelegentlich und jederzeit abbestellbar.</p>
-      </div>
-      <div class="rv" style="--d:200ms">
-        <!-- Opens the rapidmail sign-up pop-up (double opt-in), same list as everywhere -->
-        <button class="btn btn-primary rm-open-popup" type="button" aria-haspopup="dialog">Jetzt anmelden<span class="btn-ic">{{{{i:arrow}}}}</span></button>
-        <p class="fineprint" style="margin-top:16px">*Mit der Anmeldung erklären Sie sich einverstanden, per E-Mail Tipps, Workshops und Veranstaltungen von SELMA Zuhause zu erhalten. Jederzeit abbestellbar. Weitere Infos in der <a href="#datenschutzerklarung">Datenschutzerklärung</a>.</p>
-      </div>
-    </div>
-  </section>'''
-
-
 def card(a, delay, chip=True):
     excerpt = f'\n          <p class="excerpt">{esc(a["excerpt"])}</p>' if a["excerpt"] else ""
     chip_html = f'\n          <a class="chip" href="#kategorie-{a["cat"]}">{esc(a["catname"])}</a>' if chip else ""
@@ -268,7 +252,6 @@ def article_page(a):
 {a["body"]}
     </div></div>
   </article>
-{newsletter(a["slug"])}
 </div>'''
 
 
@@ -292,7 +275,6 @@ def category_page(cat, arts):
       </ul>
     </div>
   </section>
-{newsletter("k-" + cat)}
 </div>'''
 
 
