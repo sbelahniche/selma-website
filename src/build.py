@@ -27,7 +27,8 @@ ICONS = {
  "plus": '<path d="M5 12h14M12 5v14"/>',
  "user": '<circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/>',
  "calendar": '<rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>',
- "alert": '<circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/>',}
+ "alert": '<circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/>',
+ "video": '<path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/>',}
 sprite = '<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">' + "".join(
     f'<symbol id="i-{k}" viewBox="0 0 24 24">{v}</symbol>' for k, v in ICONS.items()) + "</svg>"
 
