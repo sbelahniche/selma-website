@@ -47,7 +47,7 @@ Each push costs 15 of 300 free Netlify credits per month. Collect several small 
   - info@selmazuhause.de
   - Blockdammweg 63, 10318 Berlin
   - Mo–Fr 9:00–18:00 Uhr
-  - Einzugsgebiet: Berlin Südost & Charlottenburg
+  - Einzugsgebiet: Berlin & Brandenburg
 - Forms (Netlify Forms `erstgespraech`, `frage`, `newsletter`) and the cookie banner (Silktide, `src/tracking.html`) are GDPR-relevant. Don't change them without being asked. Google Analytics must only load after consent.
 - When adding a new service or tool that processes personal data, tell Kathleen that the Datenschutzerklärung needs updating.
 - Follow `SELMA-Design-System.md`:
