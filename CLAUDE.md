@@ -23,11 +23,13 @@ Each push costs 15 of 300 free Netlify credits per month. Collect several small 
 
 | What | File |
 |---|---|
-| Start, Leistungen, Ratgeber, Kontakt pages, header, footer | `src/body.html` |
+| Start, Leistungen, Ratgeber, Kontakt, Verordnung (`/verordnung-gkv`), Für Ärzt:innen (`/fuer-aerzte`), Online-Beratung (`/online-beratung`) pages, header, footer | `src/body.html` |
 | FAQ (shown on Start and Leistungen) | `src/faq.html` |
 | Ratgeber articles (blog) | `src/content/articles.json` (images: `src/img/art-<slug>.webp`) |
-| Info pages: AGB, Verträge, Jobs, Impressum, Datenschutz, Verordnung … | `src/content/pages.json` |
-| Workshops: dates, texts, topic pages `/workshop-<slug>` (past dates hide themselves) | `src/content/workshops.json`, rendered by `src/workshops.py` |
+| Info pages: AGB, Verträge, Jobs, Impressum, Datenschutz, Videotherapie … | `src/content/pages.json` |
+| Downloads (flyer with Verordnungshilfe: `/selma-zuhause-flyer.pdf`) | `src/static/` |
+| Online booking (Erstgespräch, Hausbesuch, Online-Beratung) | Doctolib, linked from Kontakt and Online-Beratung pages |
+| Workshops: **paused since Oct 2026**, pages not built, old URLs redirect (302) in `_redirects`. To bring them back, restore the overview page and `{{WS_…}}` placeholders in `body.html` and the `workshops` calls in `build.py` from git history (before commit "Workshops pausiert"), then remove the 302s | `src/content/workshops.json`, `src/workshops.py` (kept) |
 | Page titles, meta descriptions, noindex (SEO) | `src/content/seo.json` |
 | Design (colors, spacing) | `src/style.css`, documented in `SELMA-Design-System.md` |
 | Images | `src/img/` (use `.webp`, about 1600 px max width) |
@@ -48,7 +50,7 @@ Each push costs 15 of 300 free Netlify credits per month. Collect several small 
   - Blockdammweg 63, 10318 Berlin
   - Mo–Fr 9:00–18:00 Uhr
   - Einzugsgebiet: Berlin & Brandenburg
-- Forms (Netlify Forms `erstgespraech`, `frage`, `workshop`, `warteliste`) and the cookie banner (Silktide, `src/tracking.html`) are GDPR-relevant. Don't change them without being asked. Google Analytics must only load after consent.
+- Forms (Netlify Forms `erstgespraech`, `frage`; `workshop` and `warteliste` while workshops are paused) and the cookie banner (Silktide, `src/tracking.html`) are GDPR-relevant. Don't change them without being asked. Google Analytics must only load after consent.
 - When adding a new service or tool that processes personal data, tell Kathleen that the Datenschutzerklärung needs updating.
 - Follow `SELMA-Design-System.md`:
   - Atkinson Hyperlegible font, body text at least 18 px, contrast at least 4.5:1.

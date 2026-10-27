@@ -2,7 +2,6 @@ import re, pathlib, sys
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 import blog
 import pages
-import workshops
 B = pathlib.Path(__file__).parent
 OUT = B.parent / "preview" / "index.html"  # single-file preview (not deployed)
 LIVE = "https://www.selmazuhause.de"
@@ -28,8 +27,7 @@ ICONS = {
  "plus": '<path d="M5 12h14M12 5v14"/>',
  "user": '<circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/>',
  "calendar": '<rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>',
- "alert": '<circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/>',
-}
+ "alert": '<circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/>',}
 sprite = '<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">' + "".join(
     f'<symbol id="i-{k}" viewBox="0 0 24 24">{v}</symbol>' for k, v in ICONS.items()) + "</svg>"
 
@@ -42,7 +40,6 @@ def render_body():
     body = body.replace("{{BLOG}}", blog.render() + "\n" + pages.render())
     body = body.replace("{{FAQ_START}}", faq.replace("{{FAQ_ID}}", "faq-start").replace("{{FAQ_CONTACT}}", "#kontakt").replace("{{FAQ_BG}}", ""))
     body = body.replace("{{FAQ_LEIST}}", faq.replace("{{FAQ_ID}}", "faq").replace("{{FAQ_CONTACT}}", "#kontakt-form").replace("{{FAQ_BG}}", ""))
-    body = body.replace("{{WS_PAGES}}", workshops.render_pages()).replace("{{WS_CARDS}}", workshops.render_cards()).replace("{{WS_TOPICS}}", workshops.render_topics())
     body = re.sub(r"\{\{i:([a-z]+)\}\}", icon, body)
     body = body.replace("{{ext}}", '<span class="sr-only"> (öffnet in neuem Tab)</span>').replace("{{LIVE}}", LIVE)
     assert "{{" not in body, re.findall(r"\{\{[^}]+\}\}", body)

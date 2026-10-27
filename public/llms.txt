@@ -16,6 +16,7 @@ In English: SELMA Zuhause provides home-based occupational therapy specialised i
 - E-Mail: info@selmazuhause.de
 - Erreichbarkeit: Montag bis Freitag, 9:00 bis 18:00 Uhr
 - Kostenträger: alle gesetzlichen Krankenkassen und privat
+- Erstgespräch: kostenlos und unverbindlich, für Betroffene und Angehörige; per Telefon, Formular oder online über Doctolib buchbar
 - Website: https://www.selmazuhause.de
 
 ## Leistungen
@@ -28,11 +29,12 @@ In English: SELMA Zuhause provides home-based occupational therapy specialised i
 - Angehörigenberatung: Beratung zu Alltagsstrategien, Sicherheit, Hilfsmitteln und Wohnraumanpassung; Einbezug in die Therapie auf Wunsch, um Überlastung vorzubeugen.
 - Videotherapie: Folgetermine nach einem persönlichen Ersttermin auf Wunsch auch online (über RED connect).
 
-## Kostenlose Online-Workshops
+## Online-Beratung (deutschlandweit)
 
-- Live per Video, 45 Minuten, kostenlos, für Menschen mit Parkinson und Angehörige.
-- Themen: Freezing bei Parkinson; Sicher bewegen, Stürze vermeiden; Wohnen mit Parkinson (Hilfsmittel und Wohnraumanpassung).
-- Termine und Anmeldung: https://www.selmazuhause.de/workshops
+- 45 Minuten persönliche Beratung per Video mit Ergotherapeutin Kathleen Olstedt, für Menschen mit Parkinson und Angehörige.
+- Themen: Stürze und unsichere Momente, Freezing und Bewegung, Hilfsmittel und Wohnung, Unterstützung durch Angehörige, nächste Schritte (Ergotherapie vor Ort, Verordnung, Zuschüsse).
+- Keine Verordnung nötig. Preis: 79 €, Selbstzahlerleistung (keine Kassenleistung). Beratung, keine Therapie.
+- Buchung online über Doctolib oder telefonisch: https://www.selmazuhause.de/online-beratung
 
 ## Ablauf (SELMA Programm)
 
@@ -69,7 +71,9 @@ Der Ansatz ist aktivierend und präventiv. Er passt für Menschen mit einer Park
 - [Startseite](https://www.selmazuhause.de/): Überblick über Ansatz, Ablauf und Kosten
 - [Leistungen](https://www.selmazuhause.de/leistungen): Leistungen im Detail und FAQ
 - [Erstgespräch anfragen / Kontakt](https://www.selmazuhause.de/kontakt): Formular, Telefon und E-Mail; Antwort spätestens am nächsten Werktag
-- [Ärztliche Verordnung (GKV)](https://www.selmazuhause.de/verordnung-gkv): was auf der Verordnung für Ergotherapie im Hausbesuch stehen muss
+- [Ärztliche Verordnung](https://www.selmazuhause.de/verordnung-gkv): in drei Schritten zur Verordnung, Checkliste (Muster 13, ICD-10 G20, Diagnosegruppe EN1, sensomotorisch-perzeptive Behandlung als Doppelbehandlung, Hausbesuch ja, 1–2 × wöchentlich), Beispiel-Verordnung und Infoblatt als PDF
+- [Für Ärztinnen und Ärzte](https://www.selmazuhause.de/fuer-aerzte): Angebot und Angaben auf der Verordnung kompakt, Infoblatt für die Praxis
+- [Online-Beratung](https://www.selmazuhause.de/online-beratung): Beratung per Video, deutschlandweit, ohne Verordnung
 - [Patienteninformationen](https://www.selmazuhause.de/patienteninformationen): Behandlungsvertrag, Datenschutz, Einwilligungen, Videotherapie
 - [Jobs](https://www.selmazuhause.de/jobs): offene Stellen für Ergotherapeut:innen in Berlin
 

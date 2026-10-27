@@ -14,10 +14,10 @@
         <li><a href="#ratgeber" data-nav>Ratgeber</a></li>
         <li><a href="#kontakt" data-nav>Kontakt</a></li>
       </ul>
-      <a class="btn btn-primary nav-cta-mobile" href="#kontakt">Erstgespräch anfragen<span class="btn-ic">{{i:arrow}}</span></a>
+      <a class="btn btn-primary nav-cta-mobile" href="#kontakt">Kostenloses Erstgespräch<span class="btn-ic">{{i:arrow}}</span></a>
     </nav>
     <a class="header-phone" href="tel:+493037580867"><span class="hp-ic">{{i:phone}}</span><span class="sr-only">Anrufen: </span><span class="num">030 3758 0867</span></a>
-    <a class="btn btn-primary header-cta" href="#kontakt">Erstgespräch anfragen<span class="btn-ic">{{i:arrow}}</span></a>
+    <a class="btn btn-primary header-cta" href="#kontakt">Kostenloses Erstgespräch<span class="btn-ic">{{i:arrow}}</span></a>
   </div>
 </header>
 
@@ -25,6 +25,20 @@
 
 <!-- ======================= START ======================= -->
 <div data-page id="start" data-title="SELMA Zuhause | Ergotherapie bei Parkinson zu Hause">
+  <!-- Praxisdaten für Suchmaschinen (gleiche Angaben wie im Footer) -->
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "MedicalBusiness",
+   "name": "SELMA Zuhause – Mobile Ergotherapie bei Parkinson",
+   "description": "Auf Parkinson spezialisierte Ergotherapie im Hausbesuch: Bewegungstraining, Sturzprävention, Hilfsmittel und Wohnraumanpassung.",
+   "url": "https://www.selmazuhause.de/", "logo": "https://www.selmazuhause.de/img/logo.webp", "image": "https://www.selmazuhause.de/og-image.png",
+   "telephone": "+49 30 37580867", "email": "info@selmazuhause.de",
+   "address": {"@type": "PostalAddress", "streetAddress": "Blockdammweg 63", "postalCode": "10318", "addressLocality": "Berlin", "addressCountry": "DE"},
+   "geo": {"@type": "GeoCoordinates", "latitude": 52.4845, "longitude": 13.5111},
+   "areaServed": [{"@type": "City", "name": "Berlin"}, {"@type": "State", "name": "Brandenburg"}],
+   "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "18:00"}],
+   "founder": {"@type": "Person", "name": "Kathleen Olstedt", "jobTitle": "Ergotherapeutin"},
+   "sameAs": ["https://www.doctolib.de/einzelpraxis/berlin/selma-zuhause-mobile-ergotherapie", "https://www.instagram.com/selma_parkinson_alltag/", "https://www.linkedin.com/company/selmazuhause/"]}
+  </script>
 
   <section class="hero" aria-labelledby="start-title">
     <div class="wrap">
@@ -32,13 +46,12 @@
         <h1 id="start-title" tabindex="-1">Mobile Ergotherapie bei <span class="accent">Parkinson.</span></h1>
         <div class="hero-lead">
           <p class="lead-1">Alltag stärken. Stürzen vorbeugen.</p>
-          <p class="lead-2">Mit Bewegungsroutinen, die in Ihren Alltag passen. Hilfsmittel und Umbauten nur, wenn Sie sie wirklich brauchen.</p>
         </div>
-        <div class="hero-home">
-          <p class="home-line">{{i:house}}<span>Wir kommen zu Ihnen <span class="hl">nach Hause</span></span></p>
-          <p class="hero-area">Einzugsgebiet aktuell: Berlin &amp; Brandenburg</p>
-        </div>
-        <a class="btn btn-primary" href="#kontakt">Erstgespräch anfragen<span class="btn-ic">{{i:arrow}}</span></a>
+        <ul class="hero-facts">
+          <li>{{i:house}}<span><strong>Wir kommen zu Ihnen <span class="hl">nach Hause</span></strong>Berlin &amp; Brandenburg</span></li>
+          <li>{{i:wallet}}<span><strong>Auf Rezept</strong>Alle Kassen &amp; privat</span></li>
+        </ul>
+        <a class="btn btn-primary" href="#kontakt">Kostenloses Erstgespräch<span class="btn-ic">{{i:arrow}}</span></a>
       </div>
       <div class="hero-media">
         <div class="video-frame">
@@ -58,7 +71,7 @@
       <ul>
         <li class="rv" style="--d:0ms"><span class="t-ic">{{i:house}}</span><span class="t-txt"><span>Hausbesuche in</span> <span>Berlin &amp; Brandenburg</span></span></li>
         <li class="rv" style="--d:80ms"><span class="t-ic">{{i:award}}</span><span class="t-txt"><span>Von zertifizierten</span> <span>Therapeuten</span></span></li>
-        <li class="rv" style="--d:160ms"><span class="t-ic">{{i:wallet}}</span><span class="t-txt"><span>Alle Kassen</span> <span>&amp; privat</span></span></li>
+        <li class="rv" style="--d:160ms"><span class="t-ic">{{i:user}}</span><span class="t-txt"><span>Beratung auch</span> <span>für Angehörige</span></span></li>
         <li class="rv" style="--d:240ms"><span class="t-ic">{{i:heart}}</span><span class="t-txt"><span>Evidenzbasierte</span> <span>Maßnahmen</span></span></li>
       </ul>
     </div>
@@ -104,7 +117,7 @@
           <li class="rv" style="--d:180ms"><span class="p-ic">{{i:check}}</span><div><h3>Erhalten vor kompensieren</h3><p>Fähigkeiten gezielt stärken, statt nur auszugleichen.</p></div></li>
           <li class="rv" style="--d:280ms"><span class="p-ic">{{i:check}}</span><div><h3>Vor Ort statt in der Praxis</h3><p>Therapie dort einsetzen, wo der Alltag stattfindet.</p></div></li>
         </ul>
-        <div class="rv" style="--d:360ms"><a class="btn btn-primary" href="#kontakt">Erstgespräch anfragen<span class="btn-ic">{{i:arrow}}</span></a></div>
+        <div class="rv" style="--d:360ms"><a class="btn btn-primary" href="#kontakt">Kostenloses Erstgespräch<span class="btn-ic">{{i:arrow}}</span></a></div>
       </div>
     </div>
   </section>
@@ -147,7 +160,7 @@
           <p>Für <strong>Privatversicherte und Selbstzahler:innen</strong> orientieren sich die Kosten am <span class="num">1,3</span>-fachen GKV-Satz.</p>
         </div>
       </div>
-      <div class="after-cards rv" style="--d:320ms"><a class="btn btn-ghost" href="#faq">Mehr zu Kosten &amp; Erstattung<span class="btn-ic">{{i:arrow}}</span></a></div>
+      <div class="after-cards btn-row rv" style="--d:320ms"><a class="btn btn-ghost" href="#verordnung-gkv">So bekommen Sie die Verordnung<span class="btn-ic">{{i:arrow}}</span></a><a class="btn btn-ghost" href="#faq">Mehr zu Kosten &amp; Erstattung<span class="btn-ic">{{i:arrow}}</span></a></div>
     </div>
   </section>
 
@@ -208,7 +221,7 @@
     <div class="wrap">
       <h1 id="leistungen-title" class="rv-split" tabindex="-1">Unsere Leistungen</h1>
       <p class="lead rv" style="--d:120ms"><strong>Wir schauen uns Ihren Alltag und Ihre Wohnung genau an und entwickeln daraus gezielte Maßnahmen für mehr Sicherheit und Selbstständigkeit.</strong></p>
-      <p class="lead rv" style="--d:180ms"><strong>Unsere Leistungen erfolgen im Rahmen einer ergotherapeutischen Behandlung im Hausbesuch.</strong></p>
+      <p class="lead rv" style="--d:180ms"><strong>Unsere Leistungen erfolgen im Rahmen einer ergotherapeutischen Behandlung im Hausbesuch in Berlin und Brandenburg.</strong></p>
       <div class="rv" style="--d:240ms"><a class="jump" href="#faq">{{i:arrow}}Was übernimmt die Kasse?</a></div>
     </div>
   </section>
@@ -337,96 +350,151 @@
   </section>
 </div>
 
-<!-- ======================= WORKSHOPS (Übersicht). Themenseiten und Termine: src/workshops.py + content/workshops.json ======================= -->
-<div data-page id="workshops" data-title="Kostenlose Online-Workshops bei Parkinson · SELMA Zuhause" hidden>
-  <section class="section" aria-labelledby="workshops-title">
+<!-- ======================= VERORDNUNG (alte URL /verordnung-gkv bleibt) ======================= -->
+<div data-page id="verordnung-gkv" data-title="Verordnung für Ergotherapie bei Parkinson · SELMA Zuhause" hidden>
+  <section class="page-head bg-mint" aria-labelledby="verordnung-title">
     <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Live per Video · kostenlos</p>
-        <h1 id="workshops-title" class="rv-split" tabindex="-1">Kostenlose Online-Workshops bei Parkinson</h1>
-        <p class="rv" style="--d:120ms">45 Minuten, live per Video, für Menschen mit Parkinson und ihre Angehörigen. Wählen Sie ein Thema und buchen Sie Ihren Termin.</p>
+      <p class="eyebrow rv">Verordnungshilfe</p>
+      <h1 id="verordnung-title" class="rv-split" tabindex="-1">So bekommen Sie die Verordnung</h1>
+      <p class="lead rv" style="--d:120ms">Für Ergotherapie bei Parkinson im Hausbesuch brauchen Sie eine ärztliche Verordnung. Ausstellen kann sie Ihre neurologische oder Ihre hausärztliche Praxis. Die Krankenkasse übernimmt dann die Kosten, bis auf die gesetzliche Zuzahlung.</p>
+      <div class="btn-row rv" style="--d:180ms">
+        <a class="btn btn-primary" href="/selma-zuhause-flyer.pdf" type="application/pdf">Infoblatt zum Ausdrucken (PDF)<span class="btn-ic">{{i:arrow}}</span></a>
+        <a class="btn btn-ghost" href="#kontakt">Kostenloses Erstgespräch</a>
       </div>
-      {{WS_CARDS}}
     </div>
   </section>
 
-  <section class="section bg-mist" aria-labelledby="ws-ablauf-title">
+  <section class="section" aria-labelledby="vo-schritte-title">
     <div class="wrap">
-      <div class="section-head">
-        <h2 id="ws-ablauf-title" class="rv-split">So einfach geht es</h2>
-      </div>
+      <div class="section-head"><h2 id="vo-schritte-title" class="rv-split">In drei Schritten zum Start</h2></div>
       <ol class="ws-steps">
-        <li class="rv" style="--d:0ms"><span class="phase-no" aria-hidden="true">1</span><div><h3>Termin wählen</h3><p>Sie wählen Thema und Termin und melden sich mit Namen und E-Mail an.</p></div></li>
-        <li class="rv" style="--d:120ms"><span class="phase-no" aria-hidden="true">2</span><div><h3>Link erhalten</h3><p>Wir schicken Ihnen eine Bestätigung mit dem Zugangslink per E-Mail.</p></div></li>
-        <li class="rv" style="--d:240ms"><span class="phase-no" aria-hidden="true">3</span><div><h3>Live dabei sein</h3><p>Sie klicken auf den Link, machen mit und stellen Ihre Fragen.</p></div></li>
+        <li class="rv" style="--d:0ms"><span class="phase-no" aria-hidden="true">1</span><div><h3>Infoblatt mitnehmen</h3><p>Drucken Sie unser Infoblatt aus oder zeigen Sie diese Seite in der Arztpraxis. Dort steht, was auf die Verordnung gehört.</p></div></li>
+        <li class="rv" style="--d:120ms"><span class="phase-no" aria-hidden="true">2</span><div><h3>Verordnung ausstellen lassen</h3><p>Ihre Ärztin oder Ihr Arzt stellt die Verordnung für Ergotherapie aus. Voraussetzung ist eine gesicherte Parkinson-Diagnose.</p></div></li>
+        <li class="rv" style="--d:240ms"><span class="phase-no" aria-hidden="true">3</span><div><h3>Bei uns melden</h3><p>Rufen Sie uns an oder schreiben Sie uns. Der erste Termin muss innerhalb von 28 Tagen nach dem Ausstellen stattfinden.</p></div></li>
       </ol>
     </div>
   </section>
 
-  <section class="section founder" aria-labelledby="ws-founder-title">
-    <div class="wrap">
-      <div class="portrait">
-        <div class="pblock" data-par="0.1" aria-hidden="true"></div>
-        <div class="pimg rv-img"><img data-par="0.05" src="img/portrait.webp" width="760" height="869" alt="Porträt von Kathleen Olstedt" loading="lazy"></div>
-      </div>
-      <div>
-        <p class="eyebrow rv">Wer die Workshops leitet</p>
-        <h2 id="ws-founder-title" class="rv-split">Kathleen Olstedt</h2>
-        <p class="role rv" style="--d:120ms">Leiterin SELMA Zuhause · staatl. anerkannte Ergotherapeutin</p>
-        <div class="bio rv" style="--d:200ms">
-          <p>SELMA Zuhause ist auf <strong>mobile Ergotherapie bei Parkinson</strong> spezialisiert. Wir begleiten Menschen mit Parkinson direkt in ihrem häuslichen Umfeld, und die Erfahrungen aus dieser täglichen Arbeit fließen in die Workshops ein.</p>
-          <p>Zertifiziert in <strong>LSVT BIG®</strong>, <strong>PWR!Moves®</strong>, Wohnraumanpassung (<strong>CAPS</strong>) und Sturzprävention.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section bg-peach" id="warteliste" aria-labelledby="ws-wl-title">
-    <div class="wrap ws-form-wrap">
-      <div class="section-head">
-        <h2 id="ws-wl-title" class="rv-split">Kein passender Termin?</h2>
-        <p class="rv" style="--d:120ms">Wir sagen Ihnen Bescheid, sobald neue Termine feststehen.</p>
-      </div>
-      <div class="form-card rv">
-        <form id="form-wl" novalidate data-done="Vielen Dank! Wir melden uns, sobald neue Termine feststehen.">
-          <div class="form-summary" hidden tabindex="-1"></div>
-          <input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value="">
-          <fieldset class="field ws-slots ws-topics">
-            <legend>Welches Thema interessiert Sie?</legend>
-            {{WS_TOPICS}}
-          </fieldset>
-          <div class="form-grid">
-            <div class="field">
-              <label for="wl-vorname">Vorname</label>
-              <input id="wl-vorname" name="vorname" type="text" autocomplete="given-name" required data-msg="Bitte geben Sie Ihren Vornamen an.">
-            </div>
-            <div class="field">
-              <label for="wl-nachname">Nachname</label>
-              <input id="wl-nachname" name="nachname" type="text" autocomplete="family-name" required data-msg="Bitte geben Sie Ihren Nachnamen an.">
-            </div>
-            <div class="field full">
-              <label for="wl-email">E-Mail</label>
-              <input id="wl-email" name="email" type="email" autocomplete="email" inputmode="email" required data-msg="Bitte geben Sie Ihre E-Mail-Adresse an, z. B. name@beispiel.de.">
-            </div>
-          </div>
-          <p class="fineprint ws-privacy">Wir nutzen Ihre Angaben nur, um Sie über neue Termine zu diesem Thema zu informieren. Ihre Daten geben wir nicht weiter. Mehr in der <a href="#datenschutzerklarung">Datenschutzerklärung</a>.</p>
-          <div class="form-foot">
-            <button class="btn btn-primary" type="submit">Bei neuen Terminen informieren<span class="btn-ic">{{i:arrow}}</span></button>
-          </div>
-        </form>
-      </div>
-    </div>
+  <section class="section bg-mist" aria-labelledby="vo-check-title">
+    <div class="wrap"><div class="prose">
+      <h2 id="vo-check-title">Checkliste: Das gehört auf die Verordnung</h2>
+      <ul class="checklist">
+        <li><strong>Muster 13</strong>, Ergotherapie angekreuzt</li>
+        <li><strong>Diagnose Parkinson</strong> mit ICD-10-Code G20, gegebenenfalls mit Untercode (zum Beispiel G20.0, G20.1 oder G20.11)</li>
+        <li><strong>Diagnosegruppe EN1</strong></li>
+        <li><strong>Sensomotorisch-perzeptive Behandlung</strong> mit dem Zusatz „Doppelbehandlung“</li>
+        <li><strong>Hausbesuch: Ja</strong></li>
+        <li><strong>Therapiefrequenz</strong> 1–2 × wöchentlich</li>
+      </ul>
+      <p class="note">Ob ein Hausbesuch verordnet wird, entscheidet Ihre Ärztin oder Ihr Arzt aus medizinischen Gründen. Sind Sie unsicher, sprechen Sie uns im Erstgespräch an.</p>
+      <h2>Beispiel-Verordnung</h2>
+      <figure class="fig-doc"><img src="img/verordnung-beispiel.webp" width="1086" height="1448" alt="Beispiel einer ausgefüllten Heilmittelverordnung (Muster 13), quer bedruckt mit „Muster“: Ergotherapie angekreuzt, ICD-10-Code G20.11, Diagnosegruppe EN1, Leitsymptomatik a, Heilmittel „Sensomotorisch-perzeptive Behandlung (Doppelbehandlung)“ mit 20 Behandlungseinheiten, Hausbesuch „ja“ angekreuzt, Therapiefrequenz 1–2 x wöchentlich." loading="lazy"></figure>
+      <h2>Privat versichert?</h2>
+      <p>Für die Erstattung durch Ihre private Versicherung brauchen Sie in der Regel ebenfalls eine ärztliche Verordnung. Klären Sie die Kostenübernahme am besten vorher. Wir erstellen Ihnen gern einen Kostenvoranschlag.</p>
+      <div class="article-cta"><span>Noch keine Verordnung? Im kostenlosen Erstgespräch klären wir, wie Sie dazu kommen.</span><a class="btn" href="#kontakt">Erstgespräch anfragen<span class="btn-ic">{{i:arrow}}</span></a></div>
+    </div></div>
   </section>
 </div>
 
-{{WS_PAGES}}
+<!-- ======================= FÜR ÄRZTINNEN UND ÄRZTE ======================= -->
+<div data-page id="fuer-aerzte" data-title="Für Ärztinnen und Ärzte · SELMA Zuhause" hidden>
+  <section class="page-head bg-mint" aria-labelledby="aerzte-title">
+    <div class="wrap">
+      <p class="eyebrow rv">Für Ärztinnen und Ärzte</p>
+      <h1 id="aerzte-title" class="rv-split" tabindex="-1">Ergotherapie bei Parkinson im Hausbesuch</h1>
+      <p class="lead rv" style="--d:120ms">SELMA Zuhause ist eine auf Parkinson spezialisierte Ergotherapie-Praxis. Wir behandeln ausschließlich im Hausbesuch, in Berlin und Brandenburg. Hier finden Sie, was wir anbieten und welche Angaben die Verordnung braucht.</p>
+      <div class="btn-row rv" style="--d:180ms">
+        <a class="btn btn-primary" href="/selma-zuhause-flyer.pdf" type="application/pdf">Infoblatt für Ihre Praxis (PDF)<span class="btn-ic">{{i:arrow}}</span></a>
+        <a class="btn btn-ghost" href="tel:+493037580867">030 3758 0867</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="aerzte-angebot-title">
+    <div class="wrap"><div class="prose">
+      <h2 id="aerzte-angebot-title">Was wir anbieten</h2>
+      <ul>
+        <li><strong>Bewegung und Transfers:</strong> Training alltagsrelevanter Bewegungen mit Ansätzen aus LSVT BIG® und PWR!Moves®, Strategien bei Freezing.</li>
+        <li><strong>Sturzprävention:</strong> Sturzrisiken im Alltag und in der Wohnung erkennen und gezielt senken.</li>
+        <li><strong>Hilfsmittel und Wohnraum:</strong> Auswahl und Erprobung vor Ort, therapeutische Berichte für Anträge bei Kranken- und Pflegekasse.</li>
+        <li><strong>Angehörige:</strong> Anleitung und Beratung im Alltag, um Überlastung vorzubeugen.</li>
+      </ul>
+      <p>Die Behandlung findet in der Regel einmal wöchentlich als Doppelbehandlung statt (90 Minuten). Einzelne Einheiten können als <a href="#videotherapie">Videotherapie</a> erfolgen. Mit Einwilligung Ihrer Patientinnen und Patienten stimmen wir uns mit Ihrer Praxis ab.</p>
+      <p class="more-link"><a href="#s2k-leitlinie-parkinson-ergotherapie">Was die Leitlinie zur Ergotherapie bei Parkinson empfiehlt{{i:arrow}}</a></p>
+
+      <h2>Angaben auf der Verordnung</h2>
+      <ul class="checklist">
+        <li><strong>Muster 13</strong>, Ergotherapie</li>
+        <li><strong>Diagnose:</strong> ICD-10 G20, gegebenenfalls mit Untercode</li>
+        <li><strong>Diagnosegruppe:</strong> EN1</li>
+        <li><strong>Heilmittel:</strong> Sensomotorisch-perzeptive Behandlung, Zusatz „Doppelbehandlung“</li>
+        <li><strong>Hausbesuch:</strong> Ja</li>
+        <li><strong>Therapiefrequenz:</strong> 1–2 × wöchentlich</li>
+      </ul>
+      <p class="more-link"><a href="#verordnung-gkv">Beispiel-Verordnung ansehen{{i:arrow}}</a></p>
+      <div class="article-cta"><span>Sie möchten Infoblätter für Ihr Wartezimmer oder haben Fragen? Rufen Sie uns an oder schreiben Sie an info@selmazuhause.de.</span><a class="btn" href="mailto:info@selmazuhause.de">E-Mail schreiben<span class="btn-ic">{{i:arrow}}</span></a></div>
+    </div></div>
+  </section>
+</div>
+
+<!-- ======================= ONLINE-BERATUNG (Einsteiger-Angebot, Buchung über Doctolib) ======================= -->
+<div data-page id="online-beratung" data-title="Online-Beratung bei Parkinson · SELMA Zuhause" hidden>
+  <section class="page-head bg-mint" aria-labelledby="ob-title">
+    <div class="wrap">
+      <p class="eyebrow rv">Per Video · deutschlandweit</p>
+      <h1 id="ob-title" class="rv-split" tabindex="-1">Online-Beratung bei Parkinson</h1>
+      <p class="lead rv" style="--d:120ms">45 Minuten persönliche Beratung per Video mit Ergotherapeutin Kathleen Olstedt. Für Menschen mit Parkinson und ihre Angehörigen. Sie brauchen keine Verordnung.</p>
+      <p class="ob-price rv" style="--d:160ms"><strong>79&nbsp;€</strong> · Sie zahlen selbst</p>
+      <div class="btn-row rv" style="--d:200ms">
+        <a class="btn btn-primary" href="https://www.doctolib.de/einzelpraxis/berlin/selma-zuhause-mobile-ergotherapie/booking?pid=practice-884501" target="_blank" rel="noopener">Termin online buchen<span class="btn-ic">{{i:arrow}}</span>{{ext}}</a>
+        <a class="btn btn-ghost" href="tel:+493037580867">Lieber anrufen: <span class="num">030 3758 0867</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ob-themen-title">
+    <div class="wrap"><div class="prose">
+      <h2 id="ob-themen-title">Dafür ist die Beratung gedacht</h2>
+      <ul>
+        <li><strong>Stürze und unsichere Momente:</strong> Was Sie im Alltag sofort tun können.</li>
+        <li><strong>Freezing und Bewegung:</strong> Strategien und Übungen, die zu Ihnen passen.</li>
+        <li><strong>Hilfsmittel und Wohnung:</strong> Was sinnvoll ist und was Sie sich sparen können.</li>
+        <li><strong>Als Angehörige:</strong> Wie Sie unterstützen, ohne sich selbst zu überlasten.</li>
+        <li><strong>Wie es weitergeht:</strong> Ergotherapie vor Ort, Verordnung und Zuschüsse.</li>
+      </ul>
+    </div></div>
+  </section>
+
+  <section class="section bg-mist" aria-labelledby="ob-ablauf-title">
+    <div class="wrap">
+      <div class="section-head"><h2 id="ob-ablauf-title" class="rv-split">So läuft es ab</h2></div>
+      <ol class="ws-steps">
+        <li class="rv" style="--d:0ms"><span class="phase-no" aria-hidden="true">1</span><div><h3>Termin wählen</h3><p>Sie buchen online über Doctolib oder rufen uns an.</p></div></li>
+        <li class="rv" style="--d:120ms"><span class="phase-no" aria-hidden="true">2</span><div><h3>Link erhalten</h3><p>Sie bekommen den Link per E-Mail. Sie brauchen ein Smartphone, Tablet oder einen Computer mit Kamera.</p></div></li>
+        <li class="rv" style="--d:240ms"><span class="phase-no" aria-hidden="true">3</span><div><h3>Beratung per Video</h3><p>Wir sprechen über Ihre Fragen. Angehörige dürfen gern dabei sein.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ob-wissen-title">
+    <div class="wrap"><div class="prose">
+      <h2 id="ob-wissen-title">Gut zu wissen</h2>
+      <ul>
+        <li>Die Online-Beratung ist eine Beratung, keine Therapie. Sie ersetzt keine ärztliche Behandlung.</li>
+        <li>Die Krankenkasse übernimmt die Kosten nicht.</li>
+        <li>Sie wohnen in Berlin oder Brandenburg? Dann ist oft Ergotherapie im Hausbesuch auf Verordnung möglich. Das klären wir gern im <a href="#kontakt">kostenlosen Erstgespräch</a>.</li>
+      </ul>
+      <div class="article-cta"><span>Termin für Ihre Online-Beratung</span><a class="btn" href="https://www.doctolib.de/einzelpraxis/berlin/selma-zuhause-mobile-ergotherapie/booking?pid=practice-884501" target="_blank" rel="noopener">Online buchen<span class="btn-ic">{{i:arrow}}</span>{{ext}}</a></div>
+    </div></div>
+  </section>
+</div>
 
 <!-- ======================= KONTAKT ======================= -->
 <div data-page id="kontakt" data-title="Kontakt · SELMA Zuhause" hidden>
   <section class="page-head bg-mint" aria-labelledby="kontakt-title">
     <div class="wrap">
-      <h1 id="kontakt-title" class="rv-split" tabindex="-1">Erstgespräch anfragen</h1>
-      <p class="lead rv" style="--d:120ms">Sie haben die Wahl. Füllen Sie das Formular aus, rufen Sie direkt an (<strong class="num">030 37580867</strong>) oder schreiben Sie uns eine E-Mail (<strong>info@selmazuhause.de</strong>). <strong>Wir melden uns spätestens am nächsten Werktag</strong>.</p>
+      <h1 id="kontakt-title" class="rv-split" tabindex="-1">Kostenloses Erstgespräch</h1>
+      <p class="lead rv" style="--d:120ms">Unverbindlich, für Betroffene und Angehörige. <strong>Wir melden uns spätestens am nächsten Werktag.</strong></p>
     </div>
   </section>
 
@@ -461,9 +529,10 @@
       <aside class="contact-card rv" style="--d:160ms" aria-labelledby="kc-title">
         <h2 id="kc-title">Kontakt:</h2>
         <ul class="contact-list">
-          <li><span class="c-ic">{{i:phone}}</span><a class="num" href="tel:+493037580867">030 37580867</a></li>
+          <li><span class="c-ic">{{i:phone}}</span><a class="num" href="tel:+493037580867">030 3758 0867</a></li>
           <li><span class="c-ic">{{i:pin}}</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Blockdammweg+63%2C+10318+Berlin" target="_blank" rel="noopener">Blockdammweg 63, 10318 Berlin{{ext}}</a></li>
           <li><span class="c-ic">{{i:mail}}</span><a href="mailto:info@selmazuhause.de">info@selmazuhause.de</a></li>
+          <li><span class="c-ic">{{i:calendar}}</span><a href="https://www.doctolib.de/einzelpraxis/berlin/selma-zuhause-mobile-ergotherapie/booking?pid=practice-884501" target="_blank" rel="noopener" title="Erstgespräch online über Doctolib buchen">Online buchen{{ext}}</a></li>
         </ul>
       </aside>
     </div>
@@ -499,6 +568,9 @@
           <li><a href="#start">Start</a></li>
           <li><a href="#leistungen">Leistungen</a></li>
           <li><a href="#ratgeber">Ratgeber</a></li>
+          <li><a href="#online-beratung">Online-Beratung</a></li>
+          <li><a href="#verordnung-gkv">Verordnung</a></li>
+          <li><a href="#fuer-aerzte">Für Ärztinnen und Ärzte</a></li>
           <li><a href="#patienteninformationen">AGB / Verträge</a></li>
           <li><a href="#jobs">Jobs</a></li>
         </ul>

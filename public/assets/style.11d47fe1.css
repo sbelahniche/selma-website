@@ -185,13 +185,12 @@ a:hover{color:var(--teal-deep);text-decoration-thickness:3px}
 .hero h1{font-size:var(--fs-display);line-height:1;letter-spacing:-.035em}
 .hero h1 .accent{color:var(--teal-strong);display:inline-block}
 .hero-lead{font-size:clamp(1.3125rem,1.05rem + .75vw,1.625rem);line-height:1.4;color:var(--navy)}
-.hero-lead .lead-2{margin-top:6px;font-size:.82em;color:var(--ink)}
-.hero-home{display:grid;gap:14px;justify-items:start}
-.hero-home p + p{margin-top:0}
-.home-line{display:flex;align-items:center;gap:11px;margin-top:1em;font-size:clamp(1.25rem,1rem + .68vw,1.5625rem);font-weight:800;line-height:1.25;color:var(--navy)}
-.home-line .icon{color:var(--teal-strong)}
+/* Zwei Fakten mit Symbol: Titel fett, darunter eine kleine Zeile */
+.hero-facts{list-style:none;display:grid;gap:18px;margin-block:8px 4px}
+.hero-facts li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;font-size:var(--fs-small);line-height:1.4;color:var(--ink)}
+.hero-facts .icon{width:28px;height:28px;margin-top:1px;color:var(--teal-strong)}
+.hero-facts strong{display:block;margin-bottom:2px;font-size:clamp(1.25rem,1rem + .68vw,1.5625rem);font-weight:800;line-height:1.25;color:var(--navy)}
 .hl{white-space:nowrap;padding-inline:.05em;margin-inline:-.05em;background:linear-gradient(var(--peach),var(--peach)) 0 calc(100% - .08em)/100% .4em no-repeat}
-.hero-area{font-size:var(--fs-small);color:var(--ink)}
 
 .hero-media{position:relative;justify-self:end;width:min(100%,540px)}
 .hero-media::before{
@@ -371,6 +370,9 @@ a.chip:hover{background:var(--mint);color:var(--navy)}
 .page-head .lead + p{margin-top:16px;max-width:60ch}
 .page-head .jump{display:inline-flex;align-items:center;gap:10px;margin-top:20px;min-height:48px;font-weight:700}
 .page-head .jump .icon{width:22px;height:22px}
+.page-head .btn-row{margin-top:28px}
+.ob-price{font-size:var(--fs-lead);font-weight:700;color:var(--navy)}
+.ob-price strong{font-size:1.25em;font-weight:800}
 
 /* Leistungen */
 .step-title .step-label{display:block;font-family:var(--mono);font-weight:600;font-size:1rem;letter-spacing:.02em;color:var(--teal-strong);margin-bottom:10px}

@@ -1,4 +1,5 @@
-"""Builds Verordnung, AGB & Verträge (with its documents), Jobs, Impressum and Datenschutz pages from the exported live content."""
+"""Builds AGB & Verträge (with its documents), Jobs, Impressum and Datenschutz pages from the exported live content.
+The Verordnung page now lives in body.html."""
 import json, re
 from bs4 import BeautifulSoup, NavigableString, Tag
 
@@ -22,13 +23,8 @@ ROUTES = {
     "/kontakt": "kontakt", "/leistungen": "leistungen", "/ratgeber": "ratgeber", "/": "start",
 }
 TITLES = {  # browser-tab titles (live titles, harmonised)
-    "/verordnung-gkv": "Verordnung (GKV) | SELMA Zuhause",
     "/impressum": "Impressum | SELMA Zuhause",
 }
-VERORDNUNG_IMG = ("verordnung-beispiel.webp", 1086, 1448,
-    "Beispiel einer ausgefüllten Heilmittelverordnung (Muster 13), quer bedruckt mit „Muster“: Ergotherapie angekreuzt, "
-    "ICD-10-Code G20.11, Diagnosegruppe EN1, Leitsymptomatik a, Heilmittel „Sensomotorisch-perzeptive Behandlung "
-    "(Doppelbehandlung)“ mit 20 Behandlungseinheiten, Hausbesuch „ja“ angekreuzt, Therapiefrequenz 1–2 x wöchentlich.")
 
 
 def _clean_text(html):
@@ -47,30 +43,6 @@ def transform(path, html):
     for t in soup.find_all(["script", "style"]): t.decompose()
     for d in soup.find_all(["div", "span"]):
         if d.name == "div": d.unwrap()
-
-    if path == "/verordnung-gkv":
-        h1 = soup.find("h1")
-        if h1: h1.decompose()
-        img = soup.find("img")
-        name, w, h, alt = VERORDNUNG_IMG
-        fig = soup.new_tag("figure", attrs={"class": "fig fig-doc"})
-        fig.append(soup.new_tag("img", attrs={"src": "img/" + name, "width": str(w), "height": str(h), "alt": alt, "loading": "lazy"}))
-        img.replace_with(fig)
-        # "☐ ..." lines -> a real checklist
-        for p in soup.find_all("p"):
-            if "☐" in p.get_text():
-                ul = soup.new_tag("ul", attrs={"class": "checklist"})
-                li = soup.new_tag("li")
-                for c in list(p.contents):
-                    if isinstance(c, Tag) and c.name == "br":
-                        if li.get_text().strip(): ul.append(li)
-                        li = soup.new_tag("li"); continue
-                    if isinstance(c, NavigableString) and "☐" in c:
-                        c = NavigableString(c.replace("☐", "").lstrip())
-                        if not str(c): continue
-                    li.append(c.extract() if hasattr(c, "parent") and c.parent is not None else c)
-                if li.get_text().strip(): ul.append(li)
-                p.replace_with(ul)
 
     if path == "/agb":
         h = soup.find(["h5", "h4"])
@@ -126,8 +98,7 @@ def transform(path, html):
 
 
 def title_parts(p):
-    """(main, sub) from the live title block; AGB and Verordnung carry their heading in the content."""
-    if p["path"] == "/verordnung-gkv": return "Verordnung (GKV)", None
+    """(main, sub) from the live title block; AGB carries its heading in the content."""
     if p["path"] == "/agb": return "Hinweis zu den AGB", None
     s = BeautifulSoup(_clean_text(p["title"]), "html.parser")
     h1 = s.find("h1")
