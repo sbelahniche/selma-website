@@ -16,7 +16,7 @@ In English: SELMA Zuhause provides home-based occupational therapy specialised i
 - E-Mail: info@selmazuhause.de
 - Erreichbarkeit: Montag bis Freitag, 9:00 bis 18:00 Uhr
 - Kostenträger: alle gesetzlichen Krankenkassen und privat
-- Erstgespräch: kostenlos und unverbindlich, für Betroffene und Angehörige; per Telefon oder Formular. Ein Hausbesuch kann auch online über Doctolib angefragt werden
+- Erstgespräch: kostenlos und unverbindlich (15 Minuten), für Betroffene und Angehörige, die Ergotherapie im Hausbesuch in Berlin oder Brandenburg möchten; per Telefon oder Formular. Ein Hausbesuch kann auch online über Doctolib angefragt werden
 - Website: https://www.selmazuhause.de
 
 ## Leistungen
@@ -31,9 +31,9 @@ In English: SELMA Zuhause provides home-based occupational therapy specialised i
 
 ## Online-Beratung (deutschlandweit)
 
-- 60 Minuten persönliche Beratung per Video mit Ergotherapeutin Kathleen Olstedt, für Menschen mit Parkinson und Angehörige.
-- Themen: Stürze und unsichere Momente, Freezing und Bewegung, Hilfsmittel und Wohnung, Unterstützung durch Angehörige, nächste Schritte (Ergotherapie vor Ort, Verordnung, Zuschüsse).
-- Keine Verordnung nötig. Selbstzahlerleistung (keine Kassenleistung), Preis siehe Doctolib. Beratung, keine Therapie.
+- 60 Minuten persönliche Beratung per Video mit Ergotherapeutin Kathleen Olstedt, für Menschen mit Parkinson und für Angehörige; Angehörige können die Beratung auch allein buchen.
+- Themen: Stürze und unsichere Momente, Freezing und Bewegung, Hilfsmittel und Wohnung, Unterstützung durch Angehörige, nächste Schritte (Therapie, Reha, lokale Angebote, mögliche Förderungen).
+- Keine Verordnung nötig. Kostenpflichtige Selbstzahlerleistung (keine Kassenleistung); der Preis wird bei der Buchung über Doctolib vor Abschluss angezeigt. Beratung, keine Therapie.
 - Buchung online über Doctolib oder telefonisch: https://www.selmazuhause.de/online-beratung
 
 ## Ablauf (SELMA Programm)

@@ -363,7 +363,7 @@ a.chip:hover{background:var(--mint);color:var(--navy)}
 .page-head{padding-block:clamp(48px,7vw,104px) clamp(40px,5vw,72px)}
 .page-head h1{max-width:18ch}
 .page-head .lead{margin-top:24px;font-size:var(--fs-lead);line-height:1.5;color:var(--navy);max-width:60ch}
-.page-head .lead + p{margin-top:16px;max-width:60ch}
+.page-head .lead ~ p{margin-top:16px;max-width:60ch}
 .page-head .jump{display:inline-flex;align-items:center;gap:10px;margin-top:20px;min-height:48px;font-weight:700}
 .page-head .jump .icon{width:22px;height:22px}
 .page-head .btn-row{margin-top:28px}
