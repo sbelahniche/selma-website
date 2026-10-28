@@ -382,8 +382,6 @@ a.chip:hover{background:var(--mint);color:var(--navy)}
 .teaser .btn{white-space:nowrap}
 @media (max-width:760px){.teaser-card{grid-template-columns:auto minmax(0,1fr)}.teaser-card .btn{grid-column:1 / -1;justify-self:start}}
 @media (max-width:420px){.teaser-card{grid-template-columns:minmax(0,1fr);padding:22px 20px}}
-.ob-price{font-size:var(--fs-lead);font-weight:700;color:var(--navy)}
-.ob-price strong{font-size:1.25em;font-weight:800}
 
 /* Leistungen */
 .step-title .step-label{display:block;font-family:var(--mono);font-weight:600;font-size:1rem;letter-spacing:.02em;color:var(--teal-strong);margin-bottom:10px}
