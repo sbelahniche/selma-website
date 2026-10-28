@@ -25,7 +25,7 @@ META = {
     "s2k-leitlinie-parkinson-ergotherapie": dict(
         cat="grundlagen-leitlinie", author="Kathleen Olstedt", thumb="blog-leitlinie.webp", tw=1100, th=733,
         hero=(1200, 800), alt="Gedruckte S2k-Leitlinie Parkinson der AWMF auf einem Holztisch",
-        excerpt="Die S2k-Leitlinie Parkinson-Krankheit empfiehlt Ergotherapie ausdrücklich als Teil der strukturierten Versorgung. Was das konkret im Alltag bedeutet, und warum Hausbesuche klinisch sinnvoll sind, findet sich in diesem Artikel."),
+        excerpt="Die S2k-Leitlinie Parkinson-Krankheit empfiehlt Ergotherapie bei Einschränkungen im Alltag, im Beruf oder an Armen und Händen. Für wen das gilt, wie viel Therapie sinnvoll ist und was Studien zeigen, lesen Sie in diesem Artikel."),
     "parkinson-medikamente-nebenwirkungen-alltag": dict(
         cat="medikamente-alltag", author="Kathleen Olstedt", thumb="blog-medikamente.webp", tw=900, th=506,
         hero=(1200, 675), alt="Bunte Tabletten und eine umgekippte Medikamentendose auf blauem Grund",
@@ -33,7 +33,7 @@ META = {
     "pwr-moves-parkinson-training": dict(
         cat="bewegung-training", author="Kathleen Olstedt", thumb="blog-pwr.webp", tw=900, th=600,
         hero=(1200, 800), alt="Älterer Mann geht mit großem Schritt durch die offene Haustür nach draußen",
-        excerpt="PWR!Moves® ist ein evidenzbasiertes Bewegungsprogramm, das gezielt die Fähigkeiten trainiert, die Parkinson am stärksten einschränkt. Hier erfahren Sie, was hinter dem Programm steckt, wie es sich von LSVT BIG® unterscheidet und was Sie selbst täglich tun können."),
+        excerpt="PWR!Moves® ist ein Bewegungsprogramm, das speziell für Menschen mit Parkinson entwickelt wurde. Hier erfahren Sie, was dahintersteckt, wie es sich von LSVT BIG® unterscheidet und was die Forschung bisher zeigt."),
     "freezing-bei-parkinson-hilfsmittel-im-uberblick": dict(
         cat="hilfsmittel-wohnraum", author=None, thumb="blog-freezing.webp", tw=900, th=506,
         hero=(1200, 675), alt="Schuhe mit Laser-Aufsatz projizieren grüne Linien auf einen Holzboden",
@@ -41,7 +41,7 @@ META = {
     "lsvt-big": dict(
         cat="bewegung-training", author=None, thumb="blog-lsvt.webp", tw=900, th=635,
         hero=(1024, 722), alt="Älterer Mann macht im Wohnzimmer einen großen Ausfallschritt mit ausgestreckten Armen",
-        excerpt="Wir zeigen, wie LSVT BIG® eingesetzt wird, für wen das Programm laut Forschung am wirksamsten ist und wie es helfen kann, Bewegungsfreiheit, Alltagssicherheit und Selbstständigkeit länger zu erhalten."),
+        excerpt="Wir zeigen, wie LSVT BIG® abläuft, was die Forschung bisher zeigt und wie das Training im Alltag helfen kann."),
 }
 
 INLINE_IMG = {
