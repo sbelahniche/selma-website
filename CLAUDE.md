@@ -28,7 +28,7 @@ Each push costs 15 of 300 free Netlify credits per month. Collect several small 
 | Ratgeber articles (blog) | `src/content/articles.json` (images: `src/img/art-<slug>.webp`) |
 | Info pages: AGB, Verträge, Jobs, Impressum, Datenschutz, Videotherapie … | `src/content/pages.json` |
 | Downloads (flyer with Verordnungshilfe: `/selma-zuhause-flyer.pdf`) | `src/static/` |
-| Online booking (Erstgespräch, Hausbesuch, Online-Beratung) | Doctolib, linked from Kontakt and Online-Beratung pages |
+| Online booking (Hausbesuch anfragen, Online-Beratung) | Doctolib. Kontakt links to the general booking; Start teaser and Online-Beratung link straight to the visit type with `vmids[]=17267359` |
 | Workshops: **paused since Oct 2026**, pages not built, old URLs redirect (302) in `_redirects`. To bring them back, restore the overview page and `{{WS_…}}` placeholders in `body.html` and the `workshops` calls in `build.py` from git history (before commit "Workshops pausiert"), then remove the 302s | `src/content/workshops.json`, `src/workshops.py` (kept) |
 | Page titles, meta descriptions, noindex (SEO) | `src/content/seo.json` |
 | Design (colors, spacing) | `src/style.css`, documented in `SELMA-Design-System.md` |
