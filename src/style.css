@@ -275,6 +275,7 @@ a:hover{color:var(--teal-deep);text-decoration-thickness:3px}
 /* Kosten (dark) */
 .kosten{background:var(--navy);color:#e8f3f5;--focus:var(--peach)}
 .kosten h2{color:#fff}
+.kosten .section-head p{color:#e8f3f5}
 .kosten strong{color:var(--peach)}
 .kosten-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid rgba(205,239,240,.28)}
 .kosten-cols .kosten-col{padding:28px 32px 0 0}
