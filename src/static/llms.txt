@@ -72,7 +72,8 @@ Der Ansatz ist aktivierend und präventiv. Er passt für Menschen mit einer Park
 
 - [Startseite](https://www.selmazuhause.de/): Überblick über Ansatz, Ablauf und Kosten
 - [Leistungen](https://www.selmazuhause.de/leistungen): Leistungen im Detail und FAQ
-- [Erstgespräch anfragen / Kontakt](https://www.selmazuhause.de/kontakt): Formular, Telefon und E-Mail; Antwort spätestens am nächsten Werktag
+- [Kostenloses Erstgespräch](https://www.selmazuhause.de/erstgespraech): Anfrage per Formular oder Telefon; 15 Minuten, unverbindlich; Antwort spätestens am nächsten Werktag
+- [Kontakt](https://www.selmazuhause.de/kontakt): Telefon, E-Mail, Adresse, Sprechzeiten und Formular für allgemeine Fragen
 - [Ärztliche Verordnung](https://www.selmazuhause.de/verordnung-gkv): in drei Schritten zur Verordnung, Checkliste (Muster 13, ICD-10 G20, Diagnosegruppe EN1, sensomotorisch-perzeptive Behandlung als Doppelbehandlung, Hausbesuch ja, 1–2 × wöchentlich), Beispiel-Verordnung und Infoblatt als PDF
 - [Für Ärztinnen und Ärzte](https://www.selmazuhause.de/fuer-aerzte): Angebot und Angaben auf der Verordnung kompakt, Infoblatt für die Praxis
 - [Online-Beratung](https://www.selmazuhause.de/online-beratung): Beratung per Video, deutschlandweit, ohne Verordnung

@@ -120,7 +120,6 @@ a:hover{color:var(--teal-deep);text-decoration-thickness:3px}
 .main-nav ul a:hover{background:var(--mist);color:var(--navy)}
 .main-nav ul a[aria-current="page"]{color:var(--navy)}
 .main-nav ul a[aria-current="page"]::after{content:"";position:absolute;left:16px;right:16px;bottom:6px;height:3px;border-radius:3px;background:var(--teal)}
-.header-cta{flex:none}
 .header-phone{flex:none;display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 18px 0 6px;border-radius:999px;background:var(--mint-soft);
   color:var(--navy);font-weight:700;font-size:1.0625rem;text-decoration:none;white-space:nowrap;transition:background-color .2s}
 .header-phone:hover{background:var(--mint);color:var(--navy)}
@@ -135,12 +134,10 @@ a:hover{color:var(--teal-deep);text-decoration-thickness:3px}
 .menu-btn[aria-expanded="true"]{background:var(--navy);color:#fff}
 .menu-btn[aria-expanded="true"] .ic-open{display:none}
 .menu-btn[aria-expanded="true"] .ic-close{display:block}
-.nav-cta-mobile{display:none}
 
 @media (max-width:1000px){
   :root{--header-h:68px}
   .brand img{height:38px}
-  .header-cta{display:none}
   .menu-btn{display:inline-flex}
   .main-nav{
     position:absolute;left:0;right:0;top:100%;margin:0;
@@ -153,12 +150,11 @@ a:hover{color:var(--teal-deep);text-decoration-thickness:3px}
   .main-nav ul a{display:flex;min-height:64px;padding:0 4px;border-radius:0;font-size:1.375rem}
   .main-nav ul a:hover{background:transparent;color:var(--teal-strong)}
   .main-nav ul a[aria-current="page"]::after{left:auto;right:4px;top:50%;bottom:auto;width:10px;height:10px;border-radius:50%;transform:translateY(-50%)}
-  .nav-cta-mobile{display:flex;width:100%;margin-top:20px;justify-content:space-between}
   .site-header:not(.is-landing) .header-phone{order:1;margin-left:auto}
   .menu-btn{order:2;margin-left:0}
 }
 /* Wenig Platz: Telefon nur als Symbol (Nummer bleibt für Screenreader lesbar) */
-@media (min-width:1001px) and (max-width:1199px), (max-width:560px){
+@media (max-width:560px){
   .site-header:not(.is-landing) .header-phone{padding:6px}
   .site-header:not(.is-landing) .header-phone .num{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 }
