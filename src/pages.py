@@ -113,48 +113,12 @@ def esc(s):
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
-def contact_block(sfx):
-    return f'''  <section class="section bg-mist ask" aria-labelledby="ask-title-{sfx}">
-    <div class="wrap">
-      <div class="intro">
-        <p class="eyebrow rv">Kontakt</p>
-        <h2 id="ask-title-{sfx}" class="rv-split">Sie haben eine Frage?</h2>
-        <p class="rv" style="--d:120ms">Wir antworten per E-Mail oder rufen auf Wunsch zurück. Bei Rückrufwunsch bitte Telefonnummer angeben.</p>
-      </div>
-      <div class="form-card rv" style="--d:160ms">
-        <form id="form-frage-{sfx}" novalidate data-done="Vielen Dank! Wir haben Ihre Nachricht erhalten.">
-          <div class="form-summary" hidden tabindex="-1"></div>
-          <div class="form-grid">
-            <div class="field">
-              <label for="frage-email-{sfx}">E-Mail <span class="opt">(Pflichtfeld)</span></label>
-              <input id="frage-email-{sfx}" name="email" type="email" autocomplete="email" required data-msg="Bitte geben Sie Ihre E-Mail-Adresse an, z. B. name@beispiel.de.">
-            </div>
-            <div class="field">
-              <label for="frage-tel-{sfx}">Telefon <span class="opt">(falls Rückruf erwünscht)</span></label>
-              <input id="frage-tel-{sfx}" name="telefon" type="tel" autocomplete="tel">
-            </div>
-            <div class="field full">
-              <label for="frage-msg-{sfx}">Ihre Nachricht <span class="opt">(Pflichtfeld)</span></label>
-              <textarea id="frage-msg-{sfx}" name="nachricht" required data-msg="Bitte schreiben Sie uns kurz, worum es geht."></textarea>
-            </div>
-          </div>
-          <div class="form-foot">
-            <button class="btn btn-primary" type="submit">Versenden<span class="btn-ic">{{{{i:arrow}}}}</span></button>
-            <p class="fineprint">*Mit Absenden der Anfrage erklären Sie sich einverstanden, dass wir Ihre Angaben zur Beantwortung der Anfrage verwenden. Weitere Infos in der <a href="#datenschutzerklarung">Datenschutzerklärung</a>.</p>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>'''
-
-
 def page(p):
     pid = ROUTES[p["path"]]
     main, sub = title_parts(p)
     sub_html = f' <span class="sub">{esc(sub)}</span>' if sub else ""
     doc_title = TITLES.get(p["path"], p["docTitle"] if "|" in p["docTitle"] else p["docTitle"] + " | SELMA Zuhause")
     body = transform(p["path"], p["content"])
-    contact = ("\n" + contact_block(pid)) if p["hasContactForm"] else ""
     return f'''
 <!-- ======================= SEITE: {pid} ======================= -->
 <div data-page id="{pid}" data-title="{esc(doc_title)}" hidden>
@@ -167,7 +131,7 @@ def page(p):
     <div class="wrap"><div class="prose doc-prose">
 {body}
     </div></div>
-  </section>{contact}
+  </section>
 </div>'''
 
 

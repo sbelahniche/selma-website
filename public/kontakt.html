@@ -21,7 +21,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/atkinson-next-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/atkinson-next-800.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/style.9a044977.css">
+<link rel="stylesheet" href="/assets/style.5a45ae94.css">
 <!-- Consent: nothing from Google loads until the visitor agrees in the Silktide banner -->
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -162,6 +162,7 @@ if (window.silktideCookieBannerManager) silktideCookieBannerManager.updateCookie
 <ul>
 <li><a data-nav="" href="/">Start</a></li>
 <li><a data-nav="" href="/leistungen">Leistungen</a></li>
+<li><a data-nav="" href="/verordnung-gkv">Verordnung</a></li>
 <li><a data-nav="" href="/ratgeber">Ratgeber</a></li>
 <li><a aria-current="page" data-nav="" href="/kontakt">Kontakt</a></li>
 </ul>
@@ -174,7 +175,7 @@ if (window.silktideCookieBannerManager) silktideCookieBannerManager.updateCookie
 <section aria-labelledby="kontakt-title" class="page-head bg-mint">
 <div class="wrap">
 <h1 class="rv-split" id="kontakt-title" tabindex="-1">Kontakt</h1>
-<p class="lead rv" style="--d:120ms">Schreiben Sie uns oder geben Sie Ihre Telefonnummer an, damit wir zurückrufen können.</p>
+<p class="lead rv" style="--d:120ms">Schreiben Sie uns oder geben Sie Ihre Telefonnummer an, damit wir zurückrufen können. Das erste Gespräch ist kostenlos und unverbindlich.</p>
 </div>
 </section>
 <section aria-label="Kontaktformular und Kontaktdaten" class="section contact">
@@ -187,13 +188,13 @@ if (window.silktideCookieBannerManager) silktideCookieBannerManager.updateCookie
 <label for="k-name">Name <span class="opt">(Pflichtfeld)</span></label>
 <input autocomplete="name" data-msg="Bitte geben Sie Ihren Namen an." id="k-name" name="name" required="" type="text"/>
 </div>
-<div class="field full">
-<label for="k-email">E-Mail <span class="opt">(Pflichtfeld)</span></label>
-<input autocomplete="email" data-msg="Bitte geben Sie Ihre E-Mail-Adresse an, z. B. name@beispiel.de." id="k-email" name="email" required="" type="email"/>
+<div class="field">
+<label for="k-tel">Telefon <span class="opt">(für einen Rückruf)</span></label>
+<input autocomplete="tel" data-label="Telefon oder E-Mail" data-msg="Bitte geben Sie eine Telefonnummer oder E-Mail-Adresse an." data-or="k-email" id="k-tel" name="telefon" type="tel"/>
 </div>
-<div class="field full">
-<label for="k-tel">Telefon <span class="opt">(falls Rückruf erwünscht)</span></label>
-<input autocomplete="tel" id="k-tel" name="telefon" type="tel"/>
+<div class="field">
+<label for="k-email">oder E-Mail <span class="opt">(für eine Antwort)</span></label>
+<input autocomplete="email" data-label="E-Mail" id="k-email" name="email" type="email"/>
 </div>
 <div class="field full">
 <label for="k-msg">Ihre Nachricht <span class="opt">(optional)</span></label>
@@ -284,6 +285,6 @@ if (window.silktideCookieBannerManager) silktideCookieBannerManager.updateCookie
 </div>
 </footer>
 </div>
-<script src="/assets/app.0eabe534.js" defer></script>
+<script src="/assets/app.e617b26b.js" defer></script>
 </body>
 </html>

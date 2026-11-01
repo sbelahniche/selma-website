@@ -154,6 +154,17 @@
   $$(".ws-card-dates, .ws-dates").forEach(function (list) {
     if (!list.children.length) list.textContent = "Neue Termine folgen bald.";
   });
+  // Sprungmarke auf eine FAQ-Frage: die Antwort gleich öffnen
+  function openDetails(id) {
+    var t = id && document.getElementById(id);
+    if (t && t.tagName === "DETAILS") t.open = true;
+  }
+  openDetails(location.hash.slice(1));
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if (a) openDetails(a.getAttribute("href").slice(1));
+  });
+
   $$("form[data-booking]").forEach(function (form) {
     var open = $$('input[name="termin"]', form).filter(function (r) { return !r.disabled; });
     if (!open.length) {
@@ -260,6 +271,8 @@
     if (input.type === "radio") return input.required && !input.form.querySelector('input[name="' + input.name + '"]:checked') ? (input.dataset.msg || "Bitte wählen Sie eine Option.") : "";
     var v = input.value.trim();
     if (input.required && !v) return input.dataset.msg || "Bitte füllen Sie dieses Feld aus.";
+    // Eines von zwei Feldern genügt (data-or nennt das andere Feld)
+    if (input.dataset.or && !v && !document.getElementById(input.dataset.or).value.trim()) return input.dataset.msg;
     if (input.type === "email" && v && !emailRe.test(v)) return "Bitte prüfen Sie die E-Mail-Adresse, z. B. name@beispiel.de.";
     return "";
   }
@@ -277,7 +290,11 @@
     });
     inputs.forEach(function (inp) {
       // Clear an error once the input is valid (while typing, not on blur, so the submit button never jumps under the pointer)
-      inp.addEventListener("input", function () { if (inp.getAttribute("aria-invalid") && !validate(inp)) fieldError(inp, ""); });
+      inp.addEventListener("input", function () {
+        inputs.forEach(function (o) {
+          if ((o === inp || o.dataset.or === inp.id) && o.getAttribute("aria-invalid") && !validate(o)) fieldError(o, "");
+        });
+      });
     });
     form.addEventListener("submit", function (e) {
       e.preventDefault();

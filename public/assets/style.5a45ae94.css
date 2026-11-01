@@ -436,9 +436,6 @@ a.chip:hover{background:var(--mint);color:var(--navy)}
 .form-done p{font-size:var(--fs-lead);font-weight:700;color:var(--navy);line-height:1.4}
 .form-done .preview-note{font-size:var(--fs-small);font-weight:400;color:var(--slate)}
 
-.ask .wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,5vw,80px);align-items:start}
-.ask .intro p{margin-top:18px}
-@media (max-width:900px){.ask .wrap{grid-template-columns:1fr}}
 
 /* Kontakt page */
 .contact .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:clamp(28px,4vw,56px);align-items:start}
@@ -556,7 +553,7 @@ a.chip:hover{background:var(--mint);color:var(--navy)}
 h1,h2,h3,h4{overflow-wrap:break-word}
 .prose{overflow-wrap:break-word}
 @media (max-width:600px){
-  h1,h2,h3,.faq-item summary{-webkit-hyphens:auto;hyphens:auto;overflow-wrap:anywhere}
+  h1,h2,h3,.faq-item summary{overflow-wrap:anywhere}
   .page-head h1{font-size:clamp(1.75rem,.9rem + 4vw,2.5rem)}
   .faq-item summary{gap:14px}
   .faq-item .plus{width:40px;height:40px}
@@ -572,8 +569,9 @@ h1,h2,h3,h4{overflow-wrap:break-word}
 .foot-brand .who strong{color:#fff}
 .site-footer h2{font-size:1.0625rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mint);margin-bottom:18px;font-weight:700}
 .foot-list{list-style:none;display:grid;gap:2px}
-.foot-list li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;align-items:start;padding-block:8px}
-.foot-list .icon{width:22px;height:22px;color:var(--mint);margin-top:3px}
+.foot-list li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;align-items:center;min-height:44px}
+.foot-list a{display:inline-flex;align-items:center;min-height:44px}
+.foot-list .icon{width:22px;height:22px;color:var(--mint)}
 .foot-nav{list-style:none;display:grid;gap:0}
 .foot-nav a{display:inline-flex;align-items:center;min-height:44px;gap:8px}
 .foot-certs{margin-top:clamp(40px,5vw,56px);display:flex;flex-wrap:wrap;gap:32px clamp(40px,6vw,80px)}
@@ -751,5 +749,8 @@ h1,h2,h3,h4{overflow-wrap:break-word}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
+
+/* Das schwebende Cookie-Symbol verdeckt am Handy Inhalte; Einstellungen öffnen sich über den Footer-Link */
+#silktide-wrapper #silktide-cookie-icon{display:none!important}
 
 @media (prefers-reduced-motion:no-preference){@view-transition{navigation:auto}}

@@ -30,7 +30,7 @@ META = {
 }
 PAGE_DESC = {p["path"].strip("/"): p.get("metaDesc") or None for p in json.load(open(SRC / "content" / "pages.json"))["pages"]}
 
-FORM_NAMES = (("form-frage", "frage"), ("form-erst", "erstgespraech"), ("form-ws", "workshop"), ("form-wl", "warteliste"))
+FORM_NAMES = (("form-erst", "erstgespraech"), ("form-ws", "workshop"), ("form-wl", "warteliste"))
 
 FONTS = """@font-face{font-family:"Atkinson Hyperlegible Next";font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/atkinson-next-400.woff2) format("woff2")}
 @font-face{font-family:"Atkinson Hyperlegible Next";font-style:normal;font-weight:700;font-display:swap;src:url(/assets/fonts/atkinson-next-700.woff2) format("woff2")}

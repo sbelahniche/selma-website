@@ -40,7 +40,7 @@ def render_body():
     body = (B / "body.html").read_text()
     body = body.replace("{{BLOG}}", blog.render() + "\n" + pages.render())
     body = body.replace("{{FAQ_START}}", faq.replace("{{FAQ_ID}}", "faq-start").replace("{{FAQ_CONTACT}}", "#kontakt").replace("{{FAQ_BG}}", ""))
-    body = body.replace("{{FAQ_LEIST}}", faq.replace("{{FAQ_ID}}", "faq").replace("{{FAQ_CONTACT}}", "#kontakt-form").replace("{{FAQ_BG}}", ""))
+    body = body.replace("{{FAQ_LEIST}}", faq.replace("{{FAQ_ID}}", "faq").replace("{{FAQ_CONTACT}}", "#kontakt").replace("{{FAQ_BG}}", ""))
     body = re.sub(r"\{\{i:([a-z]+)\}\}", icon, body)
     body = body.replace("{{ext}}", '<span class="sr-only"> (öffnet in neuem Tab)</span>').replace("{{LIVE}}", LIVE)
     assert "{{" not in body, re.findall(r"\{\{[^}]+\}\}", body)

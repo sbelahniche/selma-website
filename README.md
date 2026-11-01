@@ -29,5 +29,5 @@ Page addresses are the same as on the old Webflow site (`/leistungen`, `/blog-po
 
 ## Forms
 
-Contact, question and newsletter forms use Netlify Forms (form names: `erstgespraech`, `frage`, `newsletter`).
+The contact form uses Netlify Forms (form name: `erstgespraech`).
 Submissions appear in Netlify under **Forms**; set up email notifications there.
