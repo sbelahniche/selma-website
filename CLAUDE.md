@@ -23,12 +23,12 @@ Each push costs 15 of 300 free Netlify credits per month. Collect several small 
 
 | What | File |
 |---|---|
-| Start, Leistungen, Ratgeber, Kontakt, Kostenloses Erstgespräch (`/erstgespraech`), Verordnung (`/verordnung-gkv`), Für Ärzt:innen (`/fuer-aerzte`), Online-Beratung (`/online-beratung`) pages, header, footer | `src/body.html` |
+| Start, Leistungen, Ratgeber, Kontakt, Verordnung (`/verordnung-gkv`), Für Ärzt:innen (`/fuer-aerzte`), Online-Beratung (`/online-beratung`) pages, header, footer | `src/body.html` |
 | FAQ (shown on Start and Leistungen) | `src/faq.html` |
 | Ratgeber articles (blog) | `src/content/articles.json` (images: `src/img/art-<slug>.webp`) |
 | Info pages: AGB, Verträge, Jobs, Impressum, Datenschutz, Videotherapie … | `src/content/pages.json` |
 | Downloads (flyer with Verordnungshilfe: `/selma-zuhause-flyer.pdf`) | `src/static/` |
-| Online booking (Hausbesuch anfragen, Online-Beratung) | Doctolib. Start teaser and Online-Beratung link straight to the visit type with `vmids[]=17267359` |
+| Online booking (Hausbesuch anfragen, Online-Beratung) | Doctolib. Start "Termin buchen" buttons link to the general booking (`booking?pid=practice-884501`), where visitors choose gesetzlich or privat and the visit type; the Start teaser and Online-Beratung link straight to the video consultation (`vmids[]=17267359`). The home-visit type is `vmids[]=17159594` |
 | Workshops: **paused since Oct 2026**, pages not built, old URLs redirect (302) in `_redirects`. To bring them back, restore the overview page and `{{WS_…}}` placeholders in `body.html` and the `workshops` calls in `build.py` from git history (before commit "Workshops pausiert"), then remove the 302s | `src/content/workshops.json`, `src/workshops.py` (kept) |
 | Page titles, meta descriptions, noindex (SEO) | `src/content/seo.json` |
 | Design (colors, spacing) | `src/style.css`, documented in `SELMA-Design-System.md` |

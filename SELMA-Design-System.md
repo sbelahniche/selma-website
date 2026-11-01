@@ -194,7 +194,7 @@ These make a layout recognisably SELMA. Use at least one per piece.
 **Focus.** A 3 px navy outline offset by 3 px; peach on dark backgrounds.
 
 ### Common CTA labels (keep the wording)
-- "Erstgespräch anfragen"
+- "Termin buchen"
 - "Zu den Leistungen"
 - "Rückruf anfordern"
 - "Newsletter erhalten"
@@ -264,7 +264,7 @@ Pills, syringes, hospital beds, wheelchairs as the hero motif, sad or lonely fra
   - Two-part contrast: "Erst aufbauen, dann erhalten." / "So früh wie möglich. Nur das, was nötig."
   - Principles: "Erhalten vor kompensieren." / "Vor Ort statt in der Praxis."
 - Use the brand term "das SELMA Programm".
-- Use "Erstgespräch" for the first contact.
+- Use "Termin buchen" for the main call to action (Doctolib) and "Rückruf anfordern" for callback requests.
 - Use "Menschen mit Parkinson", not "Parkinson-Patienten" or "Betroffene" in headlines.
 - Avoid medical promises ("heilt", "garantiert"), fear framing and superlatives.
 - **Facts to keep exact:**
@@ -289,7 +289,7 @@ Pills, syringes, hospital beds, wheelchairs as the hero motif, sad or lonely fra
 2. **One headline** in Atkinson Next 800, navy, at least 64 px on 1080 wide, with a maximum of about 8 words. One phrase may get the peach highlighter or turn teal-strong.
 3. **One visual:** a teal line illustration or a bright home photo with radius 28 and the peach stripe block behind it.
 4. **The eyebrow motif** (peach dashes plus a teal-strong label) as a small kicker, e.g. "Ergotherapie bei Parkinson".
-5. **End card:** the CTA pill "Erstgespräch anfragen", plus selmazuhause.de and the logo (white on navy, or royal on mint).
+5. **End card:** the CTA pill "Termin buchen", plus selmazuhause.de and the logo (white on navy, or royal on mint).
 
 ### Rules
 - Keep body text in videos at least 40 px and on screen for at least 3 s per line.

@@ -182,6 +182,8 @@ a:hover{color:var(--teal-deep);text-decoration-thickness:3px}
 .hero-facts li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;font-size:var(--fs-small);line-height:1.4;color:var(--ink)}
 .hero-facts .icon{width:28px;height:28px;margin-top:1px;color:var(--teal-strong)}
 .hero-facts strong{display:block;margin-bottom:2px;font-size:clamp(1.25rem,1rem + .68vw,1.5625rem);font-weight:800;line-height:1.25;color:var(--navy)}
+.hero-note{margin-top:-14px;line-height:1.4;color:var(--ink);text-wrap:balance}
+.hero-note a{white-space:nowrap}
 .hl{white-space:nowrap;padding-inline:.05em;margin-inline:-.05em;background:linear-gradient(var(--peach),var(--peach)) 0 calc(100% - .08em)/100% .4em no-repeat}
 
 .hero-media{position:relative;justify-self:end;width:min(100%,540px)}

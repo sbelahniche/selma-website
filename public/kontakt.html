@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Kontakt | SELMA Zuhause</title>
-<meta name="description" content="So erreichen Sie SELMA Zuhause: Telefon 030 3758 0867, E-Mail und Kontaktformular. Montag bis Freitag 9:00 bis 18:00 Uhr, Blockdammweg 63, 10318 Berlin.">
+<meta name="description" content="Schreiben Sie uns oder lassen Sie sich zurückrufen: 030 3758 0867, info@selmazuhause.de. Mobile Ergotherapie bei Parkinson in Berlin und Brandenburg.">
 <link rel="canonical" href="https://www.selmazuhause.de/kontakt">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SELMA Zuhause">
 <meta property="og:locale" content="de_DE">
 <meta property="og:title" content="Kontakt | SELMA Zuhause">
-<meta property="og:description" content="So erreichen Sie SELMA Zuhause: Telefon 030 3758 0867, E-Mail und Kontaktformular. Montag bis Freitag 9:00 bis 18:00 Uhr, Blockdammweg 63, 10318 Berlin.">
+<meta property="og:description" content="Schreiben Sie uns oder lassen Sie sich zurückrufen: 030 3758 0867, info@selmazuhause.de. Mobile Ergotherapie bei Parkinson in Berlin und Brandenburg.">
 <meta property="og:url" content="https://www.selmazuhause.de/kontakt">
 <meta property="og:image" content="https://www.selmazuhause.de/og-image.png">
 <meta property="og:image:width" content="1024">
@@ -21,7 +21,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/atkinson-next-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/atkinson-next-800.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/style.1efc372e.css">
+<link rel="stylesheet" href="/assets/style.9a044977.css">
 <!-- Consent: nothing from Google loads until the visitor agrees in the Silktide banner -->
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -174,25 +174,30 @@ if (window.silktideCookieBannerManager) silktideCookieBannerManager.updateCookie
 <section aria-labelledby="kontakt-title" class="page-head bg-mint">
 <div class="wrap">
 <h1 class="rv-split" id="kontakt-title" tabindex="-1">Kontakt</h1>
+<p class="lead rv" style="--d:120ms">Schreiben Sie uns oder geben Sie Ihre Telefonnummer an, damit wir zurückrufen können.</p>
 </div>
 </section>
 <section aria-label="Kontaktformular und Kontaktdaten" class="section contact">
 <div class="wrap">
 <div class="form-card rv">
-<form data-done="Vielen Dank! Wir haben Ihre Nachricht erhalten." data-netlify="true" id="form-frage-kontakt" method="POST" name="frage" netlify-honeypot="bot-field" novalidate=""><input name="form-name" type="hidden" value="frage"/><input name="seite" type="hidden" value="/kontakt"/><p hidden=""><label>Bitte leer lassen: <input autocomplete="off" name="bot-field" tabindex="-1"/></label></p>
+<form data-done="Vielen Dank! Wir haben Ihre Nachricht erhalten und melden uns am nächsten Werktag bei Ihnen." data-netlify="true" id="form-erst" method="POST" name="erstgespraech" netlify-honeypot="bot-field" novalidate=""><input name="form-name" type="hidden" value="erstgespraech"/><input name="seite" type="hidden" value="/kontakt"/><p hidden=""><label>Bitte leer lassen: <input autocomplete="off" name="bot-field" tabindex="-1"/></label></p>
 <div class="form-summary" hidden="" tabindex="-1"></div>
 <div class="form-grid">
-<div class="field">
-<label for="kf-email">E-Mail <span class="opt">(Pflichtfeld)</span></label>
-<input autocomplete="email" data-msg="Bitte geben Sie Ihre E-Mail-Adresse an, z. B. name@beispiel.de." id="kf-email" name="email" required="" type="email"/>
-</div>
-<div class="field">
-<label for="kf-tel">Telefon <span class="opt">(falls Rückruf erwünscht)</span></label>
-<input autocomplete="tel" id="kf-tel" name="telefon" type="tel"/>
+<div class="field full">
+<label for="k-name">Name <span class="opt">(Pflichtfeld)</span></label>
+<input autocomplete="name" data-msg="Bitte geben Sie Ihren Namen an." id="k-name" name="name" required="" type="text"/>
 </div>
 <div class="field full">
-<label for="kf-msg">Ihre Nachricht <span class="opt">(Pflichtfeld)</span></label>
-<textarea data-msg="Bitte schreiben Sie uns kurz, worum es geht." id="kf-msg" name="nachricht" required=""></textarea>
+<label for="k-email">E-Mail <span class="opt">(Pflichtfeld)</span></label>
+<input autocomplete="email" data-msg="Bitte geben Sie Ihre E-Mail-Adresse an, z. B. name@beispiel.de." id="k-email" name="email" required="" type="email"/>
+</div>
+<div class="field full">
+<label for="k-tel">Telefon <span class="opt">(falls Rückruf erwünscht)</span></label>
+<input autocomplete="tel" id="k-tel" name="telefon" type="tel"/>
+</div>
+<div class="field full">
+<label for="k-msg">Ihre Nachricht <span class="opt">(optional)</span></label>
+<textarea id="k-msg" name="nachricht"></textarea>
 </div>
 </div>
 <div class="form-foot">
@@ -239,7 +244,6 @@ if (window.silktideCookieBannerManager) silktideCookieBannerManager.updateCookie
 <li><a href="/">Start</a></li>
 <li><a href="/leistungen">Leistungen</a></li>
 <li><a href="/ratgeber">Ratgeber</a></li>
-<li><a href="/erstgespraech">Kostenloses Erstgespräch</a></li>
 <li><a href="/online-beratung">Online-Beratung</a></li>
 <li><a href="/verordnung-gkv">Verordnung</a></li>
 <li><a href="/fuer-aerzte">Für Ärztinnen und Ärzte</a></li>

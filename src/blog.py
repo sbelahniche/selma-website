@@ -176,8 +176,7 @@ def transform(slug, html):
         href = a.get("href", "")
         if href == "/kontakt":
             a["href"] = "#kontakt"
-            if a.get_text().strip() == "Erstgespräch anfragen":
-                a["href"] = "#erstgespraech"
+            if a.get_text().strip() == "Rückruf anfordern":
                 a["class"] = "btn btn-primary"
                 a.append(BeautifulSoup('<span class="btn-ic">{{i:arrow}}</span>', "html.parser"))
                 par = a.find_parent("p")
