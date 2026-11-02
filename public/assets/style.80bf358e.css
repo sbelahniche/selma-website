@@ -283,6 +283,8 @@ a:hover{color:var(--teal-deep);text-decoration-thickness:3px}
 .kosten-cols .kosten-col{padding:28px 32px 0 0}
 .kosten-cols .kosten-col + .kosten-col{padding-left:32px;border-left:1px solid rgba(205,239,240,.28)}
 .kosten-cols .kosten-col h3{color:#fff;margin-bottom:12px}
+.kosten-col a{color:#fff;text-decoration-color:var(--peach)}
+.kosten-col a:hover{color:var(--peach)}
 .kosten-cols .kosten-col p{margin:0}
 .kosten .after-cards .btn-ghost{color:#fff;border-color:var(--mint)}
 .kosten .after-cards .btn-ghost .btn-ic{background:var(--mint);color:var(--navy)}
@@ -544,7 +546,9 @@ a.chip:hover{background:var(--mint);color:var(--navy)}
 .prose .back-link + *{margin-top:1.4em}
 .prose ul.checklist{gap:.5em}
 .prose ul.checklist li{padding:14px 18px 14px 58px;border-radius:14px;background:var(--mint-soft);line-height:1.5}
-.prose ul.checklist li::before{left:18px;top:15px;width:24px;height:24px;border-radius:6px;background:var(--white);border:2px solid var(--teal-strong)}
+.prose ul.checklist li::before{left:18px;top:15px;width:24px;height:24px;border-radius:6px;border:2px solid var(--teal-strong);background:var(--teal-strong) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/18px no-repeat}
+.prose .fig-video{max-width:340px;margin-inline:auto}
+.prose .fig-video video{display:block;width:100%;height:auto;border-radius:var(--r-card);background:var(--navy)}
 .prose .fig-doc{max-width:560px}
 .prose .fig-doc img{border-radius:12px;box-shadow:var(--shadow-lift)}
 

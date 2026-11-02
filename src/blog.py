@@ -90,6 +90,7 @@ def transform(slug, html):
 
     # Figures -> clean <figure><img></figure> with real alt text and local files
     for fig in soup.find_all("figure"):
+        if fig.find("video"): continue
         img = fig.find("img")
         key = img["src"].split("/")[-1]
         name, w, h, size, alt = INLINE_IMG[key]
@@ -195,7 +196,7 @@ def transform(slug, html):
         h.name = f"h{new}"
 
     # Only the attributes we set ourselves survive
-    allowed = {"a": {"href", "class", "target", "rel"}, "img": {"src", "alt", "width", "height", "loading"}, "figure": {"class"}, "p": {"class"}, "em": {"class"}, "span": {"class"}}
+    allowed = {"a": {"href", "class", "target", "rel"}, "img": {"src", "alt", "width", "height", "loading"}, "figure": {"class"}, "video": {"controls", "preload", "playsinline", "width", "height", "poster", "aria-label"}, "source": {"src", "type"}, "p": {"class"}, "em": {"class"}, "span": {"class"}}
     for t in soup.find_all(True):
         keep = allowed.get(t.name, set())
         for k in list(t.attrs):

@@ -72,6 +72,7 @@ Der Ansatz ist aktivierend und präventiv. Er passt für Menschen mit einer Park
 
 - [Startseite](https://www.selmazuhause.de/): Überblick über Ansatz, Ablauf und Kosten
 - [Leistungen](https://www.selmazuhause.de/leistungen): Leistungen im Detail und FAQ
+- [Termin buchen über Doctolib](https://www.doctolib.de/einzelpraxis/berlin/selma-zuhause-mobile-ergotherapie/booking?pid=practice-884501): Hausbesuch anfragen oder Online-Beratung buchen
 - [Kontakt und Rückruf](https://www.selmazuhause.de/kontakt): Kontaktformular (Nachricht oder Rückruf), Telefon, E-Mail und Adresse; Antwort spätestens am nächsten Werktag
 - [Ärztliche Verordnung](https://www.selmazuhause.de/verordnung-gkv): Checkliste (Muster 13, ICD-10 G20, Diagnosegruppe EN1, sensomotorisch-perzeptive Behandlung als Doppelbehandlung, Hausbesuch ja, 1–2 × wöchentlich), Beispiel-Verordnung und Infoblatt als PDF
 - [Für Ärztinnen und Ärzte](https://www.selmazuhause.de/fuer-aerzte): Angebot und Angaben auf der Verordnung kompakt, Infoblatt für die Praxis
@@ -83,7 +84,7 @@ Der Ansatz ist aktivierend und präventiv. Er passt für Menschen mit einer Park
 
 - [Ratgeber-Übersicht](https://www.selmazuhause.de/ratgeber): Wissen und Tipps rund um Parkinson im Alltag
 - [Ergotherapie bei Parkinson: Was die Leitlinie empfiehlt](https://www.selmazuhause.de/blog-posts/s2k-leitlinie-parkinson-ergotherapie)
-- [Parkinson-Medikamente: Wirkungen im Alltag managen](https://www.selmazuhause.de/blog-posts/parkinson-medikamente-nebenwirkungen-alltag)
+- [Parkinson-Medikamente im Alltag managen](https://www.selmazuhause.de/blog-posts/parkinson-medikamente-nebenwirkungen-alltag)
 - [PWR!Moves® bei Parkinson: Training für den Alltag](https://www.selmazuhause.de/blog-posts/pwr-moves-parkinson-training)
 - [LSVT BIG® bei Parkinson: Sicherer bewegen im Alltag](https://www.selmazuhause.de/blog-posts/lsvt-big)
 - [Freezing bei Parkinson: Hilfsmittel und Strategien im Überblick](https://www.selmazuhause.de/blog-posts/freezing-bei-parkinson-hilfsmittel-im-uberblick)
