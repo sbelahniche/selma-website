@@ -25,7 +25,7 @@ META = {
     "s2k-leitlinie-parkinson-ergotherapie": dict(
         cat="grundlagen-leitlinie", author="Kathleen Olstedt", thumb="blog-leitlinie.webp", tw=1100, th=733,
         hero=(1200, 800), alt="Gedruckte S2k-Leitlinie Parkinson der AWMF auf einem Holztisch",
-        excerpt="Die S2k-Leitlinie Parkinson-Krankheit empfiehlt Ergotherapie bei Einschränkungen im Alltag, im Beruf oder an Armen und Händen. Für wen das gilt, wie viel Therapie sinnvoll ist und was Studien zeigen, lesen Sie in diesem Artikel."),
+        excerpt="Selbstständig und sicher zu Hause leben, vertrauten Tätigkeiten nachgehen, am Leben teilnehmen: Was die S2k-Leitlinie zur Ergotherapie bei Parkinson empfiehlt und wie SELMA Zuhause das im Hausbesuch umsetzt."),
     "parkinson-medikamente-nebenwirkungen-alltag": dict(
         cat="medikamente-alltag", author="Kathleen Olstedt", thumb="blog-medikamente.webp", tw=900, th=506,
         hero=(1200, 675), alt="Bunte Tabletten und eine umgekippte Medikamentendose auf blauem Grund",
