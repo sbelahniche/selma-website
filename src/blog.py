@@ -33,7 +33,7 @@ META = {
     "pwr-moves-parkinson-training": dict(
         cat="bewegung-training", author="Kathleen Olstedt", thumb="blog-pwr.webp", tw=900, th=600,
         hero=(1200, 800), alt="Älterer Mann geht mit großem Schritt durch die offene Haustür nach draußen",
-        excerpt="PWR!Moves® ist ein Bewegungsprogramm, das speziell für Menschen mit Parkinson entwickelt wurde. Hier erfahren Sie, was dahintersteckt, wie es sich von LSVT BIG® unterscheidet und was die Forschung bisher zeigt."),
+        excerpt="PWR!Moves® ist ein Bewegungsprogramm, das speziell für Menschen mit Parkinson entwickelt wurde. Der Artikel erklärt, was dahintersteckt, wie es sich von LSVT BIG® unterscheidet und was die Forschung bisher zeigt."),
     "freezing-bei-parkinson-hilfsmittel-im-uberblick": dict(
         cat="hilfsmittel-wohnraum", author=None, thumb="blog-freezing.webp", tw=900, th=506,
         hero=(1200, 675), alt="Schuhe mit Laser-Aufsatz projizieren grüne Linien auf einen Holzboden",
@@ -41,7 +41,7 @@ META = {
     "lsvt-big": dict(
         cat="bewegung-training", author=None, thumb="blog-lsvt.webp", tw=900, th=635,
         hero=(1024, 722), alt="Älterer Mann macht im Wohnzimmer einen großen Ausfallschritt mit ausgestreckten Armen",
-        excerpt="Wir zeigen, wie LSVT BIG® abläuft, was die Forschung bisher zeigt und wie das Training im Alltag helfen kann."),
+        excerpt="Wie LSVT BIG® abläuft, was die Forschung bisher zeigt und wie das Training im Alltag helfen kann."),
 }
 
 INLINE_IMG = {
