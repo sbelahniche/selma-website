@@ -528,9 +528,11 @@ a.chip:hover{background:var(--mint);color:var(--navy)}
 .prose .fig-small img{border-radius:0}
 .prose hr{border:0;height:10px;max-width:220px;margin:2.6em 0 0;background:repeating-linear-gradient(90deg,var(--peach) 0 18px,transparent 18px 32px)}
 .prose .article-cta{
-  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px;margin-top:1.4em;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:16px 20px;margin-top:1.4em;
   padding:clamp(22px,3vw,32px);border-radius:var(--r-card);background:var(--navy);color:#fff;font-weight:700;line-height:1.4;--focus:var(--peach)
 }
+.prose .article-cta a:not(.btn){color:var(--mint);text-decoration-color:var(--mint);white-space:nowrap}
+.prose .article-cta a:not(.btn):hover{color:#fff;text-decoration-color:#fff}
 .prose .article-cta .btn{background:var(--mint);color:var(--navy);text-decoration:none;font-size:1.0625rem}
 .prose .article-cta .btn .btn-ic{background:var(--navy);color:#fff}
 .prose .article-cta .btn:hover{background:#fff;color:var(--navy)}
