@@ -210,7 +210,14 @@ a:hover{color:var(--teal-deep);text-decoration-thickness:3px}
 
 @media (max-width:860px){
   .hero .wrap{grid-template-columns:1fr}
-  .hero-media{justify-self:start;width:min(100% - 24px,480px)}
+  /* Mobil: Video als ruhiges Kopfbild im Breitformat (eigene 16:9-Datei), der Text schiebt sich als Karte darüber */
+  .hero{padding-top:0}
+  .hero .wrap{padding-inline:0;gap:0}
+  .hero-media{order:-1;justify-self:stretch;width:100%}
+  .hero-media::before{display:none}
+  .video-frame{width:100%;aspect-ratio:16/9;max-height:380px;border-radius:0;box-shadow:none}
+  .hero-copy{position:relative;z-index:2;margin-top:-28px;padding:30px var(--gutter) 0;background:var(--mint);border-radius:var(--r-media) var(--r-media) 0 0}
+  .video-toggle{top:12px;right:12px;left:auto;bottom:auto;width:44px;height:44px}
 }
 
 /* Trust bar */
