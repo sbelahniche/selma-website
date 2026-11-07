@@ -28,7 +28,7 @@ Each push costs 15 of 300 free Netlify credits per month. Collect several small 
 | Ratgeber articles (blog) | `src/content/articles.json` (images: `src/img/art-<slug>.webp`) |
 | Info pages: AGB, Verträge, Jobs, Impressum, Datenschutz, Videotherapie … | `src/content/pages.json` |
 | Downloads (flyer with Verordnungshilfe: `/selma-zuhause-flyer.pdf`) | `src/static/` |
-| Online booking (Hausbesuch anfragen, Online-Beratung) | Doctolib. Start "Termin buchen" buttons link to the general booking (`booking?pid=practice-884501`), where visitors choose gesetzlich or privat and the visit type; the Start teaser and Online-Beratung link straight to the video consultation (`vmids[]=17267359`). The home-visit type is `vmids[]=17159594` |
+| Appointments (Hausbesuch, Online-Beratung) | **No online booking since Nov 2026.** Kathleen removed Doctolib from the whole site because booking there was too complicated for her visitors and requests dropped. Buttons say "Rückruf anfordern" (→ `/kontakt`) and "Anrufen: 030 3758 0867". Don't add booking links again unless she asks |
 | Workshops: **paused since Oct 2026**, pages not built, old URLs redirect (302) in `_redirects`. To bring them back, restore the overview page and `{{WS_…}}` placeholders in `body.html` and the `workshops` calls in `build.py` from git history (before commit "Workshops pausiert"), then remove the 302s and put the workshop paragraph back into section 6 of the Datenschutzerklärung (git history) | `src/content/workshops.json`, `src/workshops.py` (kept) |
 | Page titles, meta descriptions, noindex (SEO) | `src/content/seo.json` |
 | Design (colors, spacing) | `src/style.css`, documented in `SELMA-Design-System.md` |
