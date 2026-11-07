@@ -2,8 +2,8 @@
 /uebersicht/*   /leistungen   301
 # Old Webflow site search -> Ratgeber (has its own search)
 /search   /ratgeber   301
-# Workshops pausiert (Okt. 2026): vorübergehend (302) zu passenden Ratgeber-Inhalten
-/workshops   /ratgeber   302
-/workshop-freezing   /blog-posts/freezing-bei-parkinson-hilfsmittel-im-uberblick   302
-/workshop-stuerze   /posts-categories/bewegung-training   302
-/workshop-wohnen   /posts-categories/hilfsmittel-wohnraum   302
+# Workshops pausiert (Okt. 2026): dauerhaft (301) zu passenden Ratgeber-Inhalten, damit Google die alten Seiten aus der Suche nimmt (Nov. 2026)
+/workshops   /ratgeber   301
+/workshop-freezing   /blog-posts/freezing-bei-parkinson-hilfsmittel-im-uberblick   301
+/workshop-stuerze   /posts-categories/bewegung-training   301
+/workshop-wohnen   /posts-categories/hilfsmittel-wohnraum   301
