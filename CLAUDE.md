@@ -23,12 +23,13 @@ Each push costs 15 of 300 free Netlify credits per month. Collect several small 
 
 | What | File |
 |---|---|
-| Start, Leistungen, Ratgeber, Kontakt, Verordnung (`/verordnung-gkv`), Für Ärzt:innen (`/fuer-aerzte`), Online-Beratung (`/online-beratung`) pages, header, footer | `src/body.html` |
+| Start, Leistungen, Ratgeber, Kontakt, Verordnung (`/verordnung-gkv`), Für Ärzt:innen (`/fuer-aerzte`) pages, header, footer | `src/body.html` |
 | FAQ (shown on Start and Leistungen) | `src/faq.html` |
 | Ratgeber articles (blog) | `src/content/articles.json` (images: `src/img/art-<slug>.webp`) |
 | Info pages: AGB, Verträge, Jobs, Impressum, Datenschutz, Videotherapie … | `src/content/pages.json` |
 | Downloads (flyer with Verordnungshilfe: `/selma-zuhause-flyer.pdf`) | `src/static/` |
-| Appointments (Hausbesuch, Online-Beratung) | **No online booking since Nov 2026.** Kathleen removed Doctolib from the whole site because booking there was too complicated for her visitors and requests dropped. Buttons say "Rückruf anfordern" (→ `/kontakt`) and "Anrufen: 030 3758 0867". Don't add booking links again unless she asks |
+| Online-Beratung per Video: **paused since Nov 2026**, Kathleen doesn't want to promote it for now. Page, footer link, FAQ item ("Ich wohne nicht in Berlin oder Brandenburg …"), the `llms.txt` section and the mention in section 7 of the Datenschutzerklärung are removed; `/online-beratung` redirects (302) to `/kontakt` in `_redirects`. To bring it back, restore them from git history (before commit "Online-Beratung pausiert") and remove the 302 | `src/body.html`, `src/faq.html`, `src/static/llms.txt`, `src/content/pages.json` |
+| Appointments (Hausbesuch) | **No online booking since Nov 2026.** Kathleen removed Doctolib from the whole site because booking there was too complicated for her visitors and requests dropped. Buttons say "Rückruf anfordern" (→ `/kontakt`) and "Anrufen: 030 3758 0867". Don't add booking links again unless she asks |
 | Workshops: **paused since Oct 2026**, pages not built, old URLs redirect (301 since Nov 2026, so Google drops the old results) in `_redirects`. To bring them back, restore the overview page and `{{WS_…}}` placeholders in `body.html` and the `workshops` calls in `build.py` from git history (before commit "Workshops pausiert"), then remove those 301s and put the workshop paragraph back into section 6 of the Datenschutzerklärung (git history) | `src/content/workshops.json`, `src/workshops.py` (kept) |
 | Page titles, meta descriptions, noindex (SEO) | `src/content/seo.json` |
 | Design (colors, spacing) | `src/style.css`, documented in `SELMA-Design-System.md` |
@@ -56,7 +57,7 @@ Each push costs 15 of 300 free Netlify credits per month. Collect several small 
   - Atkinson Hyperlegible font, body text at least 18 px, contrast at least 4.5:1.
   - Address readers as "Sie", in a calm and concrete tone.
 - Don't add new libraries, frameworks or build tools. The site is plain HTML/CSS/JS built by Python (only dependency: `beautifulsoup4`).
-- Check after building: the build prints `built 26 pages` (more if pages were added) with no error.
+- Check after building: the build prints `built 27 pages` (more if pages were added) with no error.
 
 ## If something breaks
 
