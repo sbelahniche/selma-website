@@ -184,6 +184,7 @@ a:hover{color:var(--teal-deep);text-decoration-thickness:3px}
 .hero-facts strong{display:block;margin-bottom:2px;font-size:clamp(1.25rem,1rem + .68vw,1.5625rem);font-weight:800;line-height:1.25;color:var(--navy)}
 .hero-note{margin-top:-14px;line-height:1.4;color:var(--ink);text-wrap:balance}
 .hero-note a{white-space:nowrap}
+.hero-rezept{margin-top:10px;max-width:46ch;line-height:1.45;color:var(--ink)}
 .hl{white-space:nowrap;padding-inline:.05em;margin-inline:-.05em;background:linear-gradient(var(--peach),var(--peach)) 0 calc(100% - .08em)/100% .4em no-repeat}
 
 .hero-media{position:relative;justify-self:end;width:min(100%,540px)}
@@ -276,6 +277,13 @@ a:hover{color:var(--teal-deep);text-decoration-thickness:3px}
 .phase h3 span{display:block;color:var(--teal-strong)}
 .phase p{max-width:52ch}
 @media (max-width:800px){.phases{grid-template-columns:1fr}}
+
+/* Wo wir hinkommen */
+.gebiet .section-head{margin-bottom:28px}
+.gebiet-list{list-style:none;display:flex;flex-wrap:wrap;gap:12px;margin:0;padding:0}
+.gebiet-list li{display:inline-flex;align-items:center;min-height:48px;padding:8px 22px;border-radius:999px;background:var(--white);color:var(--navy);font-size:var(--fs-body);font-weight:700;box-shadow:0 8px 20px -16px rgba(28,57,76,.6)}
+.gebiet-note{margin-top:28px;max-width:60ch}
+.gebiet-note a{color:var(--teal-strong);font-weight:700}
 
 /* Kosten (dark) */
 .kosten{background:var(--navy);color:#e8f3f5;--focus:var(--peach)}
@@ -750,3 +758,13 @@ h1,h2,h3,h4{overflow-wrap:break-word}
 
 /* Das schwebende Cookie-Symbol verdeckt am Handy Inhalte; Einstellungen öffnen sich über den Footer-Link */
 #silktide-wrapper #silktide-cookie-icon{display:none!important}
+
+/* Anruf-Leiste unten (nur Handy) */
+.call-bar{display:none}
+@media (max-width:760px){
+  .call-bar{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:8px 20px;border-radius:999px;background:var(--teal-strong);color:#fff;font-size:var(--fs-body);font-weight:700;text-decoration:none;box-shadow:0 12px 28px -12px rgba(28,57,76,.65)}
+  .call-bar:hover,.call-bar:focus-visible{background:var(--teal-deep);color:#fff}
+  .call-bar .cb-ic .icon{width:22px;height:22px}
+  .call-bar .num{letter-spacing:.02em}
+  body{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+}
