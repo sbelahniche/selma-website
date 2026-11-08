@@ -24,6 +24,7 @@ ORDER = [
 META = {
     "s2k-leitlinie-parkinson-ergotherapie": dict(
         cat="grundlagen-leitlinie", author="Kathleen Olstedt", thumb="blog-leitlinie.webp", tw=1100, th=733,
+        date=("2026-11-08", "8. November 2026"),
         hero=(1200, 800), alt="Gedruckte S2k-Leitlinie Parkinson der AWMF auf einem Holztisch",
         excerpt="Selbstständig und sicher zu Hause leben, bedeutsamen Tätigkeiten nachgehen, am Leben teilnehmen: Was die S2k-Leitlinie zur Ergotherapie bei Parkinson empfiehlt und wie SELMA Zuhause das im Hausbesuch umsetzt."),
     "parkinson-medikamente-nebenwirkungen-alltag": dict(
@@ -221,7 +222,8 @@ def esc(s):
 def byline(a):
     parts = []
     if a["author"]: parts.append('<span>{{i:user}}' + a["author"] + '</span>')
-    parts.append('<span>{{i:calendar}}<time datetime="' + DATE_ISO + '">' + DATE_DE + '</time></span>')
+    iso, de = a.get("date", (DATE_ISO, DATE_DE))  # per-article date in META, else the shared one
+    parts.append('<span>{{i:calendar}}<time datetime="' + iso + '">' + de + '</time></span>')
     return '<p class="byline">' + "".join(parts) + "</p>"
 
 
