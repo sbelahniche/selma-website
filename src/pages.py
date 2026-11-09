@@ -17,7 +17,6 @@ ROUTES = {
     "/einwilligung-versorgungskoordination": "einwilligung-versorgungskoordination",
     "/videotherapie": "videotherapie",
     "/jobs": "jobs",
-    "/jobs-ergotherapie-berlin": "jobs-ergotherapie-berlin",
     "/impressum": "impressum",
     "/datenschutzerklarung": "datenschutzerklarung",
     "/kontakt": "kontakt", "/leistungen": "leistungen", "/ratgeber": "ratgeber", "/": "start",

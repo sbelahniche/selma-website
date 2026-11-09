@@ -59,7 +59,7 @@ Each push costs 15 of 300 free Netlify credits per month. Collect several small 
   - Atkinson Hyperlegible font, body text at least 18 px, contrast at least 4.5:1.
   - Address readers as "Sie", in a calm and concrete tone.
 - Don't add new libraries, frameworks or build tools. The site is plain HTML/CSS/JS built by Python (only dependency: `beautifulsoup4`).
-- Check after building: the build prints `built 28 pages` (more if pages were added) with no error.
+- Check after building: the build prints `built 27 pages` (more if pages were added; the old job ad `/jobs-ergotherapie-berlin` was replaced in Nov 2026 by the general `/jobs` page and redirects there with a 301) with no error.
 
 ## If something breaks
 
