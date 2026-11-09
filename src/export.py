@@ -30,6 +30,9 @@ META = {
 }
 PAGE_DESC = {p["path"].strip("/"): p.get("metaDesc") or None for p in json.load(open(SRC / "content" / "pages.json"))["pages"]}
 
+# Language versions that point to each other (hreflang): German start page and the English page
+HREFLANG = {"/": "de", "/en": "en"}
+
 FORM_NAMES = (("form-erst", "erstgespraech"), ("form-ws", "workshop"), ("form-wl", "warteliste"))
 
 FONTS = """@font-face{font-family:"Atkinson Hyperlegible Next";font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/atkinson-next-400.woff2) format("woff2")}
@@ -126,7 +129,7 @@ def main():
                                       '<p hidden><label>Bitte leer lassen: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>',
                                       "html.parser"))
 
-    def document(pid, main_html, title, desc, section, og_type="website", landing=False):
+    def document(pid, main_html, title, desc, section, og_type="website", landing=False, lang="de"):
         hdr = BeautifulSoup(str(header), "html.parser")
         ftr = BeautifulSoup(str(footer), "html.parser")
         if landing:  # Workshop-Seiten: schlanke Kopf- und Fußzeile (ein Ziel pro Seite)
@@ -138,6 +141,14 @@ def main():
             bottom = ftr.select_one(".foot-bottom")
             bottom.insert(0, logo)
             bottom.ul.insert(0, BeautifulSoup('<li><a href="#start">selmazuhause.de</a></li>', "html.parser"))
+        if lang == "en":  # English page: translate the few German labels in header and footer
+            en = {"Anrufen: ": "Call: ", "Fußzeile": "Footer", "Datenschutzerklärung": "Privacy policy (German)",
+                  "Impressum": "Legal notice", "Cookie-Einstellungen": "Cookie settings"}
+            for part in (hdr, ftr):
+                for s in part.find_all(string=True):
+                    if s in en: s.replace_with(en[s])
+            hdr.select_one(".brand img")["alt"] = "SELMA Zuhause – German home page"
+            for a in ftr.select('a[hreflang="en"]'): a.parent.decompose()
         for part in (hdr, ftr): fix_links(part, pid)
         for a in hdr.select("[data-nav]"):
             if a["href"] == path.get(section, "#"): a["aria-current"] = "page"
@@ -150,15 +161,19 @@ def main():
         meta = f'<meta name="description" content="{esc(desc)}">\n' if desc else ""
         og_desc = f'<meta property="og:description" content="{esc(desc)}">\n' if desc else ""
         canon = (f'<link rel="canonical" href="{url}">\n' if pid != "404" else "") + ('<meta name="robots" content="noindex">\n' if noindex else "")
+        if p_url in HREFLANG:
+            canon += "".join(f'<link rel="alternate" hreflang="{l}" href="{SITE}{u}">\n' for u, l in HREFLANG.items())
+            canon += f'<link rel="alternate" hreflang="x-default" href="{SITE}/">\n'
+        skip_html = str(skip).replace("Zum Inhalt springen", "Skip to content") if lang == "en" else skip
         return f"""<!doctype html>
-<html lang="de">
+<html lang="{lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>{esc(title)}</title>
 {meta}{canon}<meta property="og:type" content="{og_type}">
 <meta property="og:site_name" content="SELMA Zuhause">
-<meta property="og:locale" content="de_DE">
+<meta property="og:locale" content="{"en_GB" if lang == "en" else "de_DE"}">
 <meta property="og:title" content="{esc(title)}">
 {og_desc}<meta property="og:url" content="{url}">
 <meta property="og:image" content="{SITE}/og-image.png">
@@ -175,7 +190,7 @@ def main():
 <body>
 {sprite}
 <div id="app">
-{skip}
+{skip_html}
 {hdr}
 <main id="main">
 {main_html}
@@ -203,9 +218,10 @@ def main():
         if not desc and pid == "kontakt":
             desc = excerpt(p)
         landing = p.has_attr("data-landing")
-        for a in ("hidden", "data-title", "data-landing"):
+        lang = p.get("data-lang", "de")
+        for a in ("hidden", "data-title", "data-landing", "data-lang"):
             if p.has_attr(a): del p[a]
-        html = document(pid, str(p), title, desc, section, "article" if p.has_attr("data-article") else "website", landing)
+        html = document(pid, str(p), title, desc, section, "article" if p.has_attr("data-article") else "website", landing, lang)
         fn = OUT / ("index.html" if path[pid] == "/" else path[pid].lstrip("/") + ".html")
         fn.parent.mkdir(parents=True, exist_ok=True)
         fn.write_text(html)

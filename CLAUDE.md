@@ -24,6 +24,7 @@ Each push costs 15 of 300 free Netlify credits per month. Collect several small 
 | What | File |
 |---|---|
 | Start, Leistungen, Ratgeber, Kontakt, Verordnung (`/verordnung-gkv`), Für Ärzt:innen (`/fuer-aerzte`) pages, header, footer | `src/body.html` |
+| English page `/en` (since Nov 2026): one core page for English-speaking patients and relatives abroad, "therapy in English on request". Page div `id="en"` with `data-lang="en"` (sets `<html lang="en">`, translates header/footer labels in `export.py`) and `data-landing` (slim header). Linked from the footer ("English") and the Kontakt page; `/` and `/en` point to each other via hreflang (`HREFLANG` in `export.py`). Its FAQ is repeated in the page's JSON-LD, so change both together. Keep its facts (costs, districts, contact) in sync with the German pages | `src/body.html`, title/description in `src/content/seo.json` |
 | FAQ (shown on Start and Leistungen) | `src/faq.html` |
 | Ratgeber articles (blog) | `src/content/articles.json` (images: `src/img/art-<slug>.webp`) |
 | Info pages: AGB, Verträge, Jobs, Impressum, Datenschutz, Videotherapie … | `src/content/pages.json` |
@@ -57,7 +58,7 @@ Each push costs 15 of 300 free Netlify credits per month. Collect several small 
   - Atkinson Hyperlegible font, body text at least 18 px, contrast at least 4.5:1.
   - Address readers as "Sie", in a calm and concrete tone.
 - Don't add new libraries, frameworks or build tools. The site is plain HTML/CSS/JS built by Python (only dependency: `beautifulsoup4`).
-- Check after building: the build prints `built 27 pages` (more if pages were added) with no error.
+- Check after building: the build prints `built 28 pages` (more if pages were added) with no error.
 
 ## If something breaks
 

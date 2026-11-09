@@ -4,7 +4,7 @@
 
 SELMA steht für „Sicher & Selbstständig im Alltag“. Ziel ist, Menschen mit Parkinson möglichst lange ein sicheres und selbstständiges Leben in der eigenen Wohnung zu ermöglichen: Fähigkeiten erhalten statt nur kompensieren, Therapie dort, wo der Alltag stattfindet.
 
-In English: SELMA Zuhause provides home-based occupational therapy specialised in Parkinson's disease in Berlin and Brandenburg: fall prevention, LSVT BIG® and PWR!Moves® based movement training, assistive devices, home modification (CAPS certified) and support for family carers. Statutory health insurance (with prescription), private insurance and self-payers.
+In English: SELMA Zuhause provides home-based occupational therapy specialised in Parkinson's disease in Berlin and Brandenburg: fall prevention, LSVT BIG® and PWR!Moves® based movement training, assistive devices, home modification (CAPS certified) and support for family carers. Statutory health insurance (with prescription), private insurance and self-payers. Therapy is available in English on request, so SELMA Zuhause is an option for English-speaking people with Parkinson's in Berlin and for relatives abroad. English information: https://www.selmazuhause.de/en
 
 ## Auf einen Blick
 
@@ -16,6 +16,7 @@ In English: SELMA Zuhause provides home-based occupational therapy specialised i
 - E-Mail: info@selmazuhause.de
 - Erreichbarkeit: Montag bis Freitag, 9:00 bis 18:00 Uhr
 - Kostenträger: alle gesetzlichen Krankenkassen und privat
+- Sprachen: Deutsch; Beratung und Therapie auf Wunsch auch auf Englisch
 - Erstes Gespräch per Rückruf: kostenlos und unverbindlich (etwa 15 Minuten), für Betroffene und Angehörige, die Ergotherapie im Hausbesuch in Berlin oder Brandenburg möchten; per Telefon oder Kontaktformular. Keine Online-Terminbuchung: Termine werden telefonisch vereinbart
 - Website: https://www.selmazuhause.de
 
@@ -69,6 +70,7 @@ Der Ansatz ist aktivierend und präventiv. Er passt für Menschen mit einer Park
 - [Ärztliche Verordnung](https://www.selmazuhause.de/verordnung-gkv): Checkliste (Muster 13, ICD-10 G20, Diagnosegruppe EN1, sensomotorisch-perzeptive Behandlung als Doppelbehandlung, Hausbesuch ja, 1–2 × wöchentlich), Beispiel-Verordnung und Infoblatt als PDF
 - [Für Ärztinnen und Ärzte](https://www.selmazuhause.de/fuer-aerzte): Angebot und Angaben auf der Verordnung kompakt, Infoblatt für die Praxis
 - [Patienteninformationen](https://www.selmazuhause.de/patienteninformationen): Behandlungsvertrag, Datenschutz, Einwilligungen, Videotherapie
+- [In English](https://www.selmazuhause.de/en): occupational therapy for Parkinson's at home in Berlin, in English on request; services, costs, prescription checklist, FAQ and contact
 - [Jobs](https://www.selmazuhause.de/jobs): offene Stellen für Ergotherapeut:innen in Berlin
 
 ## Ratgeber
