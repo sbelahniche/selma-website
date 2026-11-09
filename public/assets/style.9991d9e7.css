@@ -395,7 +395,7 @@ a.chip:hover{background:var(--mint);color:var(--navy)}
 .page-head .btn-row{margin-top:28px}
 
 /* Leistungen */
-.step-title .step-label{display:block;font-family:var(--mono);font-weight:600;font-size:1rem;letter-spacing:.02em;color:var(--teal-strong);margin-bottom:10px}
+.step-title .step-label{display:table;font-family:var(--mono);font-weight:700;font-size:1.125rem;line-height:1;letter-spacing:.02em;color:var(--white);background:var(--teal-strong);border-radius:999px;padding:10px 20px;margin-bottom:18px}
 .services{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,4vw,56px) clamp(24px,3.5vw,48px)}
 .service{display:grid;gap:18px;align-content:start}
 .service .media{border-radius:var(--r-card);overflow:hidden;aspect-ratio:3/2;background:var(--mint)}
