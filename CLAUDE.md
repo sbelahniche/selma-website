@@ -53,6 +53,7 @@ Each push costs 15 of 300 free Netlify credits per month. Collect several small 
   - Mo–Fr 9:00–18:00 Uhr
   - Einzugsgebiet: Berlin & Brandenburg
 - Forms (Netlify Forms: the contact form `erstgespraech` on `/kontakt`, the only form on the site while workshops are paused) and the cookie banner (Silktide, `src/tracking.html`) are GDPR-relevant. Don't change them without being asked. Google Analytics must only load after consent.
+- Tracking setup (since Nov 2026): Google Analytics 4 loads after consent to "Analyse" or "Performance". The Google Tag Manager (GTM-KC8MCTHN) loads only after consent to "Werbung" and contains only Google Ads conversion tracking (Google tag AW-18563676386, conversions for clicks on tel: links, mailto: links and the success message `.form-done` of the contact form on `/kontakt`). It is configured in tagmanager.google.com, not in this repo. If the contact form's success message or the phone/email links change, check that these triggers still work. Section 5 of the Datenschutzerklärung describes this.
 - When adding a new service or tool that processes personal data, tell Kathleen that the Datenschutzerklärung needs updating.
 - Follow `SELMA-Design-System.md`:
   - Atkinson Hyperlegible font, body text at least 18 px, contrast at least 4.5:1.

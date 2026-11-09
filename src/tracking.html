@@ -1,4 +1,4 @@
-<!-- Consent: nothing from Google loads until the visitor agrees in the Silktide banner -->
+<!-- Consent: nothing from Google loads until the visitor agrees in the Silktide banner (Analyse/Performance: Google Analytics; Werbung: Tag Manager with Google Ads conversion tracking) -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
@@ -11,7 +11,7 @@
     personalization_storage: 'denied',
     security_storage: 'granted'
   });
-  // Google Analytics 4 + Google Tag Manager, loaded only after consent (called from the banner below)
+  // Google Analytics 4, loaded only after consent to "Analyse" or "Performance" (called from the banner below)
   function selmaLoadGoogleTags() {
     if (window.__selmaGoogleTags) return;
     window.__selmaGoogleTags = true;
@@ -21,6 +21,11 @@
     document.head.appendChild(s);
     gtag('js', new Date());
     gtag('config', 'G-BXQDHS50B9');
+  }
+  // Google Tag Manager (contains only Google Ads conversion tracking), loaded only after consent to "Werbung"
+  function selmaLoadTagManager() {
+    if (window.__selmaTagManager) return;
+    window.__selmaTagManager = true;
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -84,6 +89,28 @@ if (window.silktideCookieBannerManager) silktideCookieBannerManager.updateCookie
       onReject: function() {
         gtag('consent', 'update', {
           analytics_storage: 'denied',
+        });
+      }
+    },
+    {
+      id: "werbung",
+      name: "Werbung",
+      description: "<p>Diese Cookies zeigen uns, ob jemand nach einem Klick auf unsere Google-Anzeige Kontakt mit uns aufnimmt, also anruft, eine E-Mail schreibt oder einen Rückruf anfordert. So sehen wir, ob sich unsere Anzeigen lohnen. Namen, Telefonnummern oder Nachrichten werden dabei nicht an Google übermittelt. Wir nutzen keine personalisierte Werbung.</p>",
+      required: false,
+      onAccept: function() {
+        gtag('consent', 'update', {
+          ad_storage: 'granted',
+          ad_user_data: 'granted',
+        });
+        selmaLoadTagManager();
+        dataLayer.push({
+          'event': 'consent_accepted_werbung',
+        });
+      },
+      onReject: function() {
+        gtag('consent', 'update', {
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
         });
       }
     }
