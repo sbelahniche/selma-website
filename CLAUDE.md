@@ -34,7 +34,7 @@ Each push costs 15 of 300 free Netlify credits per month. Collect several small 
 | Workshops: **paused since Oct 2026**, pages not built, old URLs redirect (301 since Nov 2026, so Google drops the old results) in `_redirects`. To bring them back, restore the overview page and `{{WS_…}}` placeholders in `body.html` and the `workshops` calls in `build.py` from git history (before commit "Workshops pausiert"), then remove those 301s and put the workshop paragraph back into section 6 of the Datenschutzerklärung (git history) | `src/content/workshops.json`, `src/workshops.py` (kept) |
 | Page titles, meta descriptions, noindex (SEO) | `src/content/seo.json` |
 | Design (colors, spacing) | `src/style.css`, documented in `SELMA-Design-System.md` |
-| Images | `src/img/` (use `.webp`, about 1600 px max width) |
+| Images | `src/img/` (use `.webp`, about 1600 px max width). Browsers cache `/img/*` for 30 days (`netlify.toml`), so **a replaced image needs a new filename**, otherwise returning visitors keep seeing the old one |
 | Text for AI search engines | `src/static/llms.txt` (update it when services, prices or contact data change) |
 | Redirects | `src/static/_redirects` |
 
